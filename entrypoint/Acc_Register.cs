@@ -5,12 +5,12 @@ using System.Windows.Forms;
 
 namespace entrypoint
 {
-    public partial class Register : Form
+    public partial class Acc_Register : Form
     {
         // DATABASE CONNECTION
         SqlConnection connect = new SqlConnection(@"Server=(localdb)\MSSQLLocalDB;AttachDbFilename=D:\OneDrive\Documents\loginData.mdf;Integrated Security=True;Connect Timeout=30;");
 
-        public Register()
+        public Acc_Register()
         {
             InitializeComponent();
         }
@@ -80,7 +80,7 @@ namespace entrypoint
 
                                 MessageBox.Show("Registered successfully", "Information Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                                Login loginForm = new Login();
+                                Acc_Login loginForm = new Acc_Login();
                                 loginForm.Show();
                                 this.Hide();
                             }
@@ -110,7 +110,7 @@ namespace entrypoint
 
         private void loginhere_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Login loginForm = new Login();
+            Acc_Login loginForm = new Acc_Login();
             loginForm.Show();
             this.Hide();
         }

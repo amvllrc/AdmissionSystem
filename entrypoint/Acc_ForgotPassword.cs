@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace entrypoint
 {
-    public partial class ForgotPassword : Form
+    public partial class Acc_ForgotPassword : Form
     {
-        public ForgotPassword()
+        public Acc_ForgotPassword()
         {
             InitializeComponent();
         }
@@ -25,7 +25,7 @@ namespace entrypoint
 
         private void btnLogin_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Login loginForm = new Login();
+            Acc_Login loginForm = new Acc_Login();
             loginForm.Show();
             this.Hide();
         }
@@ -81,7 +81,7 @@ namespace entrypoint
                         cmd.ExecuteNonQuery();
                         MessageBox.Show("Password updated successfully", "Information Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                        Login loginForm = new Login();
+                        Acc_Login loginForm = new Acc_Login();
                         loginForm.Show();
                         this.Hide();
                     }

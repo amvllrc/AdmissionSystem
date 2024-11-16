@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace entrypoint
 {
-    public partial class PayListFilter : Form
+    public partial class Ad_PayListFilter : Form
     {
-        public PayListFilter()
+        public Ad_PayListFilter()
         {
             InitializeComponent();
         }

@@ -5,9 +5,9 @@ using System.Windows.Forms;
 
 namespace entrypoint
 {
-    public partial class CourseManagement : Form
+    public partial class Ad_CourseManagement : Form
     {
-        public CourseManagement()
+        public Ad_CourseManagement()
         {
             InitializeComponent();
         }
@@ -41,7 +41,7 @@ namespace entrypoint
 
         private void btnDashboard_Click(object sender, EventArgs e)
         {
-            Dashboard dashboardForm = new Dashboard();
+            Ad_Dashboard dashboardForm = new Ad_Dashboard();
             dashboardForm.Show();
             this.Hide();
         }
@@ -55,7 +55,7 @@ namespace entrypoint
 
         private void btnPaymentList_Click(object sender, EventArgs e)
         {
-            PaymentList paymentListForm = new PaymentList();
+            Ad_PaymentList paymentListForm = new Ad_PaymentList();
             paymentListForm.Show();
             this.Hide();
         }
@@ -68,10 +68,9 @@ namespace entrypoint
                                           MessageBoxIcon.Question);
             if (result == DialogResult.Yes)
             {
-                // NOTE THAT THIS SHOULD BE ON THE LANDING PAGE.. dito kolang nilagay habang dipa nacocompile.
-                Login loginForm = new Login();
-                loginForm.Show();
-                this.Close();
+                Homepage Homepage = new Homepage();
+                Homepage.Show();
+                this.Hide();
             }
         }
     }

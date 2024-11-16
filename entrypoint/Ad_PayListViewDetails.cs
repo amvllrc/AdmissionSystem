@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace entrypoint
 {
-    public partial class PayListViewDetails : Form
+    public partial class Ad_PayListViewDetails : Form
     {
-        public PayListViewDetails()
+        public Ad_PayListViewDetails()
         {
             InitializeComponent();
         }

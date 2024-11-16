@@ -12,10 +12,10 @@ using System.Windows.Forms;
 
 namespace entrypoint
 {
-    public partial class Login : Form
+    public partial class Acc_Login : Form
     {
         SqlConnection connect = new SqlConnection(@"Server=(localdb)\MSSQLLocalDB;AttachDbFilename=D:\OneDrive\Documents\loginData.mdf;Integrated Security=True;Connect Timeout=30;");
-        public Login()
+        public Acc_Login()
         {
             InitializeComponent();
         }
@@ -27,14 +27,14 @@ namespace entrypoint
 
         private void registerhere_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Register registerForm = new Register();
+            Acc_Register registerForm = new Acc_Register();
             registerForm.Show();
             this.Hide();
         }
 
         private void forgotpassword_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            ForgotPassword forgotpasswordForm = new ForgotPassword();
+            Acc_ForgotPassword forgotpasswordForm = new Acc_ForgotPassword();
             forgotpasswordForm.Show();
             this.Hide();
         }
@@ -78,7 +78,7 @@ namespace entrypoint
                             {
                                 MessageBox.Show("Logged In successfully", "Information Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                                Dashboard dashboardForm = new Dashboard();
+                                Ad_Dashboard dashboardForm = new Ad_Dashboard();
                                 dashboardForm.Show();
                                 this.Hide();
                             }

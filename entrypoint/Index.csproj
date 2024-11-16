@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{AC835CB0-1C08-483C-B20E-1941BB6E8925}</ProjectGuid>
+    <ProjectGuid>{1AB178B4-621E-4A94-AF0F-BE4348291AD2}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>entrypoint</RootNamespace>
     <AssemblyName>entrypoint</AssemblyName>
@@ -47,106 +47,148 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AppListFilter.cs">
+    <Compile Include="Stu_AdmissionStatus.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AppListFilter.Designer.cs">
-      <DependentUpon>AppListFilter.cs</DependentUpon>
+    <Compile Include="Stu_AdmissionStatus.Designer.cs">
+      <DependentUpon>Stu_AdmissionStatus.cs</DependentUpon>
     </Compile>
-    <Compile Include="Dashboard.cs">
+    <Compile Include="Ad_AppListFilter.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Dashboard.Designer.cs">
-      <DependentUpon>Dashboard.cs</DependentUpon>
+    <Compile Include="Ad_AppListFilter.Designer.cs">
+      <DependentUpon>Ad_AppListFilter.cs</DependentUpon>
     </Compile>
-    <Compile Include="CourseManagement.cs">
+    <Compile Include="Ad_Dashboard.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CourseManagement.Designer.cs">
-      <DependentUpon>CourseManagement.cs</DependentUpon>
+    <Compile Include="Ad_Dashboard.Designer.cs">
+      <DependentUpon>Ad_Dashboard.cs</DependentUpon>
     </Compile>
-    <Compile Include="ApplicationList.cs">
+    <Compile Include="Ad_CourseManagement.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ApplicationList.Designer.cs">
-      <DependentUpon>ApplicationList.cs</DependentUpon>
+    <Compile Include="Ad_CourseManagement.Designer.cs">
+      <DependentUpon>Ad_CourseManagement.cs</DependentUpon>
     </Compile>
-    <Compile Include="ForgotPassword.cs">
+    <Compile Include="Ad_ApplicationList.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ForgotPassword.Designer.cs">
-      <DependentUpon>ForgotPassword.cs</DependentUpon>
+    <Compile Include="Ad_ApplicationList.Designer.cs">
+      <DependentUpon>Ad_ApplicationList.cs</DependentUpon>
     </Compile>
-    <Compile Include="PayListFilter.cs">
+    <Compile Include="Stu_Examination.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PayListFilter.Designer.cs">
-      <DependentUpon>PayListFilter.cs</DependentUpon>
+    <Compile Include="Stu_Examination.Designer.cs">
+      <DependentUpon>Stu_Examination.cs</DependentUpon>
     </Compile>
-    <Compile Include="PayListViewDetails.cs">
+    <Compile Include="Acc_ForgotPassword.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PayListViewDetails.Designer.cs">
-      <DependentUpon>PayListViewDetails.cs</DependentUpon>
+    <Compile Include="Acc_ForgotPassword.Designer.cs">
+      <DependentUpon>Acc_ForgotPassword.cs</DependentUpon>
     </Compile>
-    <Compile Include="PaymentList.cs">
+    <Compile Include="Homepage.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PaymentList.Designer.cs">
-      <DependentUpon>PaymentList.cs</DependentUpon>
+    <Compile Include="Homepage.Designer.cs">
+      <DependentUpon>Homepage.cs</DependentUpon>
     </Compile>
-    <Compile Include="AppListViewDetails.cs">
+    <Compile Include="Ad_PayListFilter.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AppListViewDetails.Designer.cs">
-      <DependentUpon>AppListViewDetails.cs</DependentUpon>
+    <Compile Include="Ad_PayListFilter.Designer.cs">
+      <DependentUpon>Ad_PayListFilter.cs</DependentUpon>
     </Compile>
-    <Compile Include="Login.cs">
+    <Compile Include="Ad_PayListViewDetails.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Login.Designer.cs">
-      <DependentUpon>Login.cs</DependentUpon>
+    <Compile Include="Ad_PayListViewDetails.Designer.cs">
+      <DependentUpon>Ad_PayListViewDetails.cs</DependentUpon>
     </Compile>
-    <Compile Include="Register.cs">
+    <Compile Include="Stu_PaymentForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Register.Designer.cs">
-      <DependentUpon>Register.cs</DependentUpon>
+    <Compile Include="Stu_PaymentForm.Designer.cs">
+      <DependentUpon>Stu_PaymentForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ad_PaymentList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ad_PaymentList.Designer.cs">
+      <DependentUpon>Ad_PaymentList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ad_AppListViewDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ad_AppListViewDetails.Designer.cs">
+      <DependentUpon>Ad_AppListViewDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Acc_Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Acc_Login.Designer.cs">
+      <DependentUpon>Acc_Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Acc_Register.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Acc_Register.Designer.cs">
+      <DependentUpon>Acc_Register.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="ApplicationList.resx">
-      <DependentUpon>ApplicationList.cs</DependentUpon>
+    <Compile Include="Stu_ApplicationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Stu_ApplicationForm.Designer.cs">
+      <DependentUpon>Stu_ApplicationForm.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Stu_AdmissionStatus.resx">
+      <DependentUpon>Stu_AdmissionStatus.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AppListFilter.resx">
-      <DependentUpon>AppListFilter.cs</DependentUpon>
+    <EmbeddedResource Include="Ad_ApplicationList.resx">
+      <DependentUpon>Ad_ApplicationList.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Dashboard.resx">
-      <DependentUpon>Dashboard.cs</DependentUpon>
+    <EmbeddedResource Include="Ad_AppListFilter.resx">
+      <DependentUpon>Ad_AppListFilter.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CourseManagement.resx">
-      <DependentUpon>CourseManagement.cs</DependentUpon>
+    <EmbeddedResource Include="Ad_Dashboard.resx">
+      <DependentUpon>Ad_Dashboard.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ForgotPassword.resx">
-      <DependentUpon>ForgotPassword.cs</DependentUpon>
+    <EmbeddedResource Include="Ad_CourseManagement.resx">
+      <DependentUpon>Ad_CourseManagement.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PayListFilter.resx">
-      <DependentUpon>PayListFilter.cs</DependentUpon>
+    <EmbeddedResource Include="Stu_Examination.resx">
+      <DependentUpon>Stu_Examination.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PayListViewDetails.resx">
-      <DependentUpon>PayListViewDetails.cs</DependentUpon>
+    <EmbeddedResource Include="Acc_ForgotPassword.resx">
+      <DependentUpon>Acc_ForgotPassword.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PaymentList.resx">
-      <DependentUpon>PaymentList.cs</DependentUpon>
+    <EmbeddedResource Include="Homepage.resx">
+      <DependentUpon>Homepage.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AppListViewDetails.resx">
-      <DependentUpon>AppListViewDetails.cs</DependentUpon>
+    <EmbeddedResource Include="Ad_PayListFilter.resx">
+      <DependentUpon>Ad_PayListFilter.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Login.resx">
-      <DependentUpon>Login.cs</DependentUpon>
+    <EmbeddedResource Include="Ad_PayListViewDetails.resx">
+      <DependentUpon>Ad_PayListViewDetails.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Register.resx">
-      <DependentUpon>Register.cs</DependentUpon>
+    <EmbeddedResource Include="Stu_PaymentForm.resx">
+      <DependentUpon>Stu_PaymentForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ad_PaymentList.resx">
+      <DependentUpon>Ad_PaymentList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ad_AppListViewDetails.resx">
+      <DependentUpon>Ad_AppListViewDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Acc_Login.resx">
+      <DependentUpon>Acc_Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Acc_Register.resx">
+      <DependentUpon>Acc_Register.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -157,6 +199,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Stu_ApplicationForm.resx">
+      <DependentUpon>Stu_ApplicationForm.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

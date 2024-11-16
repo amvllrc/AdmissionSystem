@@ -4,24 +4,22 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace entrypoint
 {
-    public partial class PaymentList : Form
+    public partial class ApplicationList : Form
     {
-        public PaymentList()
+        public ApplicationList()
         {
             InitializeComponent();
         }
 
-        private void exitIcon_Click(object sender, EventArgs e)
-        {
-            Application.Exit();         }
-
-        private void PaymentList_Load(object sender, EventArgs e)
+        private void ApplicationList_Load(object sender, EventArgs e)
         {
             btnDashboard.FlatStyle = FlatStyle.Flat;
             btnDashboard.FlatAppearance.BorderSize = 0;
@@ -32,28 +30,33 @@ namespace entrypoint
             btnPaymentList.FlatStyle = FlatStyle.Flat;
             btnPaymentList.FlatAppearance.BorderSize = 0;
 
-            payListDataGrid.EnableHeadersVisualStyles = false;
-            payListDataGrid.ColumnHeadersDefaultCellStyle.BackColor = Color.LightBlue;
+            appListDataGrid.EnableHeadersVisualStyles = false;
+            appListDataGrid.ColumnHeadersDefaultCellStyle.BackColor = Color.LightBlue;
+        }
+
+        private void exitIcon_Click_1(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
 
         private void btnDashboard_Click(object sender, EventArgs e)
         {
-            Dashboard dashboardForm = new Dashboard();
+            Ad_Dashboard dashboardForm = new Ad_Dashboard();
             dashboardForm.Show();
             this.Hide();
         }
 
         private void btnCourseMan_Click(object sender, EventArgs e)
         {
-            CourseManagement courseManagementForm = new CourseManagement();
+            Ad_CourseManagement courseManagementForm = new Ad_CourseManagement();
             courseManagementForm.Show();
-            this.Hide();
+            this.Hide(); 
         }
 
-        private void btnAppList_Click(object sender, EventArgs e)
+        private void btnPaymentList_Click(object sender, EventArgs e)
         {
-            ApplicationList applicationListForm = new ApplicationList();
-            applicationListForm.Show();
+            Ad_PaymentList paymentListForm = new Ad_PaymentList();
+            paymentListForm.Show();
             this.Hide();
         }
 
@@ -65,17 +68,16 @@ namespace entrypoint
                                           MessageBoxIcon.Question);
             if (result == DialogResult.Yes)
             {
-                // NOTE THAT THIS SHOULD BE ON THE LANDING PAGE.. dito kolang nilagay habang dipa nacocompile.
-                Login loginForm = new Login();
-                loginForm.Show();
-                this.Close();
+                Homepage Homepage = new Homepage();
+                Homepage.Show();
+                this.Hide();
             }
         }
 
-        private void btnPayListFilter_Click(object sender, EventArgs e)
+        private void btnAppListFilter_Click(object sender, EventArgs e)
         {
-            PayListFilter payFilterForm = new PayListFilter();
-            payFilterForm.Show();
+            Ad_AppListFilter appListFilterForm = new Ad_AppListFilter();
+            appListFilterForm.Show();
         }
     }
 }

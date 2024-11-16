@@ -1,6 +1,6 @@
 ﻿namespace entrypoint
 {
-    partial class PayListFilter
+    partial class Ad_PayListFilter
     {
         /// <summary>
         /// Required designer variable.
