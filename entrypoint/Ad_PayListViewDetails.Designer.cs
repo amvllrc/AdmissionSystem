@@ -35,6 +35,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.picProofOfPayment = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -93,6 +95,7 @@
             this.exitIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.exitIcon.TabIndex = 4;
             this.exitIcon.TabStop = false;
+            this.exitIcon.Click += new System.EventHandler(this.exitIcon_Click);
             // 
             // label1
             // 
@@ -115,6 +118,8 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.panel2.Controls.Add(this.label10);
+            this.panel2.Controls.Add(this.label11);
             this.panel2.Controls.Add(this.label9);
             this.panel2.Controls.Add(this.label8);
             this.panel2.Controls.Add(this.label7);
@@ -134,6 +139,26 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(343, 239);
             this.panel2.TabIndex = 13;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(162, 205);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(97, 20);
+            this.label10.TabIndex = 30;
+            this.label10.Text = "(Placeholder)";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(29, 205);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(134, 21);
+            this.label11.TabIndex = 29;
+            this.label11.Text = "Examination Date";
             // 
             // label9
             // 
@@ -296,6 +321,7 @@
             this.pay_btnReject.TabIndex = 14;
             this.pay_btnReject.Text = "Reject";
             this.pay_btnReject.UseVisualStyleBackColor = false;
+            this.pay_btnReject.Click += new System.EventHandler(this.pay_btnReject_Click);
             // 
             // pay_btnApprove
             // 
@@ -308,12 +334,13 @@
             this.pay_btnApprove.TabIndex = 15;
             this.pay_btnApprove.Text = "Approve";
             this.pay_btnApprove.UseVisualStyleBackColor = false;
+            this.pay_btnApprove.Click += new System.EventHandler(this.pay_btnApprove_Click);
             // 
-            // PayListViewDetails
+            // Ad_PayListViewDetails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(600, 360);
+            this.ClientSize = new System.Drawing.Size(600, 362);
             this.Controls.Add(this.pay_btnApprove);
             this.Controls.Add(this.pay_btnReject);
             this.Controls.Add(this.panel2);
@@ -322,7 +349,7 @@
             this.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "PayListViewDetails";
+            this.Name = "Ad_PayListViewDetails";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "PayListViewDetails";
             this.Load += new System.EventHandler(this.PayListViewDetails_Load);
@@ -362,5 +389,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label11;
     }
 }

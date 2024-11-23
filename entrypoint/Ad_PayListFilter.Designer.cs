@@ -32,6 +32,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.checkBox3 = new System.Windows.Forms.CheckBox();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // button2
@@ -43,6 +44,7 @@
             this.button2.TabIndex = 8;
             this.button2.Text = "Reset";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
@@ -52,6 +54,7 @@
             this.button1.TabIndex = 7;
             this.button1.Text = "Apply";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // checkBox2
             // 
@@ -70,26 +73,39 @@
             this.checkBox3.Location = new System.Drawing.Point(55, 70);
             this.checkBox3.Margin = new System.Windows.Forms.Padding(4);
             this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(78, 21);
+            this.checkBox3.Size = new System.Drawing.Size(74, 21);
             this.checkBox3.TabIndex = 9;
-            this.checkBox3.Text = "Not Paid";
+            this.checkBox3.Text = "Pending";
             this.checkBox3.UseVisualStyleBackColor = true;
             // 
-            // PayListFilter
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(55, 99);
+            this.checkBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(74, 21);
+            this.checkBox1.TabIndex = 10;
+            this.checkBox1.Text = "rejected";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            // 
+            // Ad_PayListFilter
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(200, 193);
+            this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.checkBox3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.checkBox2);
             this.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.Name = "PayListFilter";
+            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Name = "Ad_PayListFilter";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Filters";
+            this.Load += new System.EventHandler(this.Ad_PayListFilter_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -101,5 +117,6 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.CheckBox checkBox2;
         private System.Windows.Forms.CheckBox checkBox3;
+        private System.Windows.Forms.CheckBox checkBox1;
     }
 }

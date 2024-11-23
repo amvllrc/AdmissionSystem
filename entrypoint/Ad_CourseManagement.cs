@@ -1,15 +1,27 @@
 ﻿using entrypoint;
+using entrypoint.PROCESSES;
+using entrypoint.PROCESSES.Admin;
 using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
+using System.Net;
 using System.Windows.Forms;
 
 namespace entrypoint
 {
     public partial class Ad_CourseManagement : Form
     {
+        private Course course;
+        private AddEdiTDeleteCourse aedcourse;
+       
         public Ad_CourseManagement()
         {
             InitializeComponent();
+            course= new Course();
+            aedcourse=new AddEdiTDeleteCourse();
+            
         }
 
         private void exitIcon_Click(object sender, EventArgs e)
@@ -19,25 +31,31 @@ namespace entrypoint
 
         private void CourseManagement_Load(object sender, EventArgs e)
         {
-            btnDashboard.FlatStyle = FlatStyle.Flat;
-            btnDashboard.FlatAppearance.BorderSize = 0;
-            btnCourseMan.FlatStyle = FlatStyle.Flat;
-            btnCourseMan.FlatAppearance.BorderSize = 0;
-            btnAppList.FlatStyle = FlatStyle.Flat;
-            btnAppList.FlatAppearance.BorderSize = 0;
-            btnPaymentList.FlatStyle = FlatStyle.Flat;
-            btnPaymentList.FlatAppearance.BorderSize = 0;
-            listView1.DrawColumnHeader += ListView1_DrawColumnHeader;
+            loadTable();
         }
 
-        private void ListView1_DrawColumnHeader(object sender, DrawListViewColumnHeaderEventArgs e)
+        public void loadTable()
         {
-            // Set the background color for the header
-            e.Graphics.FillRectangle(Brushes.LightBlue, e.Bounds);
+            string query = "SELECT course_id as ID,name as 'COURSE NAME' FROM course";
+            DataTable dataTable = new DataTable();
 
-            // Draw the header text
-            e.DrawText(TextFormatFlags.HorizontalCenter | TextFormatFlags.VerticalCenter);
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(DBConnection.connectionString))
+                {
+                    SqlDataAdapter dataAdapter = new SqlDataAdapter(query, conn);
+                    dataAdapter.Fill(dataTable);
+                }   
+                dataGridView1.DataSource = dataTable;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
+        
         }
+
+     
 
         private void btnDashboard_Click(object sender, EventArgs e)
         {
@@ -71,6 +89,38 @@ namespace entrypoint
                 Homepage Homepage = new Homepage();
                 Homepage.Show();
                 this.Hide();
+            }
+        }
+
+        private void btnAddCourse_Click(object sender, EventArgs e)
+        {
+            AddCourse ad = new AddCourse(this);
+            ad.ShowDialog();
+        }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+           
+            int course_id=aedcourse.retrieveCellRow(dataGridView1);
+            Ad_EditCourse editForm = new Ad_EditCourse(course_id, this);
+            editForm.ShowDialog();
+
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            int course_id = aedcourse.retrieveCellRow(dataGridView1);
+            DialogResult result = MessageBox.Show(
+                "Are you sure you want to delete this course? This action cannot be undone.",
+                "Confirm Deletion",
+                MessageBoxButtons.YesNo, 
+                MessageBoxIcon.Warning);
+
+            if (result == DialogResult.Yes)
+            {
+                aedcourse.delCourse(course_id);
+                loadTable();
             }
         }
     }

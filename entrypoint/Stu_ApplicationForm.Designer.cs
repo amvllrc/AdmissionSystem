@@ -29,22 +29,12 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Stu_ApplicationForm));
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.exitIcon = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.btnAdmissionStatus = new System.Windows.Forms.Button();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.picIconExamination = new System.Windows.Forms.PictureBox();
-            this.picIconPay = new System.Windows.Forms.PictureBox();
-            this.picIconApplication = new System.Windows.Forms.PictureBox();
-            this.picIconAdmission = new System.Windows.Forms.PictureBox();
-            this.picLogout = new System.Windows.Forms.PictureBox();
-            this.btnExamination = new System.Windows.Forms.Button();
-            this.btnPaymentExam = new System.Windows.Forms.Button();
-            this.btnApplication = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.grpDocuments = new System.Windows.Forms.GroupBox();
+            this.txtEsig = new System.Windows.Forms.TextBox();
+            this.txt2by2 = new System.Windows.Forms.TextBox();
+            this.txtForm137 = new System.Windows.Forms.TextBox();
+            this.txtPSA = new System.Windows.Forms.TextBox();
             this.btn2by2Pic = new System.Windows.Forms.Button();
             this.btnForm137 = new System.Windows.Forms.Button();
             this.btnBirthCert = new System.Windows.Forms.Button();
@@ -116,16 +106,6 @@
             this.lblGender = new System.Windows.Forms.Label();
             this.lblBirthdate = new System.Windows.Forms.Label();
             this.lblFirstName = new System.Windows.Forms.Label();
-            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.exitIcon)).BeginInit();
-            this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picIconExamination)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picIconPay)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picIconApplication)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picIconAdmission)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picLogout)).BeginInit();
             this.panel3.SuspendLayout();
             this.grpDocuments.SuspendLayout();
             this.grpStudentDeclaration.SuspendLayout();
@@ -134,216 +114,6 @@
             this.grpEducationalBackground.SuspendLayout();
             this.grpPersonalInformation.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.Gold;
-            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.panel1.CausesValidation = false;
-            this.panel1.Controls.Add(this.pictureBox2);
-            this.panel1.Controls.Add(this.exitIcon);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(984, 42);
-            this.panel1.TabIndex = 0;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(14, 4);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(35, 35);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 5;
-            this.pictureBox2.TabStop = false;
-            // 
-            // exitIcon
-            // 
-            this.exitIcon.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.exitIcon.Image = ((System.Drawing.Image)(resources.GetObject("exitIcon.Image")));
-            this.exitIcon.Location = new System.Drawing.Point(944, 5);
-            this.exitIcon.Name = "exitIcon";
-            this.exitIcon.Size = new System.Drawing.Size(30, 30);
-            this.exitIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.exitIcon.TabIndex = 4;
-            this.exitIcon.TabStop = false;
-            this.exitIcon.Click += new System.EventHandler(this.pictureBox1_Click);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(55, 11);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(344, 20);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "STUDENT ADMISSION | SYSTEM NAME | STUDENT";
-            // 
-            // btnAdmissionStatus
-            // 
-            this.btnAdmissionStatus.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.btnAdmissionStatus.BackColor = System.Drawing.Color.Transparent;
-            this.btnAdmissionStatus.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnAdmissionStatus.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAdmissionStatus.FlatAppearance.BorderSize = 0;
-            this.btnAdmissionStatus.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Navy;
-            this.btnAdmissionStatus.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkBlue;
-            this.btnAdmissionStatus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAdmissionStatus.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdmissionStatus.ForeColor = System.Drawing.Color.Transparent;
-            this.btnAdmissionStatus.Location = new System.Drawing.Point(-5, 27);
-            this.btnAdmissionStatus.Margin = new System.Windows.Forms.Padding(0, 20, 0, 0);
-            this.btnAdmissionStatus.Name = "btnAdmissionStatus";
-            this.btnAdmissionStatus.Padding = new System.Windows.Forms.Padding(50, 0, 0, 0);
-            this.btnAdmissionStatus.Size = new System.Drawing.Size(276, 46);
-            this.btnAdmissionStatus.TabIndex = 0;
-            this.btnAdmissionStatus.Text = "Admission Status";
-            this.btnAdmissionStatus.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAdmissionStatus.UseVisualStyleBackColor = false;
-            this.btnAdmissionStatus.Click += new System.EventHandler(this.btnAdmissionStatus_Click);
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.MidnightBlue;
-            this.panel2.Controls.Add(this.picIconExamination);
-            this.panel2.Controls.Add(this.picIconPay);
-            this.panel2.Controls.Add(this.picIconApplication);
-            this.panel2.Controls.Add(this.picIconAdmission);
-            this.panel2.Controls.Add(this.picLogout);
-            this.panel2.Controls.Add(this.btnExamination);
-            this.panel2.Controls.Add(this.btnPaymentExam);
-            this.panel2.Controls.Add(this.btnApplication);
-            this.panel2.Controls.Add(this.btnAdmissionStatus);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel2.Location = new System.Drawing.Point(0, 42);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(260, 569);
-            this.panel2.TabIndex = 6;
-            // 
-            // picIconExamination
-            // 
-            this.picIconExamination.Image = ((System.Drawing.Image)(resources.GetObject("picIconExamination.Image")));
-            this.picIconExamination.Location = new System.Drawing.Point(12, 171);
-            this.picIconExamination.Name = "picIconExamination";
-            this.picIconExamination.Size = new System.Drawing.Size(30, 30);
-            this.picIconExamination.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picIconExamination.TabIndex = 16;
-            this.picIconExamination.TabStop = false;
-            // 
-            // picIconPay
-            // 
-            this.picIconPay.Image = ((System.Drawing.Image)(resources.GetObject("picIconPay.Image")));
-            this.picIconPay.Location = new System.Drawing.Point(12, 126);
-            this.picIconPay.Name = "picIconPay";
-            this.picIconPay.Size = new System.Drawing.Size(30, 30);
-            this.picIconPay.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picIconPay.TabIndex = 15;
-            this.picIconPay.TabStop = false;
-            // 
-            // picIconApplication
-            // 
-            this.picIconApplication.BackColor = System.Drawing.Color.Gold;
-            this.picIconApplication.Image = ((System.Drawing.Image)(resources.GetObject("picIconApplication.Image")));
-            this.picIconApplication.Location = new System.Drawing.Point(12, 80);
-            this.picIconApplication.Name = "picIconApplication";
-            this.picIconApplication.Size = new System.Drawing.Size(30, 30);
-            this.picIconApplication.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picIconApplication.TabIndex = 14;
-            this.picIconApplication.TabStop = false;
-            // 
-            // picIconAdmission
-            // 
-            this.picIconAdmission.BackColor = System.Drawing.Color.MidnightBlue;
-            this.picIconAdmission.Image = ((System.Drawing.Image)(resources.GetObject("picIconAdmission.Image")));
-            this.picIconAdmission.Location = new System.Drawing.Point(12, 35);
-            this.picIconAdmission.Name = "picIconAdmission";
-            this.picIconAdmission.Size = new System.Drawing.Size(30, 30);
-            this.picIconAdmission.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picIconAdmission.TabIndex = 13;
-            this.picIconAdmission.TabStop = false;
-            // 
-            // picLogout
-            // 
-            this.picLogout.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.picLogout.Image = ((System.Drawing.Image)(resources.GetObject("picLogout.Image")));
-            this.picLogout.Location = new System.Drawing.Point(25, 497);
-            this.picLogout.Name = "picLogout";
-            this.picLogout.Size = new System.Drawing.Size(200, 50);
-            this.picLogout.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picLogout.TabIndex = 9;
-            this.picLogout.TabStop = false;
-            this.picLogout.Click += new System.EventHandler(this.picLogout_Click);
-            // 
-            // btnExamination
-            // 
-            this.btnExamination.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.btnExamination.BackColor = System.Drawing.Color.Transparent;
-            this.btnExamination.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnExamination.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnExamination.FlatAppearance.BorderSize = 0;
-            this.btnExamination.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Navy;
-            this.btnExamination.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkBlue;
-            this.btnExamination.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExamination.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExamination.ForeColor = System.Drawing.Color.White;
-            this.btnExamination.Location = new System.Drawing.Point(-5, 163);
-            this.btnExamination.Margin = new System.Windows.Forms.Padding(0, 20, 0, 0);
-            this.btnExamination.Name = "btnExamination";
-            this.btnExamination.Padding = new System.Windows.Forms.Padding(50, 0, 0, 0);
-            this.btnExamination.Size = new System.Drawing.Size(276, 46);
-            this.btnExamination.TabIndex = 7;
-            this.btnExamination.Text = "Examination";
-            this.btnExamination.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnExamination.UseVisualStyleBackColor = false;
-            this.btnExamination.Click += new System.EventHandler(this.btnExamination_Click);
-            // 
-            // btnPaymentExam
-            // 
-            this.btnPaymentExam.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.btnPaymentExam.BackColor = System.Drawing.Color.Transparent;
-            this.btnPaymentExam.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnPaymentExam.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnPaymentExam.FlatAppearance.BorderSize = 0;
-            this.btnPaymentExam.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Navy;
-            this.btnPaymentExam.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkBlue;
-            this.btnPaymentExam.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPaymentExam.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPaymentExam.ForeColor = System.Drawing.Color.White;
-            this.btnPaymentExam.Location = new System.Drawing.Point(-5, 118);
-            this.btnPaymentExam.Margin = new System.Windows.Forms.Padding(0, 20, 0, 0);
-            this.btnPaymentExam.Name = "btnPaymentExam";
-            this.btnPaymentExam.Padding = new System.Windows.Forms.Padding(50, 0, 0, 0);
-            this.btnPaymentExam.Size = new System.Drawing.Size(276, 46);
-            this.btnPaymentExam.TabIndex = 6;
-            this.btnPaymentExam.Text = "Exam Payment";
-            this.btnPaymentExam.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnPaymentExam.UseVisualStyleBackColor = false;
-            this.btnPaymentExam.Click += new System.EventHandler(this.btnPaymentExam_Click);
-            // 
-            // btnApplication
-            // 
-            this.btnApplication.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.btnApplication.BackColor = System.Drawing.Color.Gold;
-            this.btnApplication.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnApplication.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnApplication.FlatAppearance.BorderSize = 0;
-            this.btnApplication.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(220)))), ((int)(((byte)(100)))));
-            this.btnApplication.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gold;
-            this.btnApplication.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnApplication.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnApplication.ForeColor = System.Drawing.Color.Black;
-            this.btnApplication.Location = new System.Drawing.Point(-5, 72);
-            this.btnApplication.Margin = new System.Windows.Forms.Padding(0, 20, 0, 0);
-            this.btnApplication.Name = "btnApplication";
-            this.btnApplication.Padding = new System.Windows.Forms.Padding(50, 0, 0, 0);
-            this.btnApplication.Size = new System.Drawing.Size(276, 46);
-            this.btnApplication.TabIndex = 5;
-            this.btnApplication.Text = "Application Form";
-            this.btnApplication.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnApplication.UseVisualStyleBackColor = false;
-            this.btnApplication.Click += new System.EventHandler(this.btnApplication_Click);
             // 
             // panel3
             // 
@@ -356,14 +126,18 @@
             this.panel3.Controls.Add(this.grpEducationalBackground);
             this.panel3.Controls.Add(this.lblTitleForm);
             this.panel3.Controls.Add(this.grpPersonalInformation);
-            this.panel3.Location = new System.Drawing.Point(260, 42);
+            this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Margin = new System.Windows.Forms.Padding(2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(724, 569);
+            this.panel3.Size = new System.Drawing.Size(717, 600);
             this.panel3.TabIndex = 26;
             // 
             // grpDocuments
             // 
+            this.grpDocuments.Controls.Add(this.txtEsig);
+            this.grpDocuments.Controls.Add(this.txt2by2);
+            this.grpDocuments.Controls.Add(this.txtForm137);
+            this.grpDocuments.Controls.Add(this.txtPSA);
             this.grpDocuments.Controls.Add(this.btn2by2Pic);
             this.grpDocuments.Controls.Add(this.btnForm137);
             this.grpDocuments.Controls.Add(this.btnBirthCert);
@@ -377,18 +151,58 @@
             this.grpDocuments.Margin = new System.Windows.Forms.Padding(2);
             this.grpDocuments.Name = "grpDocuments";
             this.grpDocuments.Padding = new System.Windows.Forms.Padding(2);
-            this.grpDocuments.Size = new System.Drawing.Size(680, 144);
+            this.grpDocuments.Size = new System.Drawing.Size(680, 175);
             this.grpDocuments.TabIndex = 30;
             this.grpDocuments.TabStop = false;
             this.grpDocuments.Text = "Submission of Needed Documents";
             // 
+            // txtEsig
+            // 
+            this.txtEsig.Enabled = false;
+            this.txtEsig.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEsig.Location = new System.Drawing.Point(456, 34);
+            this.txtEsig.Margin = new System.Windows.Forms.Padding(2);
+            this.txtEsig.Name = "txtEsig";
+            this.txtEsig.Size = new System.Drawing.Size(153, 26);
+            this.txtEsig.TabIndex = 31;
+            // 
+            // txt2by2
+            // 
+            this.txt2by2.Enabled = false;
+            this.txt2by2.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt2by2.Location = new System.Drawing.Point(117, 118);
+            this.txt2by2.Margin = new System.Windows.Forms.Padding(2);
+            this.txt2by2.Name = "txt2by2";
+            this.txt2by2.Size = new System.Drawing.Size(153, 26);
+            this.txt2by2.TabIndex = 30;
+            // 
+            // txtForm137
+            // 
+            this.txtForm137.Enabled = false;
+            this.txtForm137.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtForm137.Location = new System.Drawing.Point(118, 74);
+            this.txtForm137.Margin = new System.Windows.Forms.Padding(2);
+            this.txtForm137.Name = "txtForm137";
+            this.txtForm137.Size = new System.Drawing.Size(153, 26);
+            this.txtForm137.TabIndex = 29;
+            // 
+            // txtPSA
+            // 
+            this.txtPSA.Enabled = false;
+            this.txtPSA.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPSA.Location = new System.Drawing.Point(118, 32);
+            this.txtPSA.Margin = new System.Windows.Forms.Padding(2);
+            this.txtPSA.Name = "txtPSA";
+            this.txtPSA.Size = new System.Drawing.Size(153, 26);
+            this.txtPSA.TabIndex = 28;
+            // 
             // btn2by2Pic
             // 
             this.btn2by2Pic.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn2by2Pic.Location = new System.Drawing.Point(126, 102);
+            this.btn2by2Pic.Location = new System.Drawing.Point(282, 118);
             this.btn2by2Pic.Margin = new System.Windows.Forms.Padding(2);
             this.btn2by2Pic.Name = "btn2by2Pic";
-            this.btn2by2Pic.Size = new System.Drawing.Size(104, 29);
+            this.btn2by2Pic.Size = new System.Drawing.Size(57, 29);
             this.btn2by2Pic.TabIndex = 27;
             this.btn2by2Pic.Text = "Attach";
             this.btn2by2Pic.UseVisualStyleBackColor = true;
@@ -397,10 +211,10 @@
             // btnForm137
             // 
             this.btnForm137.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnForm137.Location = new System.Drawing.Point(126, 65);
+            this.btnForm137.Location = new System.Drawing.Point(282, 74);
             this.btnForm137.Margin = new System.Windows.Forms.Padding(2);
             this.btnForm137.Name = "btnForm137";
-            this.btnForm137.Size = new System.Drawing.Size(104, 29);
+            this.btnForm137.Size = new System.Drawing.Size(57, 29);
             this.btnForm137.TabIndex = 26;
             this.btnForm137.Text = "Attach";
             this.btnForm137.UseVisualStyleBackColor = true;
@@ -409,10 +223,10 @@
             // btnBirthCert
             // 
             this.btnBirthCert.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBirthCert.Location = new System.Drawing.Point(126, 30);
+            this.btnBirthCert.Location = new System.Drawing.Point(282, 30);
             this.btnBirthCert.Margin = new System.Windows.Forms.Padding(2);
             this.btnBirthCert.Name = "btnBirthCert";
-            this.btnBirthCert.Size = new System.Drawing.Size(104, 29);
+            this.btnBirthCert.Size = new System.Drawing.Size(57, 29);
             this.btnBirthCert.TabIndex = 25;
             this.btnBirthCert.Text = "Attach";
             this.btnBirthCert.UseVisualStyleBackColor = true;
@@ -422,7 +236,7 @@
             // 
             this.lblESignature.AutoSize = true;
             this.lblESignature.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblESignature.Location = new System.Drawing.Point(290, 34);
+            this.lblESignature.Location = new System.Drawing.Point(351, 37);
             this.lblESignature.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblESignature.Name = "lblESignature";
             this.lblESignature.Size = new System.Drawing.Size(89, 19);
@@ -432,10 +246,10 @@
             // btnESig
             // 
             this.btnESig.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnESig.Location = new System.Drawing.Point(386, 30);
+            this.btnESig.Location = new System.Drawing.Point(613, 34);
             this.btnESig.Margin = new System.Windows.Forms.Padding(2);
             this.btnESig.Name = "btnESig";
-            this.btnESig.Size = new System.Drawing.Size(104, 29);
+            this.btnESig.Size = new System.Drawing.Size(57, 29);
             this.btnESig.TabIndex = 12;
             this.btnESig.Text = "Attach";
             this.btnESig.UseVisualStyleBackColor = true;
@@ -445,7 +259,7 @@
             // 
             this.lbl2by2Pic.AutoSize = true;
             this.lbl2by2Pic.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl2by2Pic.Location = new System.Drawing.Point(9, 106);
+            this.lbl2by2Pic.Location = new System.Drawing.Point(9, 122);
             this.lbl2by2Pic.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl2by2Pic.Name = "lbl2by2Pic";
             this.lbl2by2Pic.Size = new System.Drawing.Size(83, 19);
@@ -456,7 +270,7 @@
             // 
             this.lblForm137.AutoSize = true;
             this.lblForm137.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblForm137.Location = new System.Drawing.Point(9, 69);
+            this.lblForm137.Location = new System.Drawing.Point(9, 77);
             this.lblForm137.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblForm137.Name = "lblForm137";
             this.lblForm137.Size = new System.Drawing.Size(66, 19);
@@ -479,7 +293,7 @@
             this.grpStudentDeclaration.Controls.Add(this.btnSubmit);
             this.grpStudentDeclaration.Controls.Add(this.lblConfirmation);
             this.grpStudentDeclaration.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grpStudentDeclaration.Location = new System.Drawing.Point(16, 798);
+            this.grpStudentDeclaration.Location = new System.Drawing.Point(16, 848);
             this.grpStudentDeclaration.Margin = new System.Windows.Forms.Padding(2);
             this.grpStudentDeclaration.Name = "grpStudentDeclaration";
             this.grpStudentDeclaration.Padding = new System.Windows.Forms.Padding(2);
@@ -498,6 +312,7 @@
             this.btnSubmit.TabIndex = 13;
             this.btnSubmit.Text = "SUBMIT";
             this.btnSubmit.UseVisualStyleBackColor = true;
+            this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
             // 
             // lblConfirmation
             // 
@@ -1083,6 +898,8 @@
             // 
             // dtpBirthdate
             // 
+            this.dtpBirthdate.CalendarForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.dtpBirthdate.CalendarMonthBackground = System.Drawing.SystemColors.InactiveBorder;
             this.dtpBirthdate.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpBirthdate.Location = new System.Drawing.Point(76, 63);
             this.dtpBirthdate.Margin = new System.Windows.Forms.Padding(2);
@@ -1183,36 +1000,18 @@
             this.lblFirstName.TabIndex = 0;
             this.lblFirstName.Text = "First Name:";
             // 
-            // openFileDialog1
-            // 
-            this.openFileDialog1.FileName = "openFileDialog1";
-            this.openFileDialog1.Multiselect = true;
-            // 
             // Stu_ApplicationForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(984, 611);
+            this.ClientSize = new System.Drawing.Size(738, 589);
             this.Controls.Add(this.panel3);
-            this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Stu_ApplicationForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.Form1_Load);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.exitIcon)).EndInit();
-            this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.picIconExamination)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picIconPay)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picIconApplication)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picIconAdmission)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picLogout)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.grpDocuments.ResumeLayout(false);
@@ -1231,16 +1030,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btnAdmissionStatus;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Button btnApplication;
-        private System.Windows.Forms.PictureBox exitIcon;
-        private System.Windows.Forms.Button btnPaymentExam;
-        private System.Windows.Forms.Button btnExamination;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.GroupBox grpProgramPreferances;
         private System.Windows.Forms.ComboBox cbSecondChoice;
@@ -1306,12 +1095,6 @@
         private System.Windows.Forms.Label lblConfirmation;
         private System.Windows.Forms.Button btnSubmit;
         private System.Windows.Forms.Button btnESig;
-        private System.Windows.Forms.OpenFileDialog openFileDialog1;
-        private System.Windows.Forms.PictureBox picLogout;
-        private System.Windows.Forms.PictureBox picIconAdmission;
-        private System.Windows.Forms.PictureBox picIconApplication;
-        private System.Windows.Forms.PictureBox picIconPay;
-        private System.Windows.Forms.PictureBox picIconExamination;
         private System.Windows.Forms.GroupBox grpDocuments;
         private System.Windows.Forms.Label lbl2by2Pic;
         private System.Windows.Forms.Label lblForm137;
@@ -1320,6 +1103,10 @@
         private System.Windows.Forms.Button btnForm137;
         private System.Windows.Forms.Button btnBirthCert;
         private System.Windows.Forms.Label lblESignature;
+        private System.Windows.Forms.TextBox txt2by2;
+        private System.Windows.Forms.TextBox txtForm137;
+        private System.Windows.Forms.TextBox txtPSA;
+        private System.Windows.Forms.TextBox txtEsig;
     }
 }
 

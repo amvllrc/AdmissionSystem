@@ -1,4 +1,5 @@
-﻿using System;
+﻿using entrypoint.PROCESSES;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -48,7 +49,7 @@ namespace entrypoint
             }
 
             // DATABASE CONNECTION TU
-            using (SqlConnection connect = new SqlConnection(@"Server=(localdb)\MSSQLLocalDB;AttachDbFilename=D:\OneDrive\Documents\loginData.mdf;Integrated Security=True;Connect Timeout=30;"))
+            using (SqlConnection connect = new SqlConnection(DBConnection.connectionString))
             {
                 try
                 {

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using entrypoint.PROCESSES;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,7 +15,9 @@ namespace entrypoint
 {
     public partial class Acc_Login : Form
     {
-        SqlConnection connect = new SqlConnection(@"Server=(localdb)\MSSQLLocalDB;AttachDbFilename=D:\OneDrive\Documents\loginData.mdf;Integrated Security=True;Connect Timeout=30;");
+
+     
+        SqlConnection connect = new SqlConnection(DBConnection.connectionString);
         public Acc_Login()
         {
             InitializeComponent();
@@ -22,7 +25,7 @@ namespace entrypoint
 
         private void Login_Load(object sender, EventArgs e)
         {
-
+            login_password.PasswordChar = '*';
         }
 
         private void registerhere_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -65,7 +68,7 @@ namespace entrypoint
                     {
                         connect.Open();
 
-                        String selectData = "SELECT * FROM users WHERE email_address = @email AND password = @pass";
+                        String selectData = "SELECT id,role,first_name FROM users WHERE email_address = @email AND password = @pass";
                         using (SqlCommand cmd = new SqlCommand(selectData, connect))
                         {
                             cmd.Parameters.AddWithValue("@email", login_email.Text);
@@ -76,11 +79,15 @@ namespace entrypoint
 
                             if (table.Rows.Count >= 1)
                             {
-                                MessageBox.Show("Logged In successfully", "Information Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                                Ad_Dashboard dashboardForm = new Ad_Dashboard();
-                                dashboardForm.Show();
-                                this.Hide();
+                                int userId = Convert.ToInt32(table.Rows[0]["id"]);
+                                string userRole = table.Rows[0]["role"].ToString();
+                                string userName = table.Rows[0]["first_name"].ToString();
+                                UserSession.ID = userId;
+                                UserSession.ROLE = userRole;
+                                UserSession.NAME = userName;
+                                getUser(UserSession.ID, UserSession.ROLE);
+                               
+                                
                             }
                             else
                             {
@@ -100,9 +107,34 @@ namespace entrypoint
             }
         }
 
+        private void getUser(int userId, String userRole)
+        {
+            if (userRole == "student")
+            {
+                Stu_AdmissionStatus status = new Stu_AdmissionStatus();
+                status.Show();
+                this.Hide();
+            }
+            else if (userRole == "admin"){
+                Ad_Dashboard dashboard = new Ad_Dashboard();
+                dashboard.Show();
+                this.Hide();
+            }
+            else
+            {
+                MessageBox.Show("Error");
+            }
+
+        }
+
         private void exitIcon_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void login_email_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

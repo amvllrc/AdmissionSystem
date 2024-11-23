@@ -1,4 +1,5 @@
 ﻿using entrypoint;
+using entrypoint.PROCESSES;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -25,6 +26,7 @@ namespace entrypoint
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            ShowPanel(new frmDashburd());
             btnDashboard.FlatStyle = FlatStyle.Flat;
             btnDashboard.FlatAppearance.BorderSize = 0;
             btnCourseMan.FlatStyle = FlatStyle.Flat;
@@ -37,23 +39,17 @@ namespace entrypoint
 
         private void btnCourseMan_Click(object sender, EventArgs e)
         {
-            Ad_CourseManagement courseManagementForm = new Ad_CourseManagement();
-            courseManagementForm.Show();
-            this.Hide();
+            ShowPanel(new Ad_CourseManagement());
         }
 
         private void btnAppList_Click(object sender, EventArgs e)
         {
-            ApplicationList applicationListForm = new ApplicationList();
-            applicationListForm.Show();
-            this.Hide();
+            ShowPanel(new ApplicationList());
         }
 
         private void btnPaymentList_Click(object sender, EventArgs e)
         {
-            Ad_PaymentList paymentListForm = new Ad_PaymentList();
-            paymentListForm.Show();
-            this.Hide();
+            ShowPanel(new Ad_PaymentList());
         }
 
         private void btnLogout_Click(object sender, EventArgs e)
@@ -68,6 +64,18 @@ namespace entrypoint
                 Homepage.Show();
                 this.Hide();
             }
+        }
+        private void ShowPanel(Form form)
+        {
+            panel9.Controls.Clear();
+            form.TopLevel = false;
+            form.Dock = DockStyle.Fill;
+            panel9.Controls.Add(form);
+            form.Show();
+        }
+        private void btnDashboard_Click(object sender, EventArgs e)
+        {
+            ShowPanel(new frmDashburd());
         }
     }
 }

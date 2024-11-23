@@ -179,6 +179,7 @@
             this.login_email.Name = "login_email";
             this.login_email.Size = new System.Drawing.Size(368, 30);
             this.login_email.TabIndex = 28;
+            this.login_email.TextChanged += new System.EventHandler(this.login_email_TextChanged);
             // 
             // label3
             // 
@@ -250,7 +251,7 @@
             this.forgotpassword.Text = "Forgot Password?";
             this.forgotpassword.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.forgotpassword_LinkClicked);
             // 
-            // Login
+            // Acc_Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -266,7 +267,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "Login";
+            this.Name = "Acc_Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Login_Load);

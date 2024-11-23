@@ -1,9 +1,13 @@
-﻿using System;
+﻿using entrypoint.PROCESSES;
+using entrypoint.PROCESSES.Student_application;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -12,9 +16,14 @@ namespace entrypoint
 {
     public partial class Stu_PaymentForm: Form
     {
+        private Payment p;
+        private String Filepath;
+        private String FileName;
         public Stu_PaymentForm()
         {
+
             InitializeComponent();
+            p= new Payment();
         }
 
 
@@ -25,44 +34,12 @@ namespace entrypoint
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            btnAdmissionStatus.FlatStyle = FlatStyle.Flat;
-            btnAdmissionStatus.FlatAppearance.BorderSize = 0;
-            btnApplication.FlatStyle = FlatStyle.Flat;
-            btnApplication.FlatAppearance.BorderSize = 0;
-            btnPaymentExam.FlatStyle = FlatStyle.Flat;
-            btnPaymentExam.FlatAppearance.BorderSize = 0;
-            btnExamination.FlatStyle = FlatStyle.Flat;
-            btnExamination.FlatAppearance.BorderSize = 0;
+            p.generateExamDates(cbDateOfExam);
+            p.validateStep2(panel3);
+          
         }
 
-        private void btnAdmissionStatus_Click(object sender, EventArgs e)
-        {
-            Stu_AdmissionStatus AdmissionForm = new Stu_AdmissionStatus();
-            AdmissionForm.Show();
-            this.Hide();
-        }
-
-        private void btnApplication_Click(object sender, EventArgs e)
-        {
-            Stu_ApplicationForm StudentApplicationForm = new Stu_ApplicationForm();
-            StudentApplicationForm.Show();
-            this.Hide();
-        }
-
-        private void btnPaymentExam_Click(object sender, EventArgs e)
-        {
-            Stu_PaymentForm PaymentForm = new Stu_PaymentForm();
-            PaymentForm.Show();
-            this.Hide();
-        }
-
-        private void btnExamination_Click(object sender, EventArgs e)
-        {
-            Stu_Examination Examination = new Stu_Examination();
-            Examination.Show();
-            this.Hide();
-        }
-
+       
         private void btnProofOfPayment_Click_1(object sender, EventArgs e)
         {
             using (OpenFileDialog openFileDialog = new OpenFileDialog())
@@ -76,6 +53,9 @@ namespace entrypoint
                     // Load the selected image into the PictureBox
                     try
                     {
+                        Filepath= openFileDialog.FileName;
+                        FileName = Path.GetFileName(Filepath);
+
                         Image selectedImage = Image.FromFile(openFileDialog.FileName);
                         picPreviewImg.Image = selectedImage;
                     }
@@ -92,6 +72,38 @@ namespace entrypoint
             Homepage Homepage = new Homepage();
             Homepage.Show();
             this.Hide();
+        }
+
+        private void btnSubmit_Click(object sender, EventArgs e)
+        {
+            string selectedDateStr = cbDateOfExam.SelectedItem.ToString();
+            DateTime selectedDate;
+            if (DateTime.TryParse(selectedDateStr, out selectedDate))
+            {
+                string formattedDate = selectedDate.ToString("MM-dd-yyyy");
+                
+            }
+            else
+            {
+                MessageBox.Show("Invalid date selected.");
+            }
+            if (p.validatePayment(txtAccountHolderName, txtCellphoneNum, txtReferenceNum, cbDateOfExam, picPreviewImg))
+            {
+                MessageBox.Show("Success");
+                p.insertPayment(txtAccountHolderName.Text, txtCellphoneNum.Text, txtReferenceNum.Text, selectedDate,Filepath,FileName);
+                foreach (Control control in panel3.Controls)
+                {
+                    control.Enabled = false;  // Disable all controls
+                }
+
+                //ProcessTracker.UpdateStatus("payment_status","Done");
+
+            }
+            else
+            {
+                MessageBox.Show("Please fill all necessary fields");
+            }
+
         }
     }
 }

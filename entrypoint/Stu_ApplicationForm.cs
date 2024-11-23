@@ -1,78 +1,62 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.IO;
+using System.Linq;
 using System.Windows.Forms;
+using entrypoint.PROCESSES;
+using entrypoint.PROCESSES.Student_application;
 
 namespace entrypoint
 {
     public partial class Stu_ApplicationForm : Form
     {
-        private Dictionary<string, string> filePaths = new Dictionary<string, string>(); //For the Files
-
-        public Stu_ApplicationForm()
+        private Dictionary<string, string> filePaths = new Dictionary<string, string>();
+        public static string Gender;
+        private Stu_AdmissionStatus adstat;
+        private ProcessTracker tracker;
+        private Student_Application stu;
+        private InsertStudentData insertStudent;
+        
+        public Stu_ApplicationForm(Stu_AdmissionStatus mainform)
         {
             InitializeComponent();
+                adstat=mainform;
+            stu= new Student_Application();
+            tracker = new ProcessTracker();
+            insertStudent = new InsertStudentData();
+            
         }
 
-        public void pictureBox1_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-
+    
         private void Form1_Load(object sender, EventArgs e)
         {
-            btnAdmissionStatus.FlatStyle = FlatStyle.Flat;
-            btnAdmissionStatus.FlatAppearance.BorderSize = 0;
-            btnApplication.FlatStyle = FlatStyle.Flat;
-            btnApplication.FlatAppearance.BorderSize = 0;
-            btnPaymentExam.FlatStyle = FlatStyle.Flat;
-            btnPaymentExam.FlatAppearance.BorderSize = 0;
-            btnExamination.FlatStyle = FlatStyle.Flat;
-            btnExamination.FlatAppearance.BorderSize = 0;
+            stu.validateStep1(panel3);
+            dtpBirthdate.CalendarTitleBackColor = Color.Aqua;
+            loadCourse();
+          
         }
 
-    //Navigation Bar
-        private void btnAdmissionStatus_Click(object sender, EventArgs e)
+        private void loadCourse()
         {
-            Stu_AdmissionStatus AdmissionForm = new Stu_AdmissionStatus();
-            AdmissionForm.Show();
+            cbFirstCourse.DataSource = stu.GenerateCourse();
+            cbSecondChoice.DataSource = stu.GenerateCourse();
+        }
+
+       
+     
+
+        private void ShowNewForm(Form form)
+        {
+            form.Show();
             this.Hide();
         }
 
-        private void btnApplication_Click(object sender, EventArgs e)
-        {
-            Stu_ApplicationForm StudentApplicationForm = new Stu_ApplicationForm();
-            StudentApplicationForm.Show();
-            this.Hide();
-        }
-
-        private void btnPaymentExam_Click(object sender, EventArgs e)
-        {
-            Stu_PaymentForm PaymentForm = new Stu_PaymentForm();
-            PaymentForm.Show();
-            this.Hide();
-        }
-
-        private void btnExamination_Click(object sender, EventArgs e)
-        {
-            Stu_Examination Examination = new Stu_Examination();
-            Examination.Show();
-            this.Hide();
-        }
-
-        //Submission of Files (Need to modify for database connection)
         private void AttachFile(string documentType)
         {
             using (OpenFileDialog openFileDialog = new OpenFileDialog())
             {
                 openFileDialog.Filter = "All Files (*.*)|*.*";
-
                 if (openFileDialog.ShowDialog() == DialogResult.OK)
                 {
                     filePaths[documentType] = openFileDialog.FileName;
@@ -83,42 +67,152 @@ namespace entrypoint
 
         private void btnBirthCert_Click(object sender, EventArgs e)
         {
-            AttachFile("Birth Certificate");
+            OpenFileAndSetTextBox(txtPSA, "Select a Birth Certificate PDF");
         }
 
         private void btnForm137_Click(object sender, EventArgs e)
         {
-            AttachFile("Form137");
+            OpenFileAndSetTextBox(txtForm137, "Select a Form 137 PDF");
         }
 
         private void btn2by2Pic_Click(object sender, EventArgs e)
         {
-            AttachFile("2x2 Picture");
+            OpenFileAndSetTextBox(txt2by2, "Select an image", "Image Files (*.jpg;*.jpeg)|*.jpg;*.jpeg|PNG Files (*.png)|*.png|GIF Files (*.gif)|*.gif|BMP Files (*.bmp)|*.bmp|TIFF Files (*.tif;*.tiff)|*.tif;*.tiff|All Image Files|*.jpg;*.jpeg;*.png;*.gif;*.bmp;*.tif;*.tiff");
         }
 
         private void btnESig_Click(object sender, EventArgs e)
         {
-            AttachFile("E-Signature");
+            OpenFileAndSetTextBox(txtEsig, "Select a Birth Certificate PDF");
+        }
+
+        private void OpenFileAndSetTextBox(TextBox textBox, string title, string filter = "PDF Files (*.pdf)|*.pdf")
+        {
+            
+            OpenFileDialog openFileDialog = new OpenFileDialog
+            {
+                Filter = filter,
+                Title = title
+            };
+
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                string fullPath = openFileDialog.FileName;
+               
+                textBox.Text = fullPath; 
+            }
+            else
+            {
+                MessageBox.Show("No file selected.");
+            }
         }
 
         private void picLogout_Click(object sender, EventArgs e)
         {
-            Homepage Homepage = new Homepage();
-            Homepage.Show();
-            this.Hide();
+            ShowNewForm(new Homepage());
         }
 
-        /*private void btnSubmit_Click(object sender, EventArgs e)
+        private void btnSubmit_Click(object sender, EventArgs e)
         {
-            // Check if all files are attached
-            if (!filePaths.ContainsKey("Birth Certificate") ||
-                !filePaths.ContainsKey("Form137") ||
-                !filePaths.ContainsKey("2x2 Picture") ||
-                !filePaths.ContainsKey("E-Signature"))
+            
+            if (stu.ValidateInput(panel3))
             {
-                MessageBox.Show("Please attach all required documents!");
-                return;
+                if (cbFirstCourse.SelectedItem != null && cbSecondChoice.SelectedItem != null)
+                {
+                    if (cbFirstCourse.SelectedItem.ToString() != cbSecondChoice.SelectedItem.ToString())
+                    {
+                        if (!(txtElemYear.Text.Length > 4 && txtHighschoolYear.Text.Length > 4 && txtSeniorYear.Text.Length > 4))
+                        {
+
+
+                            insertToDatabase();
+
+                            
+                            foreach (Control control in panel3.Controls)
+                            {
+                                control.Enabled = false;  
+                            }
+                            adstat.enableControls();
+                            
+                        }
+                        else
+                        {
+                            MessageBox.Show("Enter valid graduated year");
+                        }
+                        
+                        
+
+
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("Please choose different courses.");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Please select both courses.");
+                }
             }
-        }*/
+            else
+            {
+                MessageBox.Show("Error: Please fill in all required fields.");
+            }
+        }
+
+        private void insertToDatabase()
+        {
+            String PSaname = Path.GetFileName(txtPSA.Text);
+            String F137name = Path.GetFileName(txtForm137.Text);
+            String picname = Path.GetFileName(txt2by2.Text);
+            String esigname = Path.GetFileName(txtEsig.Text);
+            try
+            {
+                insertStudent.InsertStudentApplication(
+                    txtFirstName.Text,
+                    txtLastName.Text,
+                    txtMiddleName.Text,
+                      dtpBirthdate.Value,
+                    txtPlaceBirth.Text,
+                   Gender,
+                   txtNationality.Text,
+                   txtCivilStat.Text,
+                   txtContactNum.Text,
+                   txtAddress.Text,
+                   txtElem.Text,
+                   txtElemYear.Text,
+                   txtHighschool.Text,
+                   txtHighschoolYear.Text,
+                   txtSenior.Text,
+                   txtSeniorYear.Text,
+                    cbFirstCourse.SelectedItem.ToString(),
+                    cbSecondChoice.SelectedItem.ToString(),
+                   txtMother.Text,
+                   txtOccupationMother.Text,
+                   txtContactMother.Text,
+                   txtFather.Text,
+                   txtOccupationFather.Text,
+                   txtContactFather.Text,
+                   txtGuardian.Text,
+                   txtOccupationGuardian.Text,
+                   txtContactGuardian.Text,
+                    txtPSA.Text,
+                    PSaname,
+                    txtForm137.Text,
+                    F137name,
+                    txt2by2.Text,
+                    picname,
+                    txtEsig.Text,
+                    esigname
+                );
+
+                MessageBox.Show("Your application has been submitted successfully.");
+                tracker.validatethisbutton();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error submitting application: " + ex.Message);
+            }
+        }
     }
 }

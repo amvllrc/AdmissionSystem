@@ -1,8 +1,12 @@
-﻿using System;
+﻿using entrypoint.PROCESSES;
+using entrypoint.PROCESSES.Admin;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
@@ -14,70 +18,105 @@ namespace entrypoint
 {
     public partial class ApplicationList : Form
     {
+
+        public bool chkone { get; set; }
+        public bool chktwo { get; set; }
+        public bool chkthree { get; set; }
+        public List<string> filters { get; set; } = new List<string>();
+        public string search = "";
+        public string sort = "";
+
+        private QueryButtons qb;
         public ApplicationList()
         {
             InitializeComponent();
-        }
+            qb= new QueryButtons();
+            qb.dg = appListDataGrid;
 
+            
+            
+        }
         private void ApplicationList_Load(object sender, EventArgs e)
         {
-            btnDashboard.FlatStyle = FlatStyle.Flat;
-            btnDashboard.FlatAppearance.BorderSize = 0;
-            btnCourseMan.FlatStyle = FlatStyle.Flat;
-            btnCourseMan.FlatAppearance.BorderSize = 0;
-            btnAppList.FlatStyle = FlatStyle.Flat;
-            btnAppList.FlatAppearance.BorderSize = 0;
-            btnPaymentList.FlatStyle = FlatStyle.Flat;
-            btnPaymentList.FlatAppearance.BorderSize = 0;
+            LoadLis();
+            qb.AddViewMoreButtonColumn(appListDataGrid);
+            button1.Visible = false;
+           btnAppListSearch.FlatAppearance.BorderSize = 0;
 
             appListDataGrid.EnableHeadersVisualStyles = false;
             appListDataGrid.ColumnHeadersDefaultCellStyle.BackColor = Color.LightBlue;
         }
 
-        private void exitIcon_Click_1(object sender, EventArgs e)
+        public void LoadLis()
         {
-            Application.Exit();
+            qb.LoadList();
         }
 
-        private void btnDashboard_Click(object sender, EventArgs e)
+        private void btnAppListSearch_Click(object sender, EventArgs e)
         {
-            Ad_Dashboard dashboardForm = new Ad_Dashboard();
-            dashboardForm.Show();
-            this.Hide();
-        }
+            search = textBox1.Text.Trim();
 
-        private void btnCourseMan_Click(object sender, EventArgs e)
-        {
-            Ad_CourseManagement courseManagementForm = new Ad_CourseManagement();
-            courseManagementForm.Show();
-            this.Hide(); 
-        }
-
-        private void btnPaymentList_Click(object sender, EventArgs e)
-        {
-            Ad_PaymentList paymentListForm = new Ad_PaymentList();
-            paymentListForm.Show();
-            this.Hide();
-        }
-
-        private void btnLogout_Click(object sender, EventArgs e)
-        {
-            DialogResult result = MessageBox.Show("Are you sure you want to log out?",
-                                          "Confirm Logout",
-                                          MessageBoxButtons.YesNo,
-                                          MessageBoxIcon.Question);
-            if (result == DialogResult.Yes)
+            if (!string.IsNullOrEmpty(search))
             {
-                Homepage Homepage = new Homepage();
-                Homepage.Show();
-                this.Hide();
+                FetchData(sort,filters,search);
             }
+            else
+            {
+                MessageBox.Show("Invalid Search");
+            }
+
         }
 
-        private void btnAppListFilter_Click(object sender, EventArgs e)
+        public void FetchData(string sort, List<string> status, String search)
         {
-            Ad_AppListFilter appListFilterForm = new Ad_AppListFilter();
-            appListFilterForm.Show();
+
+            qb.executequeries(sort,status,search);
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            
+            if (!string.IsNullOrWhiteSpace(textBox1.Text)){
+                button1.Visible = true;
+            }
+            else button1.Visible = false;
+        }
+
+        private void appListSort_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            sort=qb.getItemCbo(appListSort);
+            FetchData(sort, filters, search);
+
+
+        }
+        private void btnAppListFilter_Click_1(object sender, EventArgs e)
+        {
+            Ad_AppListFilter app=new Ad_AppListFilter(this);
+            app.ShowDialog();
+        }
+        private void appListDataGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+            string cellText = appListDataGrid.Rows[e.RowIndex].Cells[e.ColumnIndex].Value?.ToString();
+
+            if (cellText == "View More")
+            {
+                viewDetails vie = new viewDetails(this);
+                vie.appli_id = Convert.ToInt32(appListDataGrid.Rows[e.RowIndex].Cells[1].Value);
+
+               
+                vie.ShowDialog();
+
+            }
+            else MessageBox.Show("PLease Click Valid Cell!");
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            textBox1.Clear();
+            search = "";
+            FetchData(sort, filters, search);
+
         }
     }
 }

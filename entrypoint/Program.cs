@@ -1,4 +1,7 @@
-﻿using System;
+﻿using entrypoint.PROCESSES;
+using entrypoint.PROCESSES.Student;
+using entrypoint.PROCESSES.Student_application;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -16,6 +19,7 @@ namespace entrypoint
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+           
             Application.Run(new Homepage());
         }
     }

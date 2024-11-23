@@ -33,25 +33,16 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.exitIcon = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.fullname = new System.Windows.Forms.Label();
-            this.contactno = new System.Windows.Forms.Label();
-            this.civilstatus = new System.Windows.Forms.Label();
-            this.nationality = new System.Windows.Forms.Label();
-            this.gender = new System.Windows.Forms.Label();
-            this.birthplace = new System.Windows.Forms.Label();
-            this.birthdate = new System.Windows.Forms.Label();
-            this.address = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.linkLabel3 = new System.Windows.Forms.LinkLabel();
+            this.linkLabel2 = new System.Windows.Forms.LinkLabel();
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.label38 = new System.Windows.Forms.Label();
+            this.label42 = new System.Windows.Forms.Label();
+            this.label43 = new System.Windows.Forms.Label();
+            this.label44 = new System.Windows.Forms.Label();
+            this.pay_btnApprove = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label24 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
@@ -72,15 +63,10 @@
             this.choice1 = new System.Windows.Forms.Label();
             this.choice2 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.label18 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.science = new System.Windows.Forms.Label();
-            this.math = new System.Windows.Forms.Label();
-            this.english = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
+            this.pay_btnReject = new System.Windows.Forms.Button();
             this.panel6 = new System.Windows.Forms.Panel();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.label31 = new System.Windows.Forms.Label();
             this.label30 = new System.Windows.Forms.Label();
             this.label29 = new System.Windows.Forms.Label();
@@ -94,17 +80,46 @@
             this.fatherContact = new System.Windows.Forms.Label();
             this.fatherOccup = new System.Windows.Forms.Label();
             this.label25 = new System.Windows.Forms.Label();
-            this.pay_btnApprove = new System.Windows.Forms.Button();
-            this.pay_btnReject = new System.Windows.Forms.Button();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.fullname = new System.Windows.Forms.Label();
+            this.contactno = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.civilstatus = new System.Windows.Forms.Label();
+            this.nationality = new System.Windows.Forms.Label();
+            this.gender = new System.Windows.Forms.Label();
+            this.birthplace = new System.Windows.Forms.Label();
+            this.birthdate = new System.Windows.Forms.Label();
+            this.address = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.science = new System.Windows.Forms.Label();
+            this.math = new System.Windows.Forms.Label();
+            this.english = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.exitIcon)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
+            this.panel8.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
-            this.panel5.SuspendLayout();
             this.panel6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            this.panel7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel5.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -118,13 +133,13 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(987, 42);
+            this.panel1.Size = new System.Drawing.Size(525, 42);
             this.panel1.TabIndex = 10;
             // 
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(14, 4);
+            this.pictureBox2.Location = new System.Drawing.Point(12, 3);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(35, 35);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -135,7 +150,7 @@
             // 
             this.exitIcon.Cursor = System.Windows.Forms.Cursors.Hand;
             this.exitIcon.Image = ((System.Drawing.Image)(resources.GetObject("exitIcon.Image")));
-            this.exitIcon.Location = new System.Drawing.Point(949, 6);
+            this.exitIcon.Location = new System.Drawing.Point(483, 8);
             this.exitIcon.Name = "exitIcon";
             this.exitIcon.Size = new System.Drawing.Size(30, 30);
             this.exitIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -153,209 +168,122 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "STUDENT ADMISSION | APPLICATION LIST | VIEW DETAILS";
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Location = new System.Drawing.Point(371, 14);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(80, 80);
-            this.pictureBox1.TabIndex = 13;
-            this.pictureBox1.TabStop = false;
-            // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.panel2.Controls.Add(this.label10);
-            this.panel2.Controls.Add(this.label9);
-            this.panel2.Controls.Add(this.label8);
-            this.panel2.Controls.Add(this.label7);
-            this.panel2.Controls.Add(this.label6);
-            this.panel2.Controls.Add(this.label5);
-            this.panel2.Controls.Add(this.label4);
-            this.panel2.Controls.Add(this.label3);
-            this.panel2.Controls.Add(this.fullname);
-            this.panel2.Controls.Add(this.contactno);
-            this.panel2.Controls.Add(this.pictureBox1);
-            this.panel2.Controls.Add(this.civilstatus);
-            this.panel2.Controls.Add(this.nationality);
-            this.panel2.Controls.Add(this.gender);
-            this.panel2.Controls.Add(this.birthplace);
-            this.panel2.Controls.Add(this.birthdate);
-            this.panel2.Controls.Add(this.address);
-            this.panel2.Controls.Add(this.label2);
-            this.panel2.Location = new System.Drawing.Point(23, 65);
+            this.panel2.AutoScroll = true;
+            this.panel2.Controls.Add(this.panel8);
+            this.panel2.Controls.Add(this.pay_btnApprove);
+            this.panel2.Controls.Add(this.panel3);
+            this.panel2.Controls.Add(this.panel4);
+            this.panel2.Controls.Add(this.pay_btnReject);
+            this.panel2.Controls.Add(this.panel6);
+            this.panel2.Controls.Add(this.panel7);
+            this.panel2.Controls.Add(this.panel5);
+            this.panel2.Location = new System.Drawing.Point(0, 48);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(468, 239);
-            this.panel2.TabIndex = 14;
+            this.panel2.Size = new System.Drawing.Size(513, 274);
+            this.panel2.TabIndex = 11;
             // 
-            // label10
+            // panel8
             // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(167, 198);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(97, 20);
-            this.label10.TabIndex = 38;
-            this.label10.Text = "(Placeholder)";
+            this.panel8.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.panel8.Controls.Add(this.linkLabel3);
+            this.panel8.Controls.Add(this.linkLabel2);
+            this.panel8.Controls.Add(this.linkLabel1);
+            this.panel8.Controls.Add(this.label38);
+            this.panel8.Controls.Add(this.label42);
+            this.panel8.Controls.Add(this.label43);
+            this.panel8.Controls.Add(this.label44);
+            this.panel8.Location = new System.Drawing.Point(25, 967);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(468, 128);
+            this.panel8.TabIndex = 66;
             // 
-            // label9
+            // linkLabel3
             // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(126, 178);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(97, 20);
-            this.label9.TabIndex = 37;
-            this.label9.Text = "(Placeholder)";
+            this.linkLabel3.AutoSize = true;
+            this.linkLabel3.Location = new System.Drawing.Point(172, 97);
+            this.linkLabel3.Name = "linkLabel3";
+            this.linkLabel3.Size = new System.Drawing.Size(61, 17);
+            this.linkLabel3.TabIndex = 33;
+            this.linkLabel3.TabStop = true;
+            this.linkLabel3.Text = "View PDF";
+            this.linkLabel3.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel3_LinkClicked_1);
             // 
-            // label8
+            // linkLabel2
             // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(129, 157);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(97, 20);
-            this.label8.TabIndex = 36;
-            this.label8.Text = "(Placeholder)";
+            this.linkLabel2.AutoSize = true;
+            this.linkLabel2.Location = new System.Drawing.Point(172, 76);
+            this.linkLabel2.Name = "linkLabel2";
+            this.linkLabel2.Size = new System.Drawing.Size(61, 17);
+            this.linkLabel2.TabIndex = 32;
+            this.linkLabel2.TabStop = true;
+            this.linkLabel2.Text = "View PDF";
+            this.linkLabel2.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel2_LinkClicked_1);
             // 
-            // label7
+            // linkLabel1
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(102, 136);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(97, 20);
-            this.label7.TabIndex = 35;
-            this.label7.Text = "(Placeholder)";
+            this.linkLabel1.AutoSize = true;
+            this.linkLabel1.Location = new System.Drawing.Point(171, 54);
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Size = new System.Drawing.Size(61, 17);
+            this.linkLabel1.TabIndex = 31;
+            this.linkLabel1.TabStop = true;
+            this.linkLabel1.Text = "View PDF";
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked_1);
             // 
-            // label6
+            // label38
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(124, 115);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(97, 20);
-            this.label6.TabIndex = 34;
-            this.label6.Text = "(Placeholder)";
+            this.label38.AutoSize = true;
+            this.label38.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label38.Location = new System.Drawing.Point(31, 51);
+            this.label38.Name = "label38";
+            this.label38.Size = new System.Drawing.Size(118, 21);
+            this.label38.TabIndex = 30;
+            this.label38.Text = "Birth Certificate";
             // 
-            // label5
+            // label42
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(115, 94);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(97, 20);
-            this.label5.TabIndex = 33;
-            this.label5.Text = "(Placeholder)";
+            this.label42.AutoSize = true;
+            this.label42.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label42.Location = new System.Drawing.Point(32, 93);
+            this.label42.Name = "label42";
+            this.label42.Size = new System.Drawing.Size(99, 21);
+            this.label42.TabIndex = 24;
+            this.label42.Text = "E - Signature";
             // 
-            // label4
+            // label43
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(105, 74);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(97, 20);
-            this.label4.TabIndex = 32;
-            this.label4.Text = "(Placeholder)";
+            this.label43.AutoSize = true;
+            this.label43.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label43.Location = new System.Drawing.Point(32, 72);
+            this.label43.Name = "label43";
+            this.label43.Size = new System.Drawing.Size(78, 21);
+            this.label43.TabIndex = 23;
+            this.label43.Text = "Form 137";
             // 
-            // label3
+            // label44
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(122, 52);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(97, 20);
-            this.label3.TabIndex = 31;
-            this.label3.Text = "(Placeholder)";
+            this.label44.AutoSize = true;
+            this.label44.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label44.Location = new System.Drawing.Point(149, 14);
+            this.label44.Name = "label44";
+            this.label44.Size = new System.Drawing.Size(189, 25);
+            this.label44.TabIndex = 22;
+            this.label44.Text = "Personal Documents";
             // 
-            // fullname
+            // pay_btnApprove
             // 
-            this.fullname.AutoSize = true;
-            this.fullname.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.fullname.Location = new System.Drawing.Point(31, 51);
-            this.fullname.Name = "fullname";
-            this.fullname.Size = new System.Drawing.Size(85, 21);
-            this.fullname.TabIndex = 30;
-            this.fullname.Text = "Full Name:";
-            // 
-            // contactno
-            // 
-            this.contactno.AutoSize = true;
-            this.contactno.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.contactno.Location = new System.Drawing.Point(32, 197);
-            this.contactno.Name = "contactno";
-            this.contactno.Size = new System.Drawing.Size(129, 21);
-            this.contactno.TabIndex = 29;
-            this.contactno.Text = "Contact Number:";
-            // 
-            // civilstatus
-            // 
-            this.civilstatus.AutoSize = true;
-            this.civilstatus.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.civilstatus.Location = new System.Drawing.Point(31, 177);
-            this.civilstatus.Name = "civilstatus";
-            this.civilstatus.Size = new System.Drawing.Size(89, 21);
-            this.civilstatus.TabIndex = 28;
-            this.civilstatus.Text = "Civil Status:";
-            // 
-            // nationality
-            // 
-            this.nationality.AutoSize = true;
-            this.nationality.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nationality.Location = new System.Drawing.Point(32, 156);
-            this.nationality.Name = "nationality";
-            this.nationality.Size = new System.Drawing.Size(91, 21);
-            this.nationality.TabIndex = 27;
-            this.nationality.Text = "Nationality:";
-            // 
-            // gender
-            // 
-            this.gender.AutoSize = true;
-            this.gender.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gender.Location = new System.Drawing.Point(32, 135);
-            this.gender.Name = "gender";
-            this.gender.Size = new System.Drawing.Size(64, 21);
-            this.gender.TabIndex = 26;
-            this.gender.Text = "Gender:";
-            // 
-            // birthplace
-            // 
-            this.birthplace.AutoSize = true;
-            this.birthplace.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.birthplace.Location = new System.Drawing.Point(31, 114);
-            this.birthplace.Name = "birthplace";
-            this.birthplace.Size = new System.Drawing.Size(87, 21);
-            this.birthplace.TabIndex = 25;
-            this.birthplace.Text = "Birth Place:";
-            // 
-            // birthdate
-            // 
-            this.birthdate.AutoSize = true;
-            this.birthdate.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.birthdate.Location = new System.Drawing.Point(32, 93);
-            this.birthdate.Name = "birthdate";
-            this.birthdate.Size = new System.Drawing.Size(77, 21);
-            this.birthdate.TabIndex = 24;
-            this.birthdate.Text = "Birthdate:";
-            // 
-            // address
-            // 
-            this.address.AutoSize = true;
-            this.address.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.address.Location = new System.Drawing.Point(32, 72);
-            this.address.Name = "address";
-            this.address.Size = new System.Drawing.Size(67, 21);
-            this.address.TabIndex = 23;
-            this.address.Text = "Address:";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(140, 14);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(194, 25);
-            this.label2.TabIndex = 22;
-            this.label2.Text = "Personal Information";
+            this.pay_btnApprove.BackColor = System.Drawing.Color.Green;
+            this.pay_btnApprove.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pay_btnApprove.ForeColor = System.Drawing.Color.White;
+            this.pay_btnApprove.Location = new System.Drawing.Point(376, 1112);
+            this.pay_btnApprove.Name = "pay_btnApprove";
+            this.pay_btnApprove.Size = new System.Drawing.Size(115, 40);
+            this.pay_btnApprove.TabIndex = 71;
+            this.pay_btnApprove.Text = "Approve";
+            this.pay_btnApprove.UseVisualStyleBackColor = false;
+            this.pay_btnApprove.Click += new System.EventHandler(this.pay_btnApprove_Click_1);
             // 
             // panel3
             // 
@@ -373,10 +301,10 @@
             this.panel3.Controls.Add(this.jhsName);
             this.panel3.Controls.Add(this.elemYearGrad);
             this.panel3.Controls.Add(this.label11);
-            this.panel3.Location = new System.Drawing.Point(497, 65);
+            this.panel3.Location = new System.Drawing.Point(25, 525);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(468, 208);
-            this.panel3.TabIndex = 31;
+            this.panel3.TabIndex = 67;
             // 
             // label24
             // 
@@ -516,10 +444,10 @@
             this.panel4.Controls.Add(this.choice1);
             this.panel4.Controls.Add(this.choice2);
             this.panel4.Controls.Add(this.label16);
-            this.panel4.Location = new System.Drawing.Point(23, 310);
+            this.panel4.Location = new System.Drawing.Point(25, 258);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(468, 114);
-            this.panel4.TabIndex = 32;
+            this.panel4.TabIndex = 68;
             // 
             // label14
             // 
@@ -571,94 +499,24 @@
             this.label16.TabIndex = 22;
             this.label16.Text = "Program Preference";
             // 
-            // panel5
+            // pay_btnReject
             // 
-            this.panel5.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.panel5.Controls.Add(this.label18);
-            this.panel5.Controls.Add(this.label17);
-            this.panel5.Controls.Add(this.label15);
-            this.panel5.Controls.Add(this.science);
-            this.panel5.Controls.Add(this.math);
-            this.panel5.Controls.Add(this.english);
-            this.panel5.Controls.Add(this.label13);
-            this.panel5.Location = new System.Drawing.Point(23, 430);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(468, 132);
-            this.panel5.TabIndex = 33;
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(102, 94);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(97, 20);
-            this.label18.TabIndex = 43;
-            this.label18.Text = "(Placeholder)";
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(102, 73);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(97, 20);
-            this.label17.TabIndex = 42;
-            this.label17.Text = "(Placeholder)";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(139, 52);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(97, 20);
-            this.label15.TabIndex = 41;
-            this.label15.Text = "(Placeholder)";
-            // 
-            // science
-            // 
-            this.science.AutoSize = true;
-            this.science.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.science.Location = new System.Drawing.Point(32, 93);
-            this.science.Name = "science";
-            this.science.Size = new System.Drawing.Size(68, 21);
-            this.science.TabIndex = 31;
-            this.science.Text = "Science: ";
-            // 
-            // math
-            // 
-            this.math.AutoSize = true;
-            this.math.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.math.Location = new System.Drawing.Point(31, 51);
-            this.math.Name = "math";
-            this.math.Size = new System.Drawing.Size(102, 21);
-            this.math.TabIndex = 30;
-            this.math.Text = "Mathematics:";
-            // 
-            // english
-            // 
-            this.english.AutoSize = true;
-            this.english.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.english.Location = new System.Drawing.Point(32, 72);
-            this.english.Name = "english";
-            this.english.Size = new System.Drawing.Size(66, 21);
-            this.english.TabIndex = 23;
-            this.english.Text = "English: ";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(170, 13);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(120, 25);
-            this.label13.TabIndex = 22;
-            this.label13.Text = "Exam Scores";
+            this.pay_btnReject.BackColor = System.Drawing.Color.Red;
+            this.pay_btnReject.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pay_btnReject.ForeColor = System.Drawing.Color.Transparent;
+            this.pay_btnReject.Location = new System.Drawing.Point(258, 1112);
+            this.pay_btnReject.Name = "pay_btnReject";
+            this.pay_btnReject.Size = new System.Drawing.Size(115, 40);
+            this.pay_btnReject.TabIndex = 70;
+            this.pay_btnReject.Text = "Reject";
+            this.pay_btnReject.UseVisualStyleBackColor = false;
+            this.pay_btnReject.Click += new System.EventHandler(this.pay_btnReject_Click_1);
             // 
             // panel6
             // 
             this.panel6.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.panel6.Controls.Add(this.pictureBox4);
+            this.panel6.Controls.Add(this.pictureBox3);
             this.panel6.Controls.Add(this.label31);
             this.panel6.Controls.Add(this.label30);
             this.panel6.Controls.Add(this.label29);
@@ -672,10 +530,26 @@
             this.panel6.Controls.Add(this.fatherContact);
             this.panel6.Controls.Add(this.fatherOccup);
             this.panel6.Controls.Add(this.label25);
-            this.panel6.Location = new System.Drawing.Point(497, 279);
+            this.panel6.Location = new System.Drawing.Point(25, 749);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(468, 201);
-            this.panel6.TabIndex = 31;
+            this.panel6.TabIndex = 65;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Location = new System.Drawing.Point(8, 8);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(100, 50);
+            this.pictureBox4.TabIndex = 57;
+            this.pictureBox4.TabStop = false;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(100, 50);
+            this.pictureBox3.TabIndex = 56;
+            this.pictureBox3.TabStop = false;
             // 
             // label31
             // 
@@ -807,65 +681,331 @@
             this.label25.TabIndex = 22;
             this.label25.Text = "Family Information";
             // 
-            // pay_btnApprove
+            // panel7
             // 
-            this.pay_btnApprove.BackColor = System.Drawing.Color.Green;
-            this.pay_btnApprove.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pay_btnApprove.ForeColor = System.Drawing.Color.White;
-            this.pay_btnApprove.Location = new System.Drawing.Point(850, 529);
-            this.pay_btnApprove.Name = "pay_btnApprove";
-            this.pay_btnApprove.Size = new System.Drawing.Size(115, 40);
-            this.pay_btnApprove.TabIndex = 35;
-            this.pay_btnApprove.Text = "Approve";
-            this.pay_btnApprove.UseVisualStyleBackColor = false;
+            this.panel7.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.panel7.Controls.Add(this.label10);
+            this.panel7.Controls.Add(this.label9);
+            this.panel7.Controls.Add(this.label8);
+            this.panel7.Controls.Add(this.label7);
+            this.panel7.Controls.Add(this.label6);
+            this.panel7.Controls.Add(this.label5);
+            this.panel7.Controls.Add(this.label4);
+            this.panel7.Controls.Add(this.label3);
+            this.panel7.Controls.Add(this.fullname);
+            this.panel7.Controls.Add(this.contactno);
+            this.panel7.Controls.Add(this.pictureBox1);
+            this.panel7.Controls.Add(this.civilstatus);
+            this.panel7.Controls.Add(this.nationality);
+            this.panel7.Controls.Add(this.gender);
+            this.panel7.Controls.Add(this.birthplace);
+            this.panel7.Controls.Add(this.birthdate);
+            this.panel7.Controls.Add(this.address);
+            this.panel7.Controls.Add(this.label2);
+            this.panel7.Location = new System.Drawing.Point(23, 3);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(470, 249);
+            this.panel7.TabIndex = 64;
             // 
-            // pay_btnReject
+            // label10
             // 
-            this.pay_btnReject.BackColor = System.Drawing.Color.Red;
-            this.pay_btnReject.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pay_btnReject.ForeColor = System.Drawing.Color.Transparent;
-            this.pay_btnReject.Location = new System.Drawing.Point(732, 529);
-            this.pay_btnReject.Name = "pay_btnReject";
-            this.pay_btnReject.Size = new System.Drawing.Size(115, 40);
-            this.pay_btnReject.TabIndex = 34;
-            this.pay_btnReject.Text = "Reject";
-            this.pay_btnReject.UseVisualStyleBackColor = false;
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(167, 198);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(97, 20);
+            this.label10.TabIndex = 38;
+            this.label10.Text = "(Placeholder)";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(126, 178);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(97, 20);
+            this.label9.TabIndex = 37;
+            this.label9.Text = "(Placeholder)";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(129, 157);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(97, 20);
+            this.label8.TabIndex = 36;
+            this.label8.Text = "(Placeholder)";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(102, 136);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(97, 20);
+            this.label7.TabIndex = 35;
+            this.label7.Text = "(Placeholder)";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(124, 115);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(97, 20);
+            this.label6.TabIndex = 34;
+            this.label6.Text = "(Placeholder)";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(115, 94);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(97, 20);
+            this.label5.TabIndex = 33;
+            this.label5.Text = "(Placeholder)";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(105, 74);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(97, 20);
+            this.label4.TabIndex = 32;
+            this.label4.Text = "(Placeholder)";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(122, 52);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(97, 20);
+            this.label3.TabIndex = 31;
+            this.label3.Text = "(Placeholder)";
+            // 
+            // fullname
+            // 
+            this.fullname.AutoSize = true;
+            this.fullname.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.fullname.Location = new System.Drawing.Point(31, 51);
+            this.fullname.Name = "fullname";
+            this.fullname.Size = new System.Drawing.Size(85, 21);
+            this.fullname.TabIndex = 30;
+            this.fullname.Text = "Full Name:";
+            // 
+            // contactno
+            // 
+            this.contactno.AutoSize = true;
+            this.contactno.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.contactno.Location = new System.Drawing.Point(32, 197);
+            this.contactno.Name = "contactno";
+            this.contactno.Size = new System.Drawing.Size(129, 21);
+            this.contactno.TabIndex = 29;
+            this.contactno.Text = "Contact Number:";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(340, 14);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(111, 100);
+            this.pictureBox1.TabIndex = 13;
+            this.pictureBox1.TabStop = false;
+            // 
+            // civilstatus
+            // 
+            this.civilstatus.AutoSize = true;
+            this.civilstatus.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.civilstatus.Location = new System.Drawing.Point(31, 177);
+            this.civilstatus.Name = "civilstatus";
+            this.civilstatus.Size = new System.Drawing.Size(89, 21);
+            this.civilstatus.TabIndex = 28;
+            this.civilstatus.Text = "Civil Status:";
+            // 
+            // nationality
+            // 
+            this.nationality.AutoSize = true;
+            this.nationality.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nationality.Location = new System.Drawing.Point(32, 156);
+            this.nationality.Name = "nationality";
+            this.nationality.Size = new System.Drawing.Size(91, 21);
+            this.nationality.TabIndex = 27;
+            this.nationality.Text = "Nationality:";
+            // 
+            // gender
+            // 
+            this.gender.AutoSize = true;
+            this.gender.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gender.Location = new System.Drawing.Point(32, 135);
+            this.gender.Name = "gender";
+            this.gender.Size = new System.Drawing.Size(64, 21);
+            this.gender.TabIndex = 26;
+            this.gender.Text = "Gender:";
+            // 
+            // birthplace
+            // 
+            this.birthplace.AutoSize = true;
+            this.birthplace.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.birthplace.Location = new System.Drawing.Point(31, 114);
+            this.birthplace.Name = "birthplace";
+            this.birthplace.Size = new System.Drawing.Size(87, 21);
+            this.birthplace.TabIndex = 25;
+            this.birthplace.Text = "Birth Place:";
+            // 
+            // birthdate
+            // 
+            this.birthdate.AutoSize = true;
+            this.birthdate.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.birthdate.Location = new System.Drawing.Point(32, 93);
+            this.birthdate.Name = "birthdate";
+            this.birthdate.Size = new System.Drawing.Size(77, 21);
+            this.birthdate.TabIndex = 24;
+            this.birthdate.Text = "Birthdate:";
+            // 
+            // address
+            // 
+            this.address.AutoSize = true;
+            this.address.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.address.Location = new System.Drawing.Point(32, 72);
+            this.address.Name = "address";
+            this.address.Size = new System.Drawing.Size(67, 21);
+            this.address.TabIndex = 23;
+            this.address.Text = "Address:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(140, 14);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(194, 25);
+            this.label2.TabIndex = 22;
+            this.label2.Text = "Personal Information";
+            // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.panel5.Controls.Add(this.label18);
+            this.panel5.Controls.Add(this.label17);
+            this.panel5.Controls.Add(this.label15);
+            this.panel5.Controls.Add(this.science);
+            this.panel5.Controls.Add(this.math);
+            this.panel5.Controls.Add(this.english);
+            this.panel5.Controls.Add(this.label13);
+            this.panel5.Location = new System.Drawing.Point(25, 378);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(468, 132);
+            this.panel5.TabIndex = 69;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.Location = new System.Drawing.Point(102, 94);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(97, 20);
+            this.label18.TabIndex = 43;
+            this.label18.Text = "(Placeholder)";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.Location = new System.Drawing.Point(102, 73);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(97, 20);
+            this.label17.TabIndex = 42;
+            this.label17.Text = "(Placeholder)";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(139, 52);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(97, 20);
+            this.label15.TabIndex = 41;
+            this.label15.Text = "(Placeholder)";
+            // 
+            // science
+            // 
+            this.science.AutoSize = true;
+            this.science.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.science.Location = new System.Drawing.Point(32, 93);
+            this.science.Name = "science";
+            this.science.Size = new System.Drawing.Size(68, 21);
+            this.science.TabIndex = 31;
+            this.science.Text = "Science: ";
+            // 
+            // math
+            // 
+            this.math.AutoSize = true;
+            this.math.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.math.Location = new System.Drawing.Point(31, 51);
+            this.math.Name = "math";
+            this.math.Size = new System.Drawing.Size(102, 21);
+            this.math.TabIndex = 30;
+            this.math.Text = "Mathematics:";
+            // 
+            // english
+            // 
+            this.english.AutoSize = true;
+            this.english.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.english.Location = new System.Drawing.Point(32, 72);
+            this.english.Name = "english";
+            this.english.Size = new System.Drawing.Size(66, 21);
+            this.english.TabIndex = 23;
+            this.english.Text = "English: ";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(170, 13);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(120, 25);
+            this.label13.TabIndex = 22;
+            this.label13.Text = "Exam Scores";
             // 
             // viewDetails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(987, 581);
-            this.Controls.Add(this.pay_btnApprove);
-            this.Controls.Add(this.pay_btnReject);
-            this.Controls.Add(this.panel6);
-            this.Controls.Add(this.panel5);
-            this.Controls.Add(this.panel4);
-            this.Controls.Add(this.panel3);
+            this.ClientSize = new System.Drawing.Size(525, 337);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "viewDetails";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Form1";
+            this.TopMost = true;
             this.Load += new System.EventHandler(this.viewDetails_Load);
+            this.Shown += new System.EventHandler(this.viewDetails_Shown);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.exitIcon)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
+            this.panel8.ResumeLayout(false);
+            this.panel8.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
-            this.panel5.ResumeLayout(false);
-            this.panel5.PerformLayout();
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            this.panel7.ResumeLayout(false);
+            this.panel7.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -876,18 +1016,23 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox exitIcon;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label contactno;
-        private System.Windows.Forms.Label civilstatus;
-        private System.Windows.Forms.Label nationality;
-        private System.Windows.Forms.Label gender;
-        private System.Windows.Forms.Label birthplace;
-        private System.Windows.Forms.Label birthdate;
-        private System.Windows.Forms.Label address;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label fullname;
+        private System.Windows.Forms.Panel panel8;
+        private System.Windows.Forms.LinkLabel linkLabel3;
+        private System.Windows.Forms.LinkLabel linkLabel2;
+        private System.Windows.Forms.LinkLabel linkLabel1;
+        private System.Windows.Forms.Label label38;
+        private System.Windows.Forms.Label label42;
+        private System.Windows.Forms.Label label43;
+        private System.Windows.Forms.Label label44;
+        private System.Windows.Forms.Button pay_btnApprove;
         private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label elemName;
         private System.Windows.Forms.Label shsYearGrad;
         private System.Windows.Forms.Label shsName;
@@ -896,15 +1041,19 @@
         private System.Windows.Forms.Label elemYearGrad;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label choice1;
         private System.Windows.Forms.Label choice2;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.Label science;
-        private System.Windows.Forms.Label math;
-        private System.Windows.Forms.Label english;
-        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Button pay_btnReject;
         private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.Label label31;
+        private System.Windows.Forms.Label label30;
+        private System.Windows.Forms.Label label29;
+        private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.Label label26;
         private System.Windows.Forms.Label fatherName;
         private System.Windows.Forms.Label motherContact;
         private System.Windows.Forms.Label motherOccup;
@@ -912,8 +1061,7 @@
         private System.Windows.Forms.Label fatherContact;
         private System.Windows.Forms.Label fatherOccup;
         private System.Windows.Forms.Label label25;
-        private System.Windows.Forms.Button pay_btnApprove;
-        private System.Windows.Forms.Button pay_btnReject;
+        private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
@@ -922,22 +1070,25 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label24;
-        private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label fullname;
+        private System.Windows.Forms.Label contactno;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label civilstatus;
+        private System.Windows.Forms.Label nationality;
+        private System.Windows.Forms.Label gender;
+        private System.Windows.Forms.Label birthplace;
+        private System.Windows.Forms.Label birthdate;
+        private System.Windows.Forms.Label address;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Label label31;
-        private System.Windows.Forms.Label label30;
-        private System.Windows.Forms.Label label29;
-        private System.Windows.Forms.Label label28;
-        private System.Windows.Forms.Label label27;
-        private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.Label science;
+        private System.Windows.Forms.Label math;
+        private System.Windows.Forms.Label english;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.PictureBox pictureBox3;
     }
 }

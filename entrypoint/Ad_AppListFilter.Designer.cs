@@ -33,6 +33,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.checkBox3 = new System.Windows.Forms.CheckBox();
+            this.checkBox4 = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // checkBox1
@@ -41,9 +42,9 @@
             this.checkBox1.Location = new System.Drawing.Point(50, 33);
             this.checkBox1.Margin = new System.Windows.Forms.Padding(4);
             this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(85, 21);
+            this.checkBox1.Size = new System.Drawing.Size(130, 21);
             this.checkBox1.TabIndex = 0;
-            this.checkBox1.Text = "Approved";
+            this.checkBox1.Text = "Ready For Review";
             this.checkBox1.UseVisualStyleBackColor = true;
             // 
             // checkBox2
@@ -52,9 +53,9 @@
             this.checkBox2.Location = new System.Drawing.Point(50, 58);
             this.checkBox2.Margin = new System.Windows.Forms.Padding(4);
             this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(77, 21);
+            this.checkBox2.Size = new System.Drawing.Size(130, 21);
             this.checkBox2.TabIndex = 1;
-            this.checkBox2.Text = "Rejected";
+            this.checkBox2.Text = "Completing Steps";
             this.checkBox2.UseVisualStyleBackColor = true;
             // 
             // button1
@@ -76,6 +77,7 @@
             this.button2.TabIndex = 3;
             this.button2.Text = "Reset";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // checkBox3
             // 
@@ -83,16 +85,28 @@
             this.checkBox3.Location = new System.Drawing.Point(50, 84);
             this.checkBox3.Margin = new System.Windows.Forms.Padding(4);
             this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(74, 21);
+            this.checkBox3.Size = new System.Drawing.Size(85, 21);
             this.checkBox3.TabIndex = 4;
-            this.checkBox3.Text = "Pending";
+            this.checkBox3.Text = "Approved";
             this.checkBox3.UseVisualStyleBackColor = true;
+            // 
+            // checkBox4
+            // 
+            this.checkBox4.AutoSize = true;
+            this.checkBox4.Location = new System.Drawing.Point(50, 113);
+            this.checkBox4.Margin = new System.Windows.Forms.Padding(4);
+            this.checkBox4.Name = "checkBox4";
+            this.checkBox4.Size = new System.Drawing.Size(77, 21);
+            this.checkBox4.TabIndex = 5;
+            this.checkBox4.Text = "Rejected";
+            this.checkBox4.UseVisualStyleBackColor = true;
             // 
             // Ad_AppListFilter
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(200, 193);
+            this.Controls.Add(this.checkBox4);
             this.Controls.Add(this.checkBox3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
@@ -117,5 +131,6 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.CheckBox checkBox3;
+        private System.Windows.Forms.CheckBox checkBox4;
     }
 }

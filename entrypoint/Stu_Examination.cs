@@ -1,4 +1,5 @@
-﻿using System;
+﻿using entrypoint.PROCESSES.Student_application;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,13 +11,39 @@ using System.Windows.Forms;
 
 namespace entrypoint
 {
-    public partial class Stu_Examination: Form
+    public partial class Stu_Examination : Form
     {
+        private QuizChecker quizHelper;
+        private ExaminationDetails r;
         public Stu_Examination()
         {
             InitializeComponent();
+            quizHelper = new QuizChecker(panel3);
+            AnswerKeys();
+            r = new ExaminationDetails();
         }
+        private void AnswerKeys()
+        {
 
+            rbQuestionOneMathB.Tag = "correct";
+            rbQuestionTwoMathA.Tag = "correct";
+            rbQuestionThreeMathB.Tag = "correct";
+            rbQuestionFourMathB.Tag = "correct";
+            rbQuestionFiveMathB.Tag = "correct";
+
+            rbQuestionOneEnglishC.Tag = "correct";
+            rbQuestionTwoEnglishB.Tag = "correct";
+            rbQuestionThreeEnglishD.Tag = "correct";
+            rbQuestionFourEnglishB.Tag = "correct";
+            rbQuestionFiveEnglishC.Tag = "correct";
+
+            rbQuestionOneScienceB.Tag = "correct";
+            rbQuestionTwoScienceA.Tag = "correct";
+            rbQuestionThreeScienceB.Tag = "correct";
+            rbQuestionFourScienceD.Tag = "correct";
+            rbQuestionFiveScienceB.Tag = "correct";
+
+        }
         public void pictureBox1_Click(object sender, EventArgs e)
         {
             Application.Exit();
@@ -24,49 +51,47 @@ namespace entrypoint
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            btnAdmissionStatus.FlatStyle = FlatStyle.Flat;
-            btnAdmissionStatus.FlatAppearance.BorderSize = 0;
-            btnApplication.FlatStyle = FlatStyle.Flat;
-            btnApplication.FlatAppearance.BorderSize = 0;
-            btnExamPayment.FlatStyle = FlatStyle.Flat;
-            btnExamPayment.FlatAppearance.BorderSize = 0;
-            btnExamination.FlatStyle = FlatStyle.Flat;
-            btnExamination.FlatAppearance.BorderSize = 0;
+            r.validatethis(panel3);
+            r.retrieveNameandOthers();
+            txtFirstName.Text=r.firstName;
+            txtLastName.Text=r.lastName;
+            txtMiddleName.Text=r.middleName;
+           
         }
 
-        private void btnAdmissionStatus_Click(object sender, EventArgs e)
+        private void btnSubmit_Click(object sender, EventArgs e)
         {
-            Stu_AdmissionStatus AdmissionForm = new Stu_AdmissionStatus();
-            AdmissionForm.Show();
-            this.Hide();
+            int mathScore = 0;
+            int englishScore = 0;
+            int scienceScore = 0;
+
+            if (quizHelper.AllQuestionsAnswered())
+            {
+                var subjectScores = quizHelper.CalculateScoresBySubject();
+                int totalScore = subjectScores.Values.Sum();
+
+                if (subjectScores.ContainsKey("MATH:"))
+                {
+                    mathScore = subjectScores["MATH:"];
+                }
+                if (subjectScores.ContainsKey("ENGLISH:"))
+                {
+                    englishScore = subjectScores["ENGLISH:"];
+                }
+                if (subjectScores.ContainsKey("SCIENCE:"))
+                {
+                    scienceScore = subjectScores["SCIENCE:"];
+                }
+
+                r.insertExaminfo(mathScore,scienceScore,englishScore);
+                foreach (Control control in panel3.Controls)
+                {
+                    control.Enabled = false;
+                }
+
+            }
         }
 
-        private void btnApplication_Click(object sender, EventArgs e)
-        {
-            Stu_ApplicationForm StudentApplicationForm = new Stu_ApplicationForm();
-            StudentApplicationForm.Show();
-            this.Hide();
-        }
-
-        private void btnExamPayment_Click(object sender, EventArgs e)
-        {
-            Stu_PaymentForm PaymentForm = new Stu_PaymentForm();
-            PaymentForm.Show();
-            this.Hide();
-        }
-
-        private void btnExamination_Click(object sender, EventArgs e)
-        {
-            Stu_Examination Examination = new Stu_Examination();
-            Examination.Show();
-            this.Hide();
-        }
-
-        private void picLogout_Click(object sender, EventArgs e)
-        {
-            Homepage Homepage = new Homepage();
-            Homepage.Show();
-            this.Hide();
-        }
     }
 }
+

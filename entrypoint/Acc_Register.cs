@@ -1,4 +1,5 @@
-﻿using System;
+﻿using entrypoint.PROCESSES;
+using System;
 using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
@@ -8,7 +9,7 @@ namespace entrypoint
     public partial class Acc_Register : Form
     {
         // DATABASE CONNECTION
-        SqlConnection connect = new SqlConnection(@"Server=(localdb)\MSSQLLocalDB;AttachDbFilename=D:\OneDrive\Documents\loginData.mdf;Integrated Security=True;Connect Timeout=30;");
+        SqlConnection connect = new SqlConnection(DBConnection.connectionString);
 
         public Acc_Register()
         {
