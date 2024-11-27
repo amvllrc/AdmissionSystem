@@ -22,7 +22,7 @@ namespace entrypoint.PROCESSES.Admin
         public void LoadList()
         {
             
-            string query = "SELECT application_id as ID, last_name as 'Last Name', first_name as 'First Name', middle_name as 'Middle Name', submitted_at as 'Application Date',admission_status as STATUS FROM application";
+            string query = "SELECT application_id as ID, last_name as 'Last Name', first_name as 'First Name', middle_name as 'Middle Name', submitted_at as 'Application Date',application_status as STATUS FROM application";
 
             using (SqlConnection conn = new SqlConnection(DBConnection.connectionString))
             {
@@ -85,7 +85,7 @@ namespace entrypoint.PROCESSES.Admin
         
 public void executequeries(string sort, List<string> status, String search)
         {
-            string query = "SELECT application_id as ID, last_name as 'Last Name', first_name as 'First Name', middle_name as 'Middle Name', submitted_at as 'Application Date',admission_status as STATUS FROM application";
+            string query = "SELECT application_id as ID, last_name as 'Last Name', first_name as 'First Name', middle_name as 'Middle Name', submitted_at as 'Application Date',application_status as STATUS FROM application";
 
             List<string> conditions = new List<string>();
             if (!string.IsNullOrEmpty(search))

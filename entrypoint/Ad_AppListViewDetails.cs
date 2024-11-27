@@ -54,10 +54,6 @@ namespace entrypoint
             label12.Text = view.choice1;
             label14.Text = view.choice2;
 
-            label15.Text = view.math;
-            label17.Text = view.english;
-            label18.Text = view.science;
-
             label19.Text = view.elem;
             label20.Text = view.elemyear;
             label21.Text = view.hs;
@@ -75,15 +71,15 @@ namespace entrypoint
 
         private void Validatethis()
         {
-            if (ctrlval.finalstatus(appli_id).Equals("Admitted"))
+            if (ctrlval.finalstatus(appli_id).Equals("approved"))
             {
-                MessageBox.Show("This student is already approved");
+                MessageBox.Show("This application is already approved");
                 pay_btnApprove.Visible = false;
                 pay_btnReject.Visible = false;
             }
-            else if (ctrlval.finalstatus(appli_id).Equals("Rejcted"))
+            else if (ctrlval.finalstatus(appli_id).Equals("rejected"))
             {
-                MessageBox.Show("This payment is already rejected");
+                MessageBox.Show("This application is already rejected");
                 pay_btnApprove.Visible = false;
                 pay_btnReject.Visible = false;
             }
@@ -132,38 +128,28 @@ namespace entrypoint
 
         private void pay_btnApprove_Click_1(object sender, EventArgs e)
         {
-            if (ctrlval.isExistExam(appli_id))
-            {
+            
                 DialogResult result = MessageBox.Show(
                         "Confirm approval?", // Message text
-                        "Confirm Admission",  // Title of the message box
+                        "Confirm Application",  // Title of the message box
                         MessageBoxButtons.OKCancel, // Buttons for the user to choose from
-                        MessageBoxIcon.Question // Icon to show in the message box
+                        MessageBoxIcon.Question 
                     );
                 if (result == DialogResult.OK)
                 {
-                    ctrlval.approverejectAdmission(appli_id, "Admitted");
+                    ctrlval.approverejectAdmission(appli_id, "approved");
                     parentForm.LoadLis();
                     this.Close();
                 }
 
-            }
-            else
-            {
-                MessageBox.Show("This student is not ready for reviewing");
-                pay_btnApprove.Enabled = false;
-                pay_btnReject.Enabled = false;
-            }
-
-
-
+            
+   
         }
 
         private void pay_btnReject_Click_1(object sender, EventArgs e)
         {
 
-            if (ctrlval.isExistExam(appli_id))
-            {
+            
                 DialogResult result = MessageBox.Show(
                         "Confirm rejection?", // Message text
                         "Confirm Rejection",  // Title of the message box
@@ -172,17 +158,12 @@ namespace entrypoint
                     );
                 if (result == DialogResult.OK)
                 {
-                    ctrlval.approverejectAdmission(appli_id, "Rejected");
+                    ctrlval.approverejectAdmission(appli_id, "rejected");
                     this.Close();
                 }
 
-            }
-            else
-            {
-                MessageBox.Show("This student is not ready for reviewing");
-                pay_btnApprove.Enabled = false;
-                pay_btnReject.Enabled = false;
-            }
+            
+           
 
         }
 

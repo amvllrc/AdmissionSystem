@@ -12,9 +12,12 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace entrypoint.PROCESSES.Student_application
 {
+    
     public class InsertStudentData
+       
 
     {
+        private Stu_AdmissionStatus adstat=new Stu_AdmissionStatus();
         private ProcessTracker tracker=new ProcessTracker();
         public void InsertStudentApplication(string firstName,
     string lastName,
@@ -116,14 +119,14 @@ namespace entrypoint.PROCESSES.Student_application
                         cmd.Parameters.AddWithValue("@Image2x2FileName", photoname); // 2x2 Picture file
                         cmd.Parameters.AddWithValue("@ESignatureImageData", eSignatureData);
                         cmd.Parameters.AddWithValue("@ESignatureFileName", esigname);
-                        cmd.Parameters.AddWithValue("@status", "DoneApplying");// E-Signature file
+                        cmd.Parameters.AddWithValue("@status", "pending");// E-Signature file
                         cmd.Parameters.AddWithValue("@id", UserSession.ID);// E-Signature file
 
 
                         int num=cmd.ExecuteNonQuery();
                         if (num > 0)
                         {
-                            //tracker.UpdateStatus("application_status", "DoneApplying");
+                            adstat.enableControls();
                         }
                     }
 

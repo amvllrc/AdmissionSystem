@@ -91,11 +91,12 @@ namespace entrypoint.PROCESSES.Student_application
         //    }
         //}
        
-        public bool getStatus()
+        public string getStatus()
         {
+            string status = "";
 
             string query = "SELECT * FROM application WHERE user_id = @Id";
-            bool isStatusDone = false;
+        
             using (SqlConnection connection = new SqlConnection(DBConnection.connectionString))
             {
                 SqlCommand command = new SqlCommand(query, connection);
@@ -107,13 +108,9 @@ namespace entrypoint.PROCESSES.Student_application
                     SqlDataReader reader = command.ExecuteReader();
                     if (reader.Read())
                     {
-                        isStatusDone = true;
+                       status = reader.GetString(reader.GetOrdinal("application_status"));
                     }
-                    else
-                    {
-                        
-                        isStatusDone = false;
-                    }
+                    
 
                 
                     reader.Close();
@@ -122,12 +119,12 @@ namespace entrypoint.PROCESSES.Student_application
                 {
                     // Handle any exceptions (e.g., SQL errors)
                     MessageBox.Show("An error occurred: " + ex.Message, "Error");
-                    isStatusDone = false;  // Return false if there's an error
+                 
                 }
             }
 
       
-            return isStatusDone;
+            return status;
         }
 
         public bool getStatus1()

@@ -23,6 +23,7 @@ namespace entrypoint
         private void Form1_Load(object sender, EventArgs e)
         {
             loadStatus();
+            loadStatus0();
             loadStatus1();
             loadStatus2();
             loadStatus3();
@@ -32,18 +33,36 @@ namespace entrypoint
         public void loadStatus()
         {
 
-            if (tracker.getStatus())
+            if (tracker.getStatus()=="pending"|| tracker.getStatus() == "approved"|| tracker.getStatus() == "rejected")
             {
                 label13.Text = "Done";
                 label13.BackColor = Color.Green;
             }
+
             else
             {
                 label13.Text = "Not Done";
                 label13.BackColor = Color.Gray;
             }
         }
-
+        public void loadStatus0()
+        {
+            if (tracker.getStatus() == "approved")
+            {
+                label18.Text = "Approved";
+                label18.BackColor = Color.Green;
+            }
+            else if (tracker.getStatus() == "rejected")
+            {
+                label18.Text = "Rejected";
+                label18.BackColor = Color.Red;
+            }
+            else 
+            {
+                label18.Text = "Pending";
+                label18.BackColor = Color.Gray;
+            }
+        }
         public void loadStatus1()
         {
             if (tracker.getStatus1())
@@ -51,7 +70,7 @@ namespace entrypoint
                 label14.Text = "Done";
                 label14.BackColor = Color.Green;
             }
-            else if (tracker.getStatus() && !tracker.getStatus1()){ 
+            else if (tracker.getStatus()== "approved" && !tracker.getStatus1()){ 
                 label14.Text = "Not yet";
                 label14.BackColor = Color.Gray;
             }

@@ -31,6 +31,11 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.lblwelcomestudent = new System.Windows.Forms.Label();
             this.grptablelike = new System.Windows.Forms.GroupBox();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
@@ -43,11 +48,9 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
             this.panel3.SuspendLayout();
             this.grptablelike.SuspendLayout();
             this.SuspendLayout();
@@ -77,6 +80,9 @@
             // 
             // grptablelike
             // 
+            this.grptablelike.Controls.Add(this.label18);
+            this.grptablelike.Controls.Add(this.label19);
+            this.grptablelike.Controls.Add(this.label20);
             this.grptablelike.Controls.Add(this.label17);
             this.grptablelike.Controls.Add(this.label16);
             this.grptablelike.Controls.Add(this.label15);
@@ -96,9 +102,74 @@
             this.grptablelike.Controls.Add(this.label1);
             this.grptablelike.Location = new System.Drawing.Point(210, 108);
             this.grptablelike.Name = "grptablelike";
-            this.grptablelike.Size = new System.Drawing.Size(346, 220);
+            this.grptablelike.Size = new System.Drawing.Size(346, 295);
             this.grptablelike.TabIndex = 16;
             this.grptablelike.TabStop = false;
+            // 
+            // label17
+            // 
+            this.label17.BackColor = System.Drawing.SystemColors.Menu;
+            this.label17.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label17.Font = new System.Drawing.Font("Mongolian Baiti", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.label17.Location = new System.Drawing.Point(252, 229);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(65, 20);
+            this.label17.TabIndex = 31;
+            this.label17.Text = "-";
+            this.label17.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label16
+            // 
+            this.label16.BackColor = System.Drawing.SystemColors.Menu;
+            this.label16.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label16.Font = new System.Drawing.Font("Mongolian Baiti", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.label16.Location = new System.Drawing.Point(252, 195);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(65, 20);
+            this.label16.TabIndex = 30;
+            this.label16.Text = "-";
+            this.label16.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label15
+            // 
+            this.label15.BackColor = System.Drawing.SystemColors.Menu;
+            this.label15.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label15.Font = new System.Drawing.Font("Mongolian Baiti", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.label15.Location = new System.Drawing.Point(252, 161);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(65, 20);
+            this.label15.TabIndex = 29;
+            this.label15.Text = "-";
+            this.label15.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label14
+            // 
+            this.label14.BackColor = System.Drawing.SystemColors.Menu;
+            this.label14.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label14.Font = new System.Drawing.Font("Mongolian Baiti", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.label14.Location = new System.Drawing.Point(252, 127);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(65, 20);
+            this.label14.TabIndex = 28;
+            this.label14.Text = "-";
+            this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label13
+            // 
+            this.label13.BackColor = System.Drawing.SystemColors.Menu;
+            this.label13.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label13.Font = new System.Drawing.Font("Mongolian Baiti", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.label13.Location = new System.Drawing.Point(252, 57);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(65, 20);
+            this.label13.TabIndex = 27;
+            this.label13.Text = "-";
+            this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label11
             // 
@@ -106,7 +177,7 @@
             this.label11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label11.Font = new System.Drawing.Font("Mongolian Baiti", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.label11.Location = new System.Drawing.Point(222, 186);
+            this.label11.Location = new System.Drawing.Point(222, 222);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(122, 34);
             this.label11.TabIndex = 26;
@@ -119,7 +190,7 @@
             this.label12.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label12.Font = new System.Drawing.Font("Mongolian Baiti", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.label12.Location = new System.Drawing.Point(0, 186);
+            this.label12.Location = new System.Drawing.Point(0, 222);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(220, 34);
             this.label12.TabIndex = 25;
@@ -132,7 +203,7 @@
             this.label9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label9.Font = new System.Drawing.Font("Mongolian Baiti", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.label9.Location = new System.Drawing.Point(222, 152);
+            this.label9.Location = new System.Drawing.Point(222, 188);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(122, 34);
             this.label9.TabIndex = 24;
@@ -145,7 +216,7 @@
             this.label10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label10.Font = new System.Drawing.Font("Mongolian Baiti", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.label10.Location = new System.Drawing.Point(0, 152);
+            this.label10.Location = new System.Drawing.Point(0, 188);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(220, 34);
             this.label10.TabIndex = 23;
@@ -158,7 +229,7 @@
             this.label7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label7.Font = new System.Drawing.Font("Mongolian Baiti", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.label7.Location = new System.Drawing.Point(222, 118);
+            this.label7.Location = new System.Drawing.Point(222, 154);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(122, 34);
             this.label7.TabIndex = 22;
@@ -171,7 +242,7 @@
             this.label8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label8.Font = new System.Drawing.Font("Mongolian Baiti", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.label8.Location = new System.Drawing.Point(0, 118);
+            this.label8.Location = new System.Drawing.Point(0, 154);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(220, 34);
             this.label8.TabIndex = 21;
@@ -184,7 +255,7 @@
             this.label5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label5.Font = new System.Drawing.Font("Mongolian Baiti", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.label5.Location = new System.Drawing.Point(222, 84);
+            this.label5.Location = new System.Drawing.Point(222, 120);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(122, 34);
             this.label5.TabIndex = 20;
@@ -197,7 +268,7 @@
             this.label6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label6.Font = new System.Drawing.Font("Mongolian Baiti", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.label6.Location = new System.Drawing.Point(0, 84);
+            this.label6.Location = new System.Drawing.Point(0, 120);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(220, 34);
             this.label6.TabIndex = 19;
@@ -258,70 +329,44 @@
             this.label1.Text = "Process";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // label13
+            // label18
             // 
-            this.label13.BackColor = System.Drawing.SystemColors.Menu;
-            this.label13.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label13.Font = new System.Drawing.Font("Mongolian Baiti", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.label13.Location = new System.Drawing.Point(252, 57);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(65, 20);
-            this.label13.TabIndex = 27;
-            this.label13.Text = "-";
-            this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label18.BackColor = System.Drawing.SystemColors.Menu;
+            this.label18.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label18.Font = new System.Drawing.Font("Mongolian Baiti", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.label18.Location = new System.Drawing.Point(252, 93);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(65, 20);
+            this.label18.TabIndex = 34;
+            this.label18.Text = "-";
+            this.label18.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label14
+            // label19
             // 
-            this.label14.BackColor = System.Drawing.SystemColors.Menu;
-            this.label14.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label14.Font = new System.Drawing.Font("Mongolian Baiti", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.label14.Location = new System.Drawing.Point(252, 91);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(65, 20);
-            this.label14.TabIndex = 28;
-            this.label14.Text = "-";
-            this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label19.BackColor = System.Drawing.SystemColors.Menu;
+            this.label19.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label19.Font = new System.Drawing.Font("Mongolian Baiti", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.label19.Location = new System.Drawing.Point(222, 86);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(122, 34);
+            this.label19.TabIndex = 33;
+            this.label19.Text = "-";
+            this.label19.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label15
+            // label20
             // 
-            this.label15.BackColor = System.Drawing.SystemColors.Menu;
-            this.label15.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label15.Font = new System.Drawing.Font("Mongolian Baiti", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.label15.Location = new System.Drawing.Point(252, 125);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(65, 20);
-            this.label15.TabIndex = 29;
-            this.label15.Text = "-";
-            this.label15.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label16
-            // 
-            this.label16.BackColor = System.Drawing.SystemColors.Menu;
-            this.label16.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label16.Font = new System.Drawing.Font("Mongolian Baiti", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.label16.Location = new System.Drawing.Point(252, 159);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(65, 20);
-            this.label16.TabIndex = 30;
-            this.label16.Text = "-";
-            this.label16.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label17
-            // 
-            this.label17.BackColor = System.Drawing.SystemColors.Menu;
-            this.label17.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label17.Font = new System.Drawing.Font("Mongolian Baiti", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.label17.Location = new System.Drawing.Point(252, 193);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(65, 20);
-            this.label17.TabIndex = 31;
-            this.label17.Text = "-";
-            this.label17.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label20.BackColor = System.Drawing.SystemColors.Menu;
+            this.label20.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label20.Font = new System.Drawing.Font("Mongolian Baiti", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.label20.Location = new System.Drawing.Point(0, 86);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(220, 34);
+            this.label20.TabIndex = 32;
+            this.label20.Text = "Approval of Application";
+            this.label20.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // Stu_Status
             // 
@@ -362,5 +407,8 @@
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label label20;
     }
 }

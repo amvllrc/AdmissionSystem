@@ -16,7 +16,7 @@ namespace entrypoint.PROCESSES.Admin
        
         public void approverejectAdmission(int id,String status)
         {
-            string query = "UPDATE application SET admission_status = @stats WHERE application_id = @id";
+            string query = "UPDATE application SET application_status = @stats WHERE application_id = @id";
 
             using (SqlConnection conn = new SqlConnection(DBConnection.connectionString))
             {
@@ -95,10 +95,6 @@ namespace entrypoint.PROCESSES.Admin
                     cmd.Parameters.AddWithValue("@id", applid);
                     cmd.Parameters.AddWithValue("@status", "Ready for Review");
                     int count = (int)cmd.ExecuteScalar();
-                   
-                 
-                
-                  
                     return count > 0;
                 }
             }
@@ -106,7 +102,7 @@ namespace entrypoint.PROCESSES.Admin
 
         public String finalstatus(int id)
         {
-            string query = "SELECT admission_status FROM application WHERE application_id = @id;";
+            string query = "SELECT application_status FROM application WHERE application_id = @id;";
 
             try
             {

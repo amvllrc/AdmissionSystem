@@ -165,10 +165,27 @@
         7fa6oiiKcoBk2ReUqwzfx1sJowAAAABJRU5ErkJggg==
 </value>
   </data>
+  <data name="pictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
+        DAAACwwBP0AiyAAAAo5JREFUaEPtmrtqVUEUho+oIVYWgg8gFgG1iI2a2FinMiJYiQiSItjY+ALGCyJ4
+        aXwEA5aClSlM8giiYCUk2igSCF5QHL81848GjpM4+5zZGXR/8MOeNWv9e35yzs7lpNfR0ZGHc24E3UJv
+        UW2sohtoRMdNQ9NNm6ic6zpuGpostXFCpWrgTBPhaG5VpTRqdLpeRoubXbcN9/VomUZ9Mcgier7Zddtw
+        X4+WadS3deM2oeP9fZDa0XHTqK96dNw06vt3XlpaVoeO1wWpBh2vC9IY2bXvp74uSASLaTTvzQL30DFt
+        NyZYtRCE0b3oqTf5M3fRDrVnEyzaCfIkOLg36AIaQ4fRJfQOGTNqz0bzZYMwdjRMu+9oTOVfUDuEPqP3
+        aI/KWTDn0TKN+poGuRym3ZJKfbAX3zdnVMpCs8WDXA3T6SCDIv/iQU6Haf/SmlR5qAT78kFG0WtvEN4L
+        D9FxtFMtA2PGhpZp1NcoiMHoAbTgTX7zET1GF9GoWhthZoaWadTXOEgEi5PoDnqBfqDICjqntmyCRYtB
+        NoLdfjSLLJRhwaa0nUUY36YgEWztr5jP/A2cW1Y5C82WDcLYFWSP4N0q9cHeFDLWVcpCs8WDvAzTblyl
+        Ptg7FVrcB5Wy0GzxIPfDtJtXqQ/2roUWt6BSFpotHuQg+uQNnHuA9mnL9nah8yjuT2srC82WDWIwehZ9
+        9SbOfUOvkD2t1q0gbqs9G82XD2IwfgQ9QmvmJb4g+0bZ6LEb8U6gZRr1DRQkgo29nCLJJ1kO8mo3iCG7
+        9v3UN7QbDxsdrwtSDTre/xUkfhg6oVI1cKbJcDS3olIamuxz7NqZ03HT0GQ/aluY+JWpCfulbA5t/Q8D
+        HR0dG+j1fgLwEVB+FdaMpAAAAABJRU5ErkJggg==
+</value>
+  </data>
   <data name="pictureBox12.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        DgAACw4BQL7hQQAAAo5JREFUaEPtmrtqVUEUho+oIVYWgg8gFgG1iI2a2FinMiJYiQiSItjY+ALGCyJ4
+        DAAACwwBP0AiyAAAAo5JREFUaEPtmrtqVUEUho+oIVYWgg8gFgG1iI2a2FinMiJYiQiSItjY+ALGCyJ4
         aXwEA5aClSlM8giiYCUk2igSCF5QHL81848GjpM4+5zZGXR/8MOeNWv9e35yzs7lpNfR0ZGHc24E3UJv
         UW2sohtoRMdNQ9NNm6ic6zpuGpostXFCpWrgTBPhaG5VpTRqdLpeRoubXbcN9/VomUZ9Mcgier7Zddtw
         X4+WadS3deM2oeP9fZDa0XHTqK96dNw06vt3XlpaVoeO1wWpBh2vC9IY2bXvp74uSASLaTTvzQL30DFt

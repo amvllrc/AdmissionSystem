@@ -77,5 +77,10 @@ namespace entrypoint
         {
             ShowPanel(new frmDashburd());
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            ShowPanel(new Ad_FinalList());
+        }
     }
 }

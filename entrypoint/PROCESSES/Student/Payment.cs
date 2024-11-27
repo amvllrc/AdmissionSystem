@@ -149,46 +149,7 @@ namespace entrypoint.PROCESSES.Student_application
             }
         }
 
-    //    private void markAsDone()
-    //    {
-    //        string query = @"
-    //    UPDATE application
-    //    SET application_status = @status
-    //    WHERE application_id = @application_id;
-    //";
-
-    //        using (SqlConnection conn = new SqlConnection(DBConnection.connectionString))
-    //        {
-    //            try
-    //            {
-    //                conn.Open();
-
-    //                using (SqlCommand cmd = new SqlCommand(query, conn))
-    //                {
-    //                    // Set parameters
-    //                    cmd.Parameters.AddWithValue("@status", "PendingPayment");
-    //                    cmd.Parameters.AddWithValue("@application_id", UserSession.ApplicationId); // Use the current application_id
-
-    //                    // Execute the update query
-    //                    int rowsAffected = cmd.ExecuteNonQuery();
-
-    //                    if (rowsAffected > 0)
-    //                    {
-                            
-    //                    }
-    //                    else
-    //                    {
-                            
-    //                    }
-    //                }
-    //            }
-    //            catch (SqlException ex)
-    //            {
-    //                MessageBox.Show("Error updating application status: " + ex.Message);
-    //            }
-    //        }
-    //    }
-    
+  
 
         public void validateStep2(Panel panel)
         {

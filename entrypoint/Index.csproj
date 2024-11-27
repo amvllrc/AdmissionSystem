@@ -153,6 +153,12 @@
     <Compile Include="AddCourse.Designer.cs">
       <DependentUpon>AddCourse.cs</DependentUpon>
     </Compile>
+    <Compile Include="Ad_FinalList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ad_FinalList.Designer.cs">
+      <DependentUpon>Ad_FinalList.cs</DependentUpon>
+    </Compile>
     <Compile Include="PROCESSES\Admin\AddEdiTDeleteCourse.cs" />
     <Compile Include="PROCESSES\Admin\ApproveReject.cs" />
     <Compile Include="PROCESSES\Admin\DashboardContents.cs" />
@@ -292,6 +298,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AddCourse.resx">
       <DependentUpon>AddCourse.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ad_FinalList.resx">
+      <DependentUpon>Ad_FinalList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Stu_NOA.resx">
       <DependentUpon>Stu_NOA.cs</DependentUpon>

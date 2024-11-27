@@ -131,7 +131,7 @@ namespace entrypoint
                             {
                                 control.Enabled = false;  
                             }
-                            adstat.enableControls();
+                            
                             
                         }
                         else

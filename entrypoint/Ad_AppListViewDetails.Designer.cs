@@ -65,8 +65,6 @@
             this.label16 = new System.Windows.Forms.Label();
             this.pay_btnReject = new System.Windows.Forms.Button();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.label31 = new System.Windows.Forms.Label();
             this.label30 = new System.Windows.Forms.Label();
             this.label29 = new System.Windows.Forms.Label();
@@ -99,14 +97,6 @@
             this.birthdate = new System.Windows.Forms.Label();
             this.address = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.label18 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.science = new System.Windows.Forms.Label();
-            this.math = new System.Windows.Forms.Label();
-            this.english = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.exitIcon)).BeginInit();
@@ -115,11 +105,8 @@
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.panel5.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -178,7 +165,6 @@
             this.panel2.Controls.Add(this.pay_btnReject);
             this.panel2.Controls.Add(this.panel6);
             this.panel2.Controls.Add(this.panel7);
-            this.panel2.Controls.Add(this.panel5);
             this.panel2.Location = new System.Drawing.Point(0, 48);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(513, 274);
@@ -194,7 +180,7 @@
             this.panel8.Controls.Add(this.label42);
             this.panel8.Controls.Add(this.label43);
             this.panel8.Controls.Add(this.label44);
-            this.panel8.Location = new System.Drawing.Point(25, 967);
+            this.panel8.Location = new System.Drawing.Point(25, 844);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(468, 128);
             this.panel8.TabIndex = 66;
@@ -277,7 +263,7 @@
             this.pay_btnApprove.BackColor = System.Drawing.Color.Green;
             this.pay_btnApprove.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pay_btnApprove.ForeColor = System.Drawing.Color.White;
-            this.pay_btnApprove.Location = new System.Drawing.Point(376, 1112);
+            this.pay_btnApprove.Location = new System.Drawing.Point(363, 997);
             this.pay_btnApprove.Name = "pay_btnApprove";
             this.pay_btnApprove.Size = new System.Drawing.Size(115, 40);
             this.pay_btnApprove.TabIndex = 71;
@@ -301,7 +287,7 @@
             this.panel3.Controls.Add(this.jhsName);
             this.panel3.Controls.Add(this.elemYearGrad);
             this.panel3.Controls.Add(this.label11);
-            this.panel3.Location = new System.Drawing.Point(25, 525);
+            this.panel3.Location = new System.Drawing.Point(25, 391);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(468, 208);
             this.panel3.TabIndex = 67;
@@ -504,7 +490,7 @@
             this.pay_btnReject.BackColor = System.Drawing.Color.Red;
             this.pay_btnReject.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pay_btnReject.ForeColor = System.Drawing.Color.Transparent;
-            this.pay_btnReject.Location = new System.Drawing.Point(258, 1112);
+            this.pay_btnReject.Location = new System.Drawing.Point(245, 997);
             this.pay_btnReject.Name = "pay_btnReject";
             this.pay_btnReject.Size = new System.Drawing.Size(115, 40);
             this.pay_btnReject.TabIndex = 70;
@@ -515,8 +501,6 @@
             // panel6
             // 
             this.panel6.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.panel6.Controls.Add(this.pictureBox4);
-            this.panel6.Controls.Add(this.pictureBox3);
             this.panel6.Controls.Add(this.label31);
             this.panel6.Controls.Add(this.label30);
             this.panel6.Controls.Add(this.label29);
@@ -530,26 +514,10 @@
             this.panel6.Controls.Add(this.fatherContact);
             this.panel6.Controls.Add(this.fatherOccup);
             this.panel6.Controls.Add(this.label25);
-            this.panel6.Location = new System.Drawing.Point(25, 749);
+            this.panel6.Location = new System.Drawing.Point(25, 621);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(468, 201);
             this.panel6.TabIndex = 65;
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.Location = new System.Drawing.Point(8, 8);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(100, 50);
-            this.pictureBox4.TabIndex = 57;
-            this.pictureBox4.TabStop = false;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(100, 50);
-            this.pictureBox3.TabIndex = 56;
-            this.pictureBox3.TabStop = false;
             // 
             // label31
             // 
@@ -885,91 +853,6 @@
             this.label2.TabIndex = 22;
             this.label2.Text = "Personal Information";
             // 
-            // panel5
-            // 
-            this.panel5.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.panel5.Controls.Add(this.label18);
-            this.panel5.Controls.Add(this.label17);
-            this.panel5.Controls.Add(this.label15);
-            this.panel5.Controls.Add(this.science);
-            this.panel5.Controls.Add(this.math);
-            this.panel5.Controls.Add(this.english);
-            this.panel5.Controls.Add(this.label13);
-            this.panel5.Location = new System.Drawing.Point(25, 378);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(468, 132);
-            this.panel5.TabIndex = 69;
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(102, 94);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(97, 20);
-            this.label18.TabIndex = 43;
-            this.label18.Text = "(Placeholder)";
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(102, 73);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(97, 20);
-            this.label17.TabIndex = 42;
-            this.label17.Text = "(Placeholder)";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(139, 52);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(97, 20);
-            this.label15.TabIndex = 41;
-            this.label15.Text = "(Placeholder)";
-            // 
-            // science
-            // 
-            this.science.AutoSize = true;
-            this.science.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.science.Location = new System.Drawing.Point(32, 93);
-            this.science.Name = "science";
-            this.science.Size = new System.Drawing.Size(68, 21);
-            this.science.TabIndex = 31;
-            this.science.Text = "Science: ";
-            // 
-            // math
-            // 
-            this.math.AutoSize = true;
-            this.math.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.math.Location = new System.Drawing.Point(31, 51);
-            this.math.Name = "math";
-            this.math.Size = new System.Drawing.Size(102, 21);
-            this.math.TabIndex = 30;
-            this.math.Text = "Mathematics:";
-            // 
-            // english
-            // 
-            this.english.AutoSize = true;
-            this.english.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.english.Location = new System.Drawing.Point(32, 72);
-            this.english.Name = "english";
-            this.english.Size = new System.Drawing.Size(66, 21);
-            this.english.TabIndex = 23;
-            this.english.Text = "English: ";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(170, 13);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(120, 25);
-            this.label13.TabIndex = 22;
-            this.label13.Text = "Exam Scores";
-            // 
             // viewDetails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
@@ -999,13 +882,9 @@
             this.panel4.PerformLayout();
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.panel5.ResumeLayout(false);
-            this.panel5.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1080,15 +959,5 @@
         private System.Windows.Forms.Label birthdate;
         private System.Windows.Forms.Label address;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Label science;
-        private System.Windows.Forms.Label math;
-        private System.Windows.Forms.Label english;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.PictureBox pictureBox4;
-        private System.Windows.Forms.PictureBox pictureBox3;
     }
 }

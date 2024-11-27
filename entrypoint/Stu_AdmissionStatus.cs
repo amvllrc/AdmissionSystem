@@ -56,7 +56,7 @@ namespace entrypoint
             ShowPanel(new Stu_Status());
 
 
-            if (tracker.getStatus())
+            if (tracker.getStatus()=="approved")
            {
    enableControls();
             }
