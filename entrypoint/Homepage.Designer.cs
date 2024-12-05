@@ -349,9 +349,9 @@
             this.label5.Location = new System.Drawing.Point(465, 94);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(164, 40);
+            this.label5.Size = new System.Drawing.Size(164, 20);
             this.label5.TabIndex = 20;
-            this.label5.Text = "\"Start of Class Period\"\r\nSeptember";
+            this.label5.Text = "\"Start of Class Period\"\r\n";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label4
@@ -359,12 +359,12 @@
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(255, 94);
+            this.label4.Location = new System.Drawing.Point(232, 94);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(159, 40);
+            this.label4.Size = new System.Drawing.Size(159, 20);
             this.label4.TabIndex = 19;
-            this.label4.Text = "\"Examination Period\"\r\nJuly - August ";
+            this.label4.Text = "\"Examination Period\"\r\n";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label3
@@ -372,12 +372,12 @@
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(45, 94);
+            this.label3.Location = new System.Drawing.Point(11, 94);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(152, 40);
+            this.label3.Size = new System.Drawing.Size(152, 20);
             this.label3.TabIndex = 18;
-            this.label3.Text = "\"Application Period\"\r\nJuly - August ";
+            this.label3.Text = "\"Application Period\"\r\n";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblTitleImportantDates

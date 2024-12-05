@@ -1,4 +1,5 @@
 ﻿using entrypoint.PROCESSES;
+using entrypoint.PROCESSES.Student;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -30,9 +31,23 @@ namespace entrypoint
 
         private void registerhere_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Acc_Register registerForm = new Acc_Register();
-            registerForm.Show();
-            this.Hide();
+            if (TimePeriods.CurrentDate >= TimePeriods.ApplicationPeriodStart && TimePeriods.CurrentDate <= TimePeriods.ApplicationPeriodEnd)
+            {
+                Acc_Register registerForm = new Acc_Register();
+                registerForm.Show();
+                this.Hide();
+            }
+
+            else if (TimePeriods.CurrentDate > TimePeriods.ApplicationPeriodEnd)
+            {
+                MessageBox.Show("The application period ended, You cannot proceed with this action");
+
+            }
+            else if (TimePeriods.CurrentDate < TimePeriods.ApplicationPeriodStart)
+            {
+                MessageBox.Show("The application is not yet started, You cannot proceed with this action");
+
+            }
         }
 
         private void forgotpassword_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

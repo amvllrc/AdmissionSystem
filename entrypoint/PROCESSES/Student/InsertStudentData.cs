@@ -1,4 +1,5 @@
-﻿using System;
+﻿using entrypoint.PROCESSES.Student;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
@@ -8,17 +9,17 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Net.Mime.MediaTypeNames;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace entrypoint.PROCESSES.Student_application
 {
-    
     public class InsertStudentData
-       
+
 
     {
-        private Stu_AdmissionStatus adstat=new Stu_AdmissionStatus();
-        private ProcessTracker tracker=new ProcessTracker();
+        private Stu_AdmissionStatus adstat = new Stu_AdmissionStatus();
+        private ProcessTracker tracker = new ProcessTracker();
         public void InsertStudentApplication(string firstName,
     string lastName,
     string middleName,
@@ -59,7 +60,7 @@ namespace entrypoint.PROCESSES.Student_application
             byte[] form137Data = File.ReadAllBytes(form137File);
             byte[] pictureData = File.ReadAllBytes(photo2by2);
             byte[] eSignatureData = File.ReadAllBytes(eSignatureFile);
-            
+
             using (SqlConnection conn = new SqlConnection(DBConnection.connectionString))
             {
                 try
@@ -71,14 +72,14 @@ namespace entrypoint.PROCESSES.Student_application
                    "highschool_graduation_year, college, shs_graduation_year, program_choice_1, program_choice_2, " +
                    "mother_name, father_name, guardian_name, occupation_father, occupation_mother, occupation_guardian, " +
                    "contact_mother, contact_father, contact_guardian, psa_pdf, psa_pdf_filename, form_137_pdf, " +
-                   "form_137_pdf_filename, image_2x2, image_2x2_filename, esignature_image, esignature_image_filename,application_status,user_id) " +
+                   "form_137_pdf_filename, image_2x2, image_2x2_filename, esignature_image, esignature_image_filename,application_status,user_id,submitted_at) " +
                    "VALUES (" +
                    "@FirstName, @LastName, @MiddleName, @BirthDate, @PlaceOfBirth, @Gender, @Nationality, @CivilStatus, " +
                    "@ContactNumber, @Address, @ElementarySchool, @ElementaryYear, @HighSchool, @HighSchoolYear, " +
                    "@College, @ShsGraduationYear, @FirstCourseChoice, @SecondCourseChoice, @MotherName, @FatherName, " +
                    "@GuardianName, @OccupationFather, @OccupationMother, @OccupationGuardian, @ContactMother, @ContactFather, " +
                    "@ContactGuardian, @PsaPdfData, @PsaPdfFileName, @Form137PdfData, @Form137PdfFileName, @Image2x2Data, " +
-                   "@Image2x2FileName, @ESignatureImageData, @ESignatureFileName,@status,@id)";
+                   "@Image2x2FileName, @ESignatureImageData, @ESignatureFileName,@status,@id,@submitted_at)";
 
                     using (SqlCommand cmd = new SqlCommand(query, conn))
                     {
@@ -110,7 +111,7 @@ namespace entrypoint.PROCESSES.Student_application
                         cmd.Parameters.AddWithValue("@OccupationGuardian", guardianOccupation);
                         cmd.Parameters.AddWithValue("@ContactGuardian", guardianContact);
 
-                        
+
                         cmd.Parameters.AddWithValue("@PsaPdfData", birthCertData);
                         cmd.Parameters.AddWithValue("@PsaPdfFileName", psaName);
                         cmd.Parameters.AddWithValue("@Form137PdfData", form137Data);
@@ -120,23 +121,61 @@ namespace entrypoint.PROCESSES.Student_application
                         cmd.Parameters.AddWithValue("@ESignatureImageData", eSignatureData);
                         cmd.Parameters.AddWithValue("@ESignatureFileName", esigname);
                         cmd.Parameters.AddWithValue("@status", "pending");// E-Signature file
-                        cmd.Parameters.AddWithValue("@id", UserSession.ID);// E-Signature file
+                        cmd.Parameters.AddWithValue("@id", UserSession.ID);
+                        cmd.Parameters.AddWithValue("@submitted_at", TimePeriods.CurrentDate);// E-Signature file
 
-
-                        int num=cmd.ExecuteNonQuery();
-                        if (num > 0)
+                        int rowsAffected = cmd.ExecuteNonQuery();
+                        if (rowsAffected > 0)
                         {
-                            adstat.enableControls();
+
+                            MessageBox.Show("Your application has been submitted successfully.");
+                            Stu_ApplicationForm form = new Stu_ApplicationForm(adstat);
+                            adstat.Show();
+                            form.Close();
+                            form.Hide();
+                            tracker.validatethisbutton();
+                            insertnotif();
+
                         }
                     }
 
-                  
+
                 }
+
+
+
                 catch (Exception ex)
                 {
-                    throw new Exception("Error submitting application: " + ex.Message);
+                    throw new Exception("Error submitting application11: " + ex.Message);
                 }
             }
         }
+
+
+        public void insertnotif()
+        {
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(DBConnection.connectionString))
+                {
+                    conn.Open();
+
+                    string insertNotificationQuery = "INSERT INTO Notifications (application_id, approvedapplication, rejectedapplication, approvedpayment, rejectedpayment, admitted, rejected) " +
+                                                      "VALUES (@ApplicationId, 0, 0, 0, 0, 0, 0);";
+
+                    using (SqlCommand notificationCmd = new SqlCommand(insertNotificationQuery, conn))
+                    {
+                        notificationCmd.Parameters.AddWithValue("@ApplicationId", UserSession.ApplicationId);
+                        notificationCmd.ExecuteNonQuery();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                // Handle any exceptions that occur during the process
+                MessageBox.Show("Error inserting notification: " + ex.Message);
+            }
         }
+
     }
+}

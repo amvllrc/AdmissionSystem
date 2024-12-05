@@ -159,6 +159,7 @@ namespace entrypoint
                 if (result == DialogResult.OK)
                 {
                     ctrlval.approverejectAdmission(appli_id, "rejected");
+                ctrlval.RejectAdmission(appli_id);
                     this.Close();
                 }
 

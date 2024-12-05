@@ -20,7 +20,7 @@ namespace entrypoint
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
            
-            Application.Run(new Homepage());
+            Application.Run(new Acc_Login());
         }
     }
 }

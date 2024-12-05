@@ -135,8 +135,71 @@ namespace entrypoint.PROCESSES.Admin
                 return "An error occurred: " + ex.Message;
             }
         }
-       
 
+        public string Decision(int applid)
+        {
+            string query = "SELECT admission_status FROM application WHERE application_id = @id;";
+
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(DBConnection.connectionString))
+                {
+                    conn.Open();
+
+                    using (SqlCommand cmd = new SqlCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@id", applid);
+                        var status = cmd.ExecuteScalar();
+                        if (status == null)
+                        {
+                            return "No application record found for this application.";
+                        }
+                        else
+                        {
+                            return status.ToString();
+                        }
+                    }
+                }
+            }
+            catch (SqlException sqlEx)
+            {
+
+                return "Database error: " + sqlEx.Message;
+            }
+            catch (Exception ex)
+            {
+                return "An error occurred: " + ex.Message;
+            }
+        }
+        public void RejectAdmission(int applicationId)
+        {
+            string query = "UPDATE application SET admission_status = 'Rejected' WHERE application_id = @applicationId";
+
+            using (SqlConnection conn = new SqlConnection(DBConnection.connectionString))
+            {
+                try
+                {
+                    conn.Open();
+                    using (SqlCommand cmd = new SqlCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@applicationId", applicationId);
+                        int rowsAffected = cmd.ExecuteNonQuery();
+                        if (rowsAffected > 0)
+                        {
+                            MessageBox.Show("This admission has been rejected automatically.");
+                        }
+                        else
+                        {
+                            MessageBox.Show("No application found with the specified ID.");
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error: {ex.Message}");
+                }
+            }
+        }
 
     }
 }

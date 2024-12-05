@@ -13,7 +13,7 @@ namespace entrypoint.PROCESSES.Student_application
 {
     public class ProcessTracker
     {
-        
+
         public void validatethisbutton()
         {
             string query = "SELECT application_id FROM application where user_id = @user_id";
@@ -32,11 +32,12 @@ namespace entrypoint.PROCESSES.Student_application
                         {
 
 
-                            if (reader.Read()) { 
-                                
+                            if (reader.Read())
+                            {
+
 
                                 UserSession.ApplicationId = reader.GetInt32(reader.GetOrdinal("application_id"));
-                 
+
 
                             }
                             else
@@ -55,48 +56,44 @@ namespace entrypoint.PROCESSES.Student_application
 
         }
 
-    
 
-        //public void UpdateStatus(String columnname,String status)
-        //{
+        public DateTime? getExamDate()
+        {
+            DateTime? examDate = null;  // Use nullable DateTime to handle cases where no date is found
+            string query = "SELECT date_of_exam FROM payment WHERE application_id = @id";
 
-        //    string query = "UPDATE application " +
-        //          "SET " + columnname + " = '" + status + "' " +
-        //          "WHERE user_id = " + UserSession.ID;
-        //    using (SqlConnection connection = new SqlConnection(DBConnection.connectionString))
-        //    {
-        //        SqlCommand command = new SqlCommand(query, connection);
+            using (SqlConnection conn = new SqlConnection(DBConnection.connectionString))
+            {
+                try
+                {
+                    conn.Open();
+                    using (SqlCommand cmd = new SqlCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@id", UserSession.ApplicationId);
+                        object result = cmd.ExecuteScalar();
+                        if (result != null)
+                        {
+                            examDate = Convert.ToDateTime(result);  // Convert the result to DateTime
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error retrieving exam date: " + ex.Message);
+                }
+            }
 
-        //        try
-        //        {
-        //            connection.Open();
+            return examDate;  // Return DateTime? (nullable DateTime)
+        }
 
-        //            // Execute the update query
-        //            int rowsAffected = command.ExecuteNonQuery();
 
-        //            if (rowsAffected > 0)
-        //            {
 
-        //            }
-        //            else
-        //            {
-        //                MessageBox.Show("No records were updated. Please check the application ID.");
-        //            }
-        //        }
-        //        catch (Exception ex)
-        //        {
-                   
-        //            MessageBox.Show("An error occurred: " + ex.Message, "Error");
-        //        }
-        //    }
-        //}
-       
         public string getStatus()
         {
             string status = "";
 
             string query = "SELECT * FROM application WHERE user_id = @Id";
-        
+
             using (SqlConnection connection = new SqlConnection(DBConnection.connectionString))
             {
                 SqlCommand command = new SqlCommand(query, connection);
@@ -108,22 +105,22 @@ namespace entrypoint.PROCESSES.Student_application
                     SqlDataReader reader = command.ExecuteReader();
                     if (reader.Read())
                     {
-                       status = reader.GetString(reader.GetOrdinal("application_status"));
+                        status = reader.GetString(reader.GetOrdinal("application_status"));
                     }
-                    
 
-                
+
+
                     reader.Close();
                 }
                 catch (Exception ex)
                 {
                     // Handle any exceptions (e.g., SQL errors)
                     MessageBox.Show("An error occurred: " + ex.Message, "Error");
-                 
+
                 }
             }
 
-      
+
             return status;
         }
 
@@ -145,8 +142,8 @@ namespace entrypoint.PROCESSES.Student_application
 
                         isdone = true;
 
-                           
-                        
+
+
                     }
                     reader.Close();
                 }
@@ -154,7 +151,7 @@ namespace entrypoint.PROCESSES.Student_application
                 {
                     // Handle any exceptions (e.g., SQL errors)
                     MessageBox.Show("An error occurred: " + ex.Message, "Error");
-                   
+
                 }
             }
 
@@ -213,12 +210,12 @@ namespace entrypoint.PROCESSES.Student_application
 
                         if (reader.Read())
                         {
-                            bool paymentRejected = reader.GetBoolean(0); 
-                            bool applicationRejected = reader.GetBoolean(1); 
+                            bool paymentRejected = reader.GetBoolean(0);
+                            bool applicationRejected = reader.GetBoolean(1);
 
                             if (!paymentRejected && !applicationRejected)
                             {
-                               
+
                                 UpdateNotificationStatus();
                                 return true;
 
@@ -231,7 +228,7 @@ namespace entrypoint.PROCESSES.Student_application
                     MessageBox.Show("An error occurred while checking notification status: " + ex.Message);
                 }
             }
-            return false; 
+            return false;
         }
 
         private void UpdateNotificationStatus()
@@ -291,11 +288,11 @@ namespace entrypoint.PROCESSES.Student_application
         }
 
 
-        public bool displayNOA()
+        public string displayNOA()
         {
+            string query = "SELECT admission_status FROM application WHERE user_id = @Id";
+            string admissionStatus = string.Empty; 
 
-            string query = "SELECT * FROM application WHERE user_id = @Id AND admission_status='Admitted'";
-            bool isStatusDone = false;
             using (SqlConnection connection = new SqlConnection(DBConnection.connectionString))
             {
                 SqlCommand command = new SqlCommand(query, connection);
@@ -307,31 +304,23 @@ namespace entrypoint.PROCESSES.Student_application
                     SqlDataReader reader = command.ExecuteReader();
                     if (reader.Read())
                     {
-                        isStatusDone = true;
+                        admissionStatus = reader["admission_status"].ToString(); 
                     }
-                    else
-                    {
-
-                        isStatusDone = false;
-                    }
-
-
                     reader.Close();
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show("An error occurred: " + ex.Message, "Error");
-                    isStatusDone = false; 
+                    admissionStatus = "Error";  
                 }
             }
 
-
-            return isStatusDone;
+            return admissionStatus;
         }
-
     }
 
 
 
-}
-    
+    }
+
+

@@ -1012,6 +1012,7 @@
             this.Name = "Stu_ApplicationForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.Form1_Load);
+          
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.grpDocuments.ResumeLayout(false);

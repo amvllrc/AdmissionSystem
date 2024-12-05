@@ -1,4 +1,5 @@
 ﻿using entrypoint.PROCESSES;
+using entrypoint.PROCESSES.Student;
 using System;
 using System.Data;
 using System.Data.SqlClient;
@@ -8,7 +9,6 @@ namespace entrypoint
 {
     public partial class Acc_Register : Form
     {
-        // DATABASE CONNECTION
         SqlConnection connect = new SqlConnection(DBConnection.connectionString);
 
         public Acc_Register()
@@ -75,7 +75,7 @@ namespace entrypoint
                                 cmd.Parameters.AddWithValue("@FirstName", signup_firstname.Text.Trim());
                                 cmd.Parameters.AddWithValue("@PhoneNum", signup_phoneNum.Text.Trim());
                                 cmd.Parameters.AddWithValue("@Password", signup_password.Text.Trim());
-                                cmd.Parameters.AddWithValue("@CreatedAt", DateTime.Now);
+                                cmd.Parameters.AddWithValue("@CreatedAt", TimePeriods.CurrentDate);
 
                                 cmd.ExecuteNonQuery();
 
@@ -114,6 +114,12 @@ namespace entrypoint
             Acc_Login loginForm = new Acc_Login();
             loginForm.Show();
             this.Hide();
+        }
+
+        private void Acc_Register_Load(object sender, EventArgs e)
+        {
+            signup_password.PasswordChar = '*';
+            signup_confirmpassword.PasswordChar= '*';
         }
     }
 }

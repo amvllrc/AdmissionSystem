@@ -7,6 +7,7 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using entrypoint.PROCESSES.Student;
 
 namespace entrypoint.PROCESSES.Student_application
 {
@@ -66,24 +67,19 @@ namespace entrypoint.PROCESSES.Student_application
             // If all validations pass, return true
             return true;
         }
-
         public void generateExamDates(ComboBox cbo)
         {
-            if (ProcessPeriods.ExaminationStartDate.HasValue && ProcessPeriods.ExaminationEndDate.HasValue)
+            if (TimePeriods.ExamPeriodStart != null && TimePeriods.ExamPeriodEnd != null)
             {
-                DateTime startDate = ProcessPeriods.ExaminationStartDate.Value;
-                DateTime endDate = ProcessPeriods.ExaminationEndDate.Value;
+                DateTime startDate = TimePeriods.ExamPeriodStart;
+                DateTime endDate = TimePeriods.ExamPeriodEnd;
 
                 List<string> formattedDateList = new List<string>();
-
-                // Add formatted dates to the list between start and end date (inclusive)
                 for (DateTime date = startDate; date <= endDate; date = date.AddDays(1))
                 {
                     string formattedDate = date.ToString("MMMM dd, yyyy"); // Format as "November 20, 2024"
                     formattedDateList.Add(formattedDate);
                 }
-
-                // Set the ComboBox DataSource to the list of formatted strings
                 cbo.DataSource = formattedDateList;
             }
             else
@@ -91,6 +87,7 @@ namespace entrypoint.PROCESSES.Student_application
                 MessageBox.Show("Examination start or end date is not set.");
             }
         }
+       
 
         public void insertPayment(string accountHolderName, string cellphoneNumber, string referenceNumber, DateTime dateOfExam, string filepath,string filename)
         {
@@ -99,18 +96,16 @@ namespace entrypoint.PROCESSES.Student_application
             {
                 conn.Open();
 
-                // Prepare the SQL query to insert the payment record with the file data
                 string query = @"
-            INSERT INTO payment (application_id,filepath, account_holder_name, cellphone_number, reference_number, date_of_exam,file_name)
-            VALUES (@application_id, @filepath, @account_holder_name, @cellphone_number, @reference_number, @date_of_exam,@file_name);
+            INSERT INTO payment (application_id,filepath, account_holder_name, cellphone_number, reference_number, date_of_exam,file_name,pay_at)
+            VALUES (@application_id, @filepath, @account_holder_name, @cellphone_number, @reference_number, @date_of_exam,@file_name,@date);
         ";
 
                 using (SqlCommand cmd = new SqlCommand(query, conn))
                 {
                     // Add parameters for application_id, status, pay_at, account_holder_name, etc.
                     cmd.Parameters.AddWithValue("@application_id", UserSession.ApplicationId);
-                      // e.g., "paid", "not yet paid", etc.
-             ;
+              
 
                     // Read the file and convert it to a byte array
                     byte[] fileData = File.ReadAllBytes(filepath);
@@ -122,6 +117,7 @@ namespace entrypoint.PROCESSES.Student_application
                     cmd.Parameters.AddWithValue("@reference_number", referenceNumber);
                     cmd.Parameters.AddWithValue("@date_of_exam", dateOfExam);
                     cmd.Parameters.AddWithValue("@file_name", filename);
+                    cmd.Parameters.AddWithValue("@date", TimePeriods.CurrentDate);
 
                     // Execute the command
                     try
@@ -129,8 +125,10 @@ namespace entrypoint.PROCESSES.Student_application
                         int rowsAffected = cmd.ExecuteNonQuery();
                         if (rowsAffected > 0)
                         {
-                            //// Call markAsDone() if a record was successfully inserted
-                            //markAsDone();
+                            MessageBox.Show("Success, Wait for the evaluation of your payment");
+                            Stu_AdmissionStatus status = new Stu_AdmissionStatus();
+                            status.Show();
+                           
                         }
                     }
                     catch (SqlException ex)

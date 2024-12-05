@@ -21,7 +21,7 @@ namespace entrypoint.PROCESSES.Student
         {
             NOA noa = new NOA();
             noa.getStudentNOA();
-            this.Close();
+            this.Hide();
         }
     }
 }

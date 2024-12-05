@@ -159,15 +159,25 @@
     <Compile Include="Ad_FinalList.Designer.cs">
       <DependentUpon>Ad_FinalList.cs</DependentUpon>
     </Compile>
+    <Compile Include="Ad_FinalListFilter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ad_FinalListFilter.Designer.cs">
+      <DependentUpon>Ad_FinalListFilter.cs</DependentUpon>
+    </Compile>
     <Compile Include="PROCESSES\Admin\AddEdiTDeleteCourse.cs" />
     <Compile Include="PROCESSES\Admin\ApproveReject.cs" />
+    <Compile Include="PROCESSES\Admin\Notification.cs" />
+    <Compile Include="PROCESSES\Admin\FinalList.cs" />
     <Compile Include="PROCESSES\Admin\DashboardContents.cs" />
     <Compile Include="PROCESSES\Admin\ControlValidator.cs" />
+    <Compile Include="PROCESSES\Admin\FinalListQuery.cs" />
     <Compile Include="PROCESSES\Admin\PDetailsView.cs" />
     <Compile Include="PROCESSES\Admin\QueryPayment.cs" />
     <Compile Include="PROCESSES\Admin\DetailsView.cs" />
     <Compile Include="PROCESSES\Admin\QueryButtons.cs" />
     <Compile Include="PROCESSES\Admin\Course.cs" />
+    <Compile Include="PROCESSES\Student\TimePeriods.cs" />
     <Compile Include="PROCESSES\Student\NOA.cs" />
     <Compile Include="Stu_NOA.cs">
       <SubType>Form</SubType>
@@ -302,6 +312,9 @@
     <EmbeddedResource Include="Ad_FinalList.resx">
       <DependentUpon>Ad_FinalList.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Ad_FinalListFilter.resx">
+      <DependentUpon>Ad_FinalListFilter.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Stu_NOA.resx">
       <DependentUpon>Stu_NOA.cs</DependentUpon>
     </EmbeddedResource>
@@ -396,9 +409,6 @@
     <None Include="Resources\close-svgrepo-com.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\IMG_20240729_205539_772-removebg-preview.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\white-lock-icon-png-91.png" />
   </ItemGroup>
   <ItemGroup>
@@ -409,6 +419,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\lock-keyhole.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="INSTRUCTIONS.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -5,6 +5,7 @@ using System.IO;
 using System.Linq;
 using System.Windows.Forms;
 using entrypoint.PROCESSES;
+using entrypoint.PROCESSES.Student;
 using entrypoint.PROCESSES.Student_application;
 
 namespace entrypoint
@@ -17,24 +18,24 @@ namespace entrypoint
         private ProcessTracker tracker;
         private Student_Application stu;
         private InsertStudentData insertStudent;
-        
+
         public Stu_ApplicationForm(Stu_AdmissionStatus mainform)
         {
             InitializeComponent();
-                adstat=mainform;
-            stu= new Student_Application();
+            adstat = mainform;
+            stu = new Student_Application();
             tracker = new ProcessTracker();
             insertStudent = new InsertStudentData();
-            
+
         }
 
-    
+
         private void Form1_Load(object sender, EventArgs e)
         {
             stu.validateStep1(panel3);
             dtpBirthdate.CalendarTitleBackColor = Color.Aqua;
             loadCourse();
-          
+
         }
 
         private void loadCourse()
@@ -43,8 +44,8 @@ namespace entrypoint
             cbSecondChoice.DataSource = stu.GenerateCourse();
         }
 
-       
-     
+
+
 
         private void ShowNewForm(Form form)
         {
@@ -87,7 +88,7 @@ namespace entrypoint
 
         private void OpenFileAndSetTextBox(TextBox textBox, string title, string filter = "PDF Files (*.pdf)|*.pdf")
         {
-            
+
             OpenFileDialog openFileDialog = new OpenFileDialog
             {
                 Filter = filter,
@@ -97,8 +98,8 @@ namespace entrypoint
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
                 string fullPath = openFileDialog.FileName;
-               
-                textBox.Text = fullPath; 
+
+                textBox.Text = fullPath;
             }
             else
             {
@@ -113,7 +114,7 @@ namespace entrypoint
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
-            
+
             if (stu.ValidateInput(panel3))
             {
                 if (cbFirstCourse.SelectedItem != null && cbSecondChoice.SelectedItem != null)
@@ -122,24 +123,27 @@ namespace entrypoint
                     {
                         if (!(txtElemYear.Text.Length > 4 && txtHighschoolYear.Text.Length > 4 && txtSeniorYear.Text.Length > 4))
                         {
-
-
-                            insertToDatabase();
-
-                            
-                            foreach (Control control in panel3.Controls)
+                            DialogResult result = MessageBox.Show(
+                                "Please make sure to check all your details before clicking OK to submit.",
+                                "Confirmation",
+                                MessageBoxButtons.OKCancel,
+                                MessageBoxIcon.Warning);
+                            if (result == DialogResult.OK)
                             {
-                                control.Enabled = false;  
+                                insertToDatabase();
+
+                                foreach (Control control in panel3.Controls)
+                                {
+                                    control.Enabled = false;
+                                }
                             }
-                            
-                            
                         }
                         else
                         {
                             MessageBox.Show("Enter valid graduated year");
                         }
-                        
-                        
+
+
 
 
 
@@ -206,13 +210,15 @@ namespace entrypoint
                     esigname
                 );
 
-                MessageBox.Show("Your application has been submitted successfully.");
+
                 tracker.validatethisbutton();
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Error submitting application: " + ex.Message);
             }
+
+
         }
     }
 }

@@ -67,28 +67,45 @@ namespace entrypoint
 
             if (quizHelper.AllQuestionsAnswered())
             {
-                var subjectScores = quizHelper.CalculateScoresBySubject();
-                int totalScore = subjectScores.Values.Sum();
+                DialogResult result = MessageBox.Show(
+                    "Please make sure to check all your answers before clicking OK to submit your scores.",
+                    "Confirmation",
+                    MessageBoxButtons.OKCancel,
+                    MessageBoxIcon.Warning);
 
-                if (subjectScores.ContainsKey("MATH:"))
+                if (result == DialogResult.OK)
                 {
-                    mathScore = subjectScores["MATH:"];
-                }
-                if (subjectScores.ContainsKey("ENGLISH:"))
-                {
-                    englishScore = subjectScores["ENGLISH:"];
-                }
-                if (subjectScores.ContainsKey("SCIENCE:"))
-                {
-                    scienceScore = subjectScores["SCIENCE:"];
-                }
+                    var subjectScores = quizHelper.CalculateScoresBySubject();
+                    int totalScore = subjectScores.Values.Sum();
 
-                r.insertExaminfo(mathScore,scienceScore,englishScore);
-                foreach (Control control in panel3.Controls)
-                {
-                    control.Enabled = false;
-                }
+                    if (subjectScores.ContainsKey("MATH:"))
+                    {
+                        mathScore = subjectScores["MATH:"];
+                    }
+                    if (subjectScores.ContainsKey("ENGLISH:"))
+                    {
+                        englishScore = subjectScores["ENGLISH:"];
+                    }
+                    if (subjectScores.ContainsKey("SCIENCE:"))
+                    {
+                        scienceScore = subjectScores["SCIENCE:"];
+                    }
 
+                    bool isInsertSuccessful = r.insertExaminfo(mathScore, scienceScore, englishScore);
+                    if (isInsertSuccessful)
+                    {
+                        Stu_AdmissionStatus status = new Stu_AdmissionStatus();
+                        status.Show();
+                    }
+                    else
+                    {
+                        MessageBox.Show("There was an issue with inserting the exam data. Please try again.");
+                    }
+                    foreach (Control control in panel3.Controls)
+                    {
+                        control.Enabled = false;
+                    }
+                }
             }
         }
 

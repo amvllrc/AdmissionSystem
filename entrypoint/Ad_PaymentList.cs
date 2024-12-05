@@ -114,5 +114,14 @@ namespace entrypoint
             }
             else button1.Visible = false;
         }
+
+        private void payListDataGrid_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (payListDataGrid.Columns[e.ColumnIndex].Name == "viewMoreButton")
+            {
+                e.CellStyle.BackColor = Color.Yellow;
+                e.CellStyle.ForeColor = Color.Black;
+            }
+        }
     }
 }

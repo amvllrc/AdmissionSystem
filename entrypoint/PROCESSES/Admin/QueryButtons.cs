@@ -8,7 +8,9 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Globalization;
 using System.Drawing.Text;
+using System.Drawing;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using iText.Layout.Element;
 
 namespace entrypoint.PROCESSES.Admin
 {
@@ -48,13 +50,19 @@ namespace entrypoint.PROCESSES.Admin
         public void AddViewMoreButtonColumn(DataGridView dgv)
         {
 
-            DataGridViewButtonColumn viewMoreButton = new DataGridViewButtonColumn
-            {
-                HeaderText = "Action",
-                Text = "View More",
-                UseColumnTextForButtonValue = true
-            };
-            dgv.Columns.Add(viewMoreButton);
+         
+            DataGridViewButtonColumn viewMoreButton = new DataGridViewButtonColumn();
+            viewMoreButton.HeaderText = "Action";
+            viewMoreButton.Name = "viewMoreButton";
+            viewMoreButton.Text = "View More";
+            viewMoreButton.UseColumnTextForButtonValue = true;
+
+            viewMoreButton.FlatStyle = FlatStyle.Flat;
+            viewMoreButton.DefaultCellStyle.BackColor = Color.Red;
+            viewMoreButton.DefaultCellStyle.ForeColor = Color.White;
+
+            dg.Columns.Add(viewMoreButton);
+
 
         }
 
@@ -93,11 +101,10 @@ public void executequeries(string sort, List<string> status, String search)
                 conditions.Add($"(last_name LIKE '%{search}%' OR first_name LIKE '%{search}%')");
             }
             List<string> filterConditions = new List<string>();
-            if (status.Contains("Admitted")) filterConditions.Add("admission_status = 'Admitted'");
-            if (status.Contains("Rejected")) filterConditions.Add("admission_status = 'Rejected'");
-            if (status.Contains("Not Ready")) filterConditions.Add("admission_status = 'Not Ready'");
-            if (status.Contains("Ready for Review")) filterConditions.Add("admission_status = 'Ready for Review'");
-
+            if (status.Contains("approved")) filterConditions.Add("application_status = 'approved'");
+            if (status.Contains("rejected")) filterConditions.Add("application_status = 'rejected'");
+            if (status.Contains("pending")) filterConditions.Add("application_status = 'pending'");
+      
             if (filterConditions.Count > 0)
             {
                 conditions.Add("(" + string.Join(" OR ", filterConditions) + ")");

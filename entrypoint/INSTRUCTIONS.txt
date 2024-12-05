@@ -1,0 +1,4 @@
+﻿Import the bacpac file in SSMS (data-tier)
+Update the Data Connection in left side of Visual Studio, modify and change the server and name based on your server and name the bacpac file is saved.
+Access DBConnection.cs file change the string
+For Simulation access the TimePeriods.cs file, and change the dates especially the current_date to simulate

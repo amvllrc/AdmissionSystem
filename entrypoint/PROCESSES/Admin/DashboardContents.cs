@@ -10,17 +10,11 @@ namespace entrypoint.PROCESSES.Admin
 {
     public class DashboardContents
  {
-        //valueApprovedApplicants.Text = dc.GetApprovedApp();
-        //    valueNumCourses.Text = dc.GetNumCourse();
-        //    valuePendingApplicants.Text = dc.GetPendingApp(); 
-        //    valueRejectedApplicants.Text = dc.GetRejectApp();
-        //    valueTotalApplicants.Text = dc.GetTotalApp();
-        //    valueTotalUsers.Text = dc.GetTotalUse();
 
         public int GetApprovedApp()
         {
             int count = 0;
-            string query = "SELECT COUNT(*) FROM application WHERE admission_status = 'Admitted'";
+            string query = "SELECT COUNT(*) FROM application WHERE application_status = 'approved'";
 
             try
             {
@@ -66,7 +60,7 @@ namespace entrypoint.PROCESSES.Admin
         public int GetPendingApp()
         {
             int count = 0;
-            string query = "SELECT COUNT(*) FROM application WHERE admission_status = 'Ready for Review'";
+            string query = "SELECT COUNT(*) FROM application WHERE application_status = 'pending'";
 
             try
             {
@@ -89,7 +83,7 @@ namespace entrypoint.PROCESSES.Admin
         {
 
             int count = 0;
-            string query = "SELECT COUNT(*) FROM application WHERE admission_status = 'Rejected'";
+            string query = "SELECT COUNT(*) FROM application WHERE application_status = 'rejected'";
 
             try
             {
@@ -155,6 +149,76 @@ namespace entrypoint.PROCESSES.Admin
             return count;
         }
 
+        public int GetTotalAddmitted()
+        {
 
+            int count = 0;
+            string query = "SELECT COUNT(*) FROM application WHERE admission_status = 'Admitted'";
+
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(DBConnection.connectionString))
+                {
+                    conn.Open();
+                    using (SqlCommand cmd = new SqlCommand(query, conn))
+                    {
+                        count = (int)cmd.ExecuteScalar();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            return count;
+        }
+
+        public int GetTotalRejected()
+        {
+
+            int count = 0;
+            string query = "SELECT COUNT(*) FROM application WHERE admission_status = 'Rejected'";
+
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(DBConnection.connectionString))
+                {
+                    conn.Open();
+                    using (SqlCommand cmd = new SqlCommand(query, conn))
+                    {
+                        count = (int)cmd.ExecuteScalar();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            return count;
+        }
+
+        public int GetTotalPending()
+        {
+
+            int count = 0;
+            string query = "SELECT COUNT(*) FROM application WHERE admission_status = 'Ready for Review'";
+
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(DBConnection.connectionString))
+                {
+                    conn.Open();
+                    using (SqlCommand cmd = new SqlCommand(query, conn))
+                    {
+                        count = (int)cmd.ExecuteScalar();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            return count;
+        }
     }
 }

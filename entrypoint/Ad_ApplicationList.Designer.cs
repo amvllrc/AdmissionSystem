@@ -84,7 +84,7 @@
             this.appListDataGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.appListDataGrid.BackgroundColor = System.Drawing.Color.White;
             this.appListDataGrid.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
@@ -115,6 +115,7 @@
             this.appListDataGrid.Size = new System.Drawing.Size(661, 425);
             this.appListDataGrid.TabIndex = 26;
             this.appListDataGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.appListDataGrid_CellContentClick);
+            this.appListDataGrid.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.appListDataGrid_CellFormatting);
             // 
             // appListSort
             // 

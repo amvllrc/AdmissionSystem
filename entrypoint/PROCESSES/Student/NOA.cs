@@ -12,16 +12,15 @@ namespace entrypoint.PROCESSES.Student
     {
         public void getStudentNOA()
         {
-            string firstName = "", lastName = "", middleName = "";
-            string query = "SELECT first_name, last_name, middle_name FROM application WHERE application_id = @applicationId";
+            string firstName = "", lastName = "", middleName = "",programchoice1="",programchoice2="";
+            string query = "SELECT first_name, last_name, middle_name,program_choice_1,program_choice_2 FROM application WHERE application_id = @applicationId";
 
             try
             {
-                // Fetching student details from the database
                 using (SqlConnection conn = new SqlConnection(DBConnection.connectionString))
                 using (SqlCommand cmd = new SqlCommand(query, conn))
                 {
-                    cmd.Parameters.AddWithValue("@applicationId", 11); // Adjust this to fetch the correct application ID
+                    cmd.Parameters.AddWithValue("@applicationId", UserSession.ApplicationId); 
 
                     conn.Open();
                     SqlDataReader reader = cmd.ExecuteReader();
@@ -30,6 +29,8 @@ namespace entrypoint.PROCESSES.Student
                         firstName = reader["first_name"].ToString();
                         lastName = reader["last_name"].ToString();
                         middleName = reader["middle_name"].ToString();
+                        //programchoice1 = reader["program_choice_1"].ToString();
+                        //programchoice2 = reader["program_choice_2"].ToString();
                     }
                     reader.Close();
                 }
@@ -42,48 +43,83 @@ namespace entrypoint.PROCESSES.Student
 
                 string filePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), $"{lastName}_{firstName}_Admission_Notice.pdf");
 
-                // Creating the PDF document with iTextSharp
                 try
                 {
                     using (FileStream fs = new FileStream(filePath, FileMode.Create))
                     using (Document document = new Document())
                     {
-                        PdfWriter.GetInstance(document, fs);
+                        PdfWriter writer = PdfWriter.GetInstance(document, fs);
 
                         document.Open();
+                        string startupPath = Application.StartupPath;
+                        string projectRootPath = Path.GetFullPath(Path.Combine(startupPath, @"..\..\.."));
 
-                        // Set fonts
+                        string logoPathLeft = Path.Combine(projectRootPath, "Images", "logoContainer.png"); 
+                        string logoPathRight = Path.Combine(projectRootPath, "Images", "makati_logo.png");
+
+                        Image logoLeft = Image.GetInstance(logoPathLeft);
+                        logoLeft.ScaleToFit(80f, 80f); // Scale the logo to a smaller size
+                        logoLeft.SetAbsolutePosition(70f, document.PageSize.Height - 120f); // Position the left logo at the top left corner
+                        document.Add(logoLeft);
+
+                        Image logoRight = Image.GetInstance(logoPathRight);
+                        logoRight.ScaleToFit(80f, 80f); // Scale the logo to a smaller size
+                        logoRight.SetAbsolutePosition(document.PageSize.Width - 140f, document.PageSize.Height - 120f); // Position the right logo at the top right corner
+                        document.Add(logoRight);
+
                         Font fontBold = FontFactory.GetFont(FontFactory.HELVETICA_BOLD, 20);
+                        Font fontNorma = FontFactory.GetFont(FontFactory.HELVETICA_BOLD, 12);
                         Font fontNormal = FontFactory.GetFont(FontFactory.HELVETICA, 12);
-
-                        // Set font for underlined name
                         Font fontUnderline = FontFactory.GetFont(FontFactory.HELVETICA_BOLD, 12, Font.UNDERLINE);
-
-                        // Capitalize initials and make name underlined
                         string fullName = $"{firstName.ToUpper()} {middleName.ToUpper()} {lastName.ToUpper()}";
 
-                        // Add the Title
-                        Paragraph title = new Paragraph("Notice of Admission", fontBold)
+                        Paragraph title = new Paragraph("LAND OF DAWN UNIVERSITY", fontBold)
                         {
                             Alignment = Element.ALIGN_CENTER
                         };
                         document.Add(title);
-
-                        // Add the congratulatory message with underlined name
-                        Paragraph greeting = new Paragraph($"Dear {fullName},", fontUnderline)
+                        Paragraph subtitle = new Paragraph("ADMISSION DEPARTMENT", fontNormal)
+                        {
+                            Alignment = Element.ALIGN_CENTER
+                        };
+                        document.Add(subtitle);
+                        Paragraph content0 = new Paragraph("NOTICE OF ADMISSION", fontNorma)
+                        {
+                            Alignment = Element.ALIGN_CENTER
+                        };
+                        document.Add(content0);
+                        Paragraph content = new Paragraph("Academic Year 2024-2025", fontNormal)
+                        {
+                            Alignment = Element.ALIGN_CENTER
+                        };
+                        document.Add(content);
+                        Paragraph greeting = new Paragraph($"\n\nDear {fullName},", fontUnderline)
                         {
                             Alignment = Element.ALIGN_LEFT
                         };
                         document.Add(greeting);
 
-                        // Add the congratulatory message
+                        // Heartwarming message and enrollment announcement
                         Paragraph message = new Paragraph("\nCongratulations! We are pleased to inform you that you have been successfully admitted to our University.", fontNormal)
                         {
                             Alignment = Element.ALIGN_LEFT
                         };
                         document.Add(message);
 
-                        // Add further instructions
+                        // Add wait for enrollment announcement message
+                        Paragraph waitMessage = new Paragraph("\nPlease wait for the official announcement regarding enrollment and further instructions.", fontNormal)
+                        {
+                            Alignment = Element.ALIGN_LEFT
+                        };
+                        document.Add(waitMessage);
+
+                        // Add more heartwarming messages
+                        Paragraph warmMessage = new Paragraph("\nWe are excited to welcome you to our community. Your hard work and dedication have paid off, and we look forward to seeing you on campus soon!", fontNormal)
+                        {
+                            Alignment = Element.ALIGN_LEFT
+                        };
+                        document.Add(warmMessage);
+
                         Paragraph instructions = new Paragraph("\nPlease visit the campus for further instructions. We look forward to having you with us.", fontNormal)
                         {
                             Alignment = Element.ALIGN_LEFT
@@ -105,10 +141,8 @@ namespace entrypoint.PROCESSES.Student
                         document.Close();
                     }
 
-                    // Inform the user that the PDF was created successfully
                     MessageBox.Show($"Admission notice generated successfully! Check the file at: {filePath}", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                    // Open the PDF automatically in the default viewer (browser or PDF reader)
                     Process.Start(filePath);
                 }
                 catch (Exception ex)

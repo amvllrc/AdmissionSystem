@@ -1,4 +1,5 @@
-﻿using System;
+﻿using entrypoint.PROCESSES.Student;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -27,6 +28,18 @@ namespace entrypoint
         {
             btnHomepage.FlatStyle = FlatStyle.Flat;
             btnHomepage.FlatAppearance.BorderSize = 0;
+
+            // Format the dates with full month name, day, and year
+            label3.Text += "\n" +
+                TimePeriods.ApplicationPeriodStart.ToString("MMMM dd") + // Full month name
+                " - " +
+                TimePeriods.ApplicationPeriodEnd.ToString("MMMM dd");  // Full month name
+
+            // Similarly, update label4
+            label4.Text += "\n" +
+                TimePeriods.ExamPeriodStart.ToString("MMMM dd") + // Full month name
+                " - " +
+                TimePeriods.ExamPeriodEnd.ToString("MMMM dd");  // Full month name
         }
 
         private void btnHomepage_Click(object sender, EventArgs e)

@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Globalization;
-
+using System.Drawing;
 namespace entrypoint.PROCESSES.Admin
 {
     public class QueryPayment
@@ -54,14 +54,18 @@ p.application_id as ApplicationId,
 
         public void AddViewMoreButtonColumn(DataGridView dg)
         {
-            // Create a new DataGridViewButtonColumn
-            DataGridViewButtonColumn viewMoreButton = new DataGridViewButtonColumn
-            {
-                HeaderText = "Action",
-                Text = "View More",
-                UseColumnTextForButtonValue = true
-            };
-            dg.Columns.Insert(dg.Columns.Count, viewMoreButton);
+            DataGridViewButtonColumn viewMoreButton = new DataGridViewButtonColumn();
+            viewMoreButton.HeaderText = "Action";
+            viewMoreButton.Name = "viewMoreButton";
+            viewMoreButton.Text = "View More";
+            viewMoreButton.UseColumnTextForButtonValue = true;
+
+            viewMoreButton.FlatStyle = FlatStyle.Flat;
+            viewMoreButton.DefaultCellStyle.BackColor = Color.Red;
+            viewMoreButton.DefaultCellStyle.ForeColor = Color.White;
+
+            dg.Columns.Add(viewMoreButton);
+
         }
 
         public String getItemCbo(ComboBox cbo)

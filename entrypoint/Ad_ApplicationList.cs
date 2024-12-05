@@ -118,5 +118,14 @@ namespace entrypoint
             FetchData(sort, filters, search);
 
         }
+
+        private void appListDataGrid_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (appListDataGrid.Columns[e.ColumnIndex].Name == "viewMoreButton")
+            {
+                e.CellStyle.BackColor = Color.Yellow;
+                e.CellStyle.ForeColor = Color.Black;
+            }
+        }
     }
 }

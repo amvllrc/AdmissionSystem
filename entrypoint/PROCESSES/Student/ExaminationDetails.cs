@@ -9,6 +9,7 @@ using System.Windows.Forms;
 using static System.Net.Mime.MediaTypeNames;
 using System.Net.NetworkInformation;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using entrypoint.PROCESSES.Student;
 
 namespace entrypoint.PROCESSES.Student_application
 {
@@ -59,44 +60,48 @@ namespace entrypoint.PROCESSES.Student_application
             }
         }
 
-        public void insertExaminfo(int mathScore, int scienceScore, int englishScore)
+        public bool insertExaminfo(int mathScore, int scienceScore, int englishScore)
         {
             using (SqlConnection conn = new SqlConnection(DBConnection.connectionString))
+            {
+                try
                 {
-                    try
-                    {
                     conn.Open();
-                        string query = "INSERT INTO exam (application_id, scoremath, scoreenglish, scorescience) " +
-                                       "VALUES (@application_id, @scoremath, @scoreenglish, @scorescience)";
 
+                    double averageScore = (mathScore + scienceScore + englishScore) / 3.0;
 
-                        using (SqlCommand cmd = new SqlCommand(query, conn))
-                        {
-                            cmd.Parameters.AddWithValue("@application_id", UserSession.ApplicationId);
-                            cmd.Parameters.AddWithValue("@scoremath", mathScore);
-                            cmd.Parameters.AddWithValue("@scoreenglish", englishScore);
+                    string query = "INSERT INTO exam (application_id, scoremath, scoreenglish, scorescience, taken_at, AverageScore) " +
+                                   "VALUES (@application_id, @scoremath, @scoreenglish, @scorescience, @currentdate, @ave)";
+                    using (SqlCommand cmd = new SqlCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@application_id", UserSession.ApplicationId);
+                        cmd.Parameters.AddWithValue("@scoremath", mathScore);
+                        cmd.Parameters.AddWithValue("@scoreenglish", englishScore);
                         cmd.Parameters.AddWithValue("@scorescience", scienceScore);
+                        cmd.Parameters.AddWithValue("@currentdate", TimePeriods.CurrentDate);
+                        cmd.Parameters.AddWithValue("@ave", averageScore); 
 
-                            int num=cmd.ExecuteNonQuery();
+                        int num = cmd.ExecuteNonQuery();
                         if (num > 0)
                         {
-                            MessageBox.Show("Congratulations! You have Completed the exam!\nJust wait for your approval");
+                            MessageBox.Show("Congratulations! You have completed the exam!\nJust wait for the evaluation of your score.");
                             updateappstatus();
-                            
-
+                            return true; 
                         }
                         else
                         {
                             MessageBox.Show("Failed to insert exam data.");
+                            return false; 
                         }
                     }
-                    }
-                    catch (Exception ex)
-                    {
-                        Console.WriteLine("Error: " + ex.Message);
-                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error: " + ex.Message, "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return false; 
                 }
             }
+        }
 
         private void updateappstatus()
         {
@@ -156,7 +161,7 @@ namespace entrypoint.PROCESSES.Student_application
                                 {
                                     control.Enabled = false;
                                 }
-                                MessageBox.Show("You have already taken this examination. Wait for Approval", "Access Denied", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                MessageBox.Show("You have already taken this examination. Cannot proceed with this form", "Access Denied", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
                             }
 

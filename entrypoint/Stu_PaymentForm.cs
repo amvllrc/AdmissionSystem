@@ -1,4 +1,5 @@
 ﻿using entrypoint.PROCESSES;
+using entrypoint.PROCESSES.Student;
 using entrypoint.PROCESSES.Student_application;
 using System;
 using System.Collections.Generic;
@@ -89,16 +90,23 @@ namespace entrypoint
             }
             if (p.validatePayment(txtAccountHolderName, txtCellphoneNum, txtReferenceNum, cbDateOfExam, picPreviewImg))
             {
-                MessageBox.Show("Success");
-                p.insertPayment(txtAccountHolderName.Text, txtCellphoneNum.Text, txtReferenceNum.Text, selectedDate,Filepath,FileName);
-                foreach (Control control in panel3.Controls)
+                DialogResult result = MessageBox.Show(
+                    "Please make sure to check all your payment details before clicking OK to submit.",
+                    "Confirmation",
+                    MessageBoxButtons.OKCancel,
+                    MessageBoxIcon.Warning);
+                if (result == DialogResult.OK)
                 {
-                    control.Enabled = false;  // Disable all controls
+                   
+
+                    p.insertPayment(txtAccountHolderName.Text, txtCellphoneNum.Text, txtReferenceNum.Text, selectedDate, Filepath, FileName);
+                    foreach (Control control in panel3.Controls)
+                    {
+                        control.Enabled = false;
+                    }
                 }
-
-                //ProcessTracker.UpdateStatus("payment_status","Done");
-
             }
+
             else
             {
                 MessageBox.Show("Please fill all necessary fields");

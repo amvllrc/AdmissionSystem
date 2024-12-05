@@ -1,7 +1,9 @@
 ﻿using entrypoint.PROCESSES;
+using entrypoint.PROCESSES.Admin;
 using entrypoint.PROCESSES.Student;
 using entrypoint.PROCESSES.Student_application;
 using System;
+using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
@@ -12,6 +14,7 @@ namespace entrypoint
     { 
     private Stu_Status stats;
         private ProcessTracker tracker;
+        private Notification notification;
         public Stu_AdmissionStatus()
         {
             InitializeComponent();
@@ -19,6 +22,7 @@ namespace entrypoint
             btnExamination.Enabled = false;
             stats= new Stu_Status();
             tracker= new ProcessTracker();
+            notification= new Notification();
         }
 
     
@@ -40,27 +44,28 @@ namespace entrypoint
         
         public void pictureBox1_Click(object sender, EventArgs e)
         {
+            UserSession.ApplicationId = 0;
+            UserSession.NAME = "";
+            UserSession.ROLE = "";
+            UserSession.ID = 0;
             Application.Exit();
+            
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
 
             tracker.validatethisbutton();
-            if (tracker.displayNOA())
-            {
-                Stu_NOA noa= new Stu_NOA();
-                noa.ShowDialog();
-            }
+           
             btnAdmissionStatus.BackColor = Color.Gold;
             ShowPanel(new Stu_Status());
 
 
-            if (tracker.getStatus()=="approved")
+            if (tracker.getStatus()=="approved"&&TimePeriods.CurrentDate>=TimePeriods.PaymentPeriodStart)
            {
    enableControls();
             }
-            if (tracker.getStatus2()=="paid")
+            if (tracker.getStatus2()=="paid"&&TimePeriods.CurrentDate>=TimePeriods.ExamPeriodStart&&TimePeriods.CurrentDate==tracker.getExamDate()&&TimePeriods.CurrentDate<=TimePeriods.ExamPeriodEnd)
             {
                 enableControls1();
             }
@@ -84,7 +89,7 @@ namespace entrypoint
             
         }
 
-        public void enableControls1()
+        public void enableControls1()//
         {
 
             pictureBox3.Visible = false;
@@ -134,7 +139,6 @@ namespace entrypoint
           
             StudentChangeIconColor imageUpdater = new StudentChangeIconColor();
 
-            // Use the instance method to update the images
             imageUpdater.UpdateButtonImages(
                 picIconApplication, picIconAdmission, picIconPay, picIconExamination,
                 "AppListWhite.png", "application(White).png", "iconpayment(Black).png", "exams(White).png"
@@ -165,9 +169,19 @@ namespace entrypoint
 
         private void picLogout_Click(object sender, EventArgs e)
         {
+           
             Homepage Homepage = new Homepage();
             Homepage.Show();
-            this.Hide();
+            Stu_ApplicationForm form = new Stu_ApplicationForm(this);
+            Stu_PaymentForm form2 = new Stu_PaymentForm();
+            Stu_Examination form3= new Stu_Examination();
+            form.Close();
+            form2.Close();
+            form3.Close();
+            this.Close();
+            
+
+       
             UserSession.ROLE = "";
             UserSession.NAME = "";
             UserSession.ID = 0;
@@ -178,6 +192,78 @@ namespace entrypoint
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             // Handle DataGridView cell content click here (if needed)
+        }
+
+        private void Stu_AdmissionStatus_Shown(object sender, EventArgs e)
+        {
+            if (tracker.displayNOA()=="Admitted"&&!notification.isadmitShown())
+            {
+                Stu_NOA noa = new Stu_NOA();
+                noa.ShowDialog();
+                notification.updateBit("admitted", 1);
+            }
+            else if (tracker.displayNOA() == "Rejected"&&!notification.isrejectedShown())
+            {
+                MessageBox.Show(
+                    "We understand that this news may be disappointing, but remember, this is not the end of your journey. " +
+                    "We believe in your potential, and there are many other opportunities ahead. " +
+                    "Keep striving, stay positive, and we wish you all the best in your future endeavors. " +
+                    "Your hard work and determination will lead you to success. Don't give up, your time will come!",
+                    "Admission Status",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information
+                );
+                notification.updateBit("rejected", 1);
+            }
+            else if (notification.isRejectedShown())
+            {
+                MessageBox.Show("You are already rejected. Redirecting to homepage");
+                this.Close();
+                UserSession.ApplicationId = 0;
+                UserSession.NAME = "";
+                UserSession.ROLE = "";
+                UserSession.ID = 0;
+                Homepage homepage = new Homepage();
+                homepage.Show();
+            }
+
+            if (notification.isRejPaymentShown()&&tracker.getStatus()=="approved")
+            {
+                MessageBox.Show("You are already rejected due to rejection of payment. Redirecting to homepage");
+                this.Close();
+                UserSession.ApplicationId = 0;
+                UserSession.NAME = "";
+                UserSession.ROLE = "";
+                UserSession.ID = 0;
+                Homepage homepage = new Homepage();
+                homepage.Show();
+            }
+            if(notification.isrejectedShown())
+            {
+                MessageBox.Show("You are already rejected. Redirecting to homepage");
+                this.Close();
+                UserSession.ApplicationId = 0;
+                UserSession.NAME = "";
+                UserSession.ROLE = "";
+                UserSession.ID = 0;
+                Homepage homepage = new Homepage();
+                homepage.Show();
+            }
+
+            //if (notification.isexammShown())
+            //{
+            //    MessageBox.Show("You are already rejected due to missed exam. Redirecting to homepage");
+            //    this.Close();
+            //    UserSession.ApplicationId = 0;
+            //    UserSession.NAME = "";
+            //    UserSession.ROLE = "";
+            //    UserSession.ID = 0;
+            //    Homepage homepage = new Homepage();
+            //    homepage.Show();
+            //}
+
+
+
         }
     }
 }

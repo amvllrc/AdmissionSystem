@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Org.BouncyCastle.Utilities;
+using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Deployment.Application;
@@ -6,39 +7,87 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace entrypoint.PROCESSES.System_Processes
 {
     public class AutomaticRejectAppStudent
     {
-        public void AutomaticReject(String reason)
+        public void RejectAll()
         {
-            string query = "UPDATE application " +
-                  "SET admission_status = 'Rejected' " +
-                  "WHERE user_id = @userid;";
+            string query3 = "UPDATE application SET admission_status = 'Rejected'  WHERE application_id=@Id";
+
             using (SqlConnection conn = new SqlConnection(DBConnection.connectionString))
             {
                 try
                 {
                     conn.Open();
-                    using (SqlCommand cmd = new SqlCommand(query, conn))
+
+                    using (SqlTransaction transaction = conn.BeginTransaction())
                     {
-                        cmd.Parameters.AddWithValue("@userid", UserSession.ID);
-                        int rowsAffected = cmd.ExecuteNonQuery();
-                        if (rowsAffected > 0)
+                        try
                         {
-                            MessageBox.Show("You have been automatically Rejected due to failure "+reason);
+                          
+                            using (SqlCommand cmd3 = new SqlCommand(query3, conn, transaction))
+                            {
+                                cmd3.Parameters.AddWithValue("@Id", UserSession.ApplicationId);
+
+                                cmd3.ExecuteNonQuery();
+                            }
+
+                            transaction.Commit();
+
+                 
                         }
-                        else
+                        catch (Exception ex)
                         {
-                            MessageBox.Show("No records found for the specified user.");
+                            transaction.Rollback();
+                            MessageBox.Show("Error rejecting applications and payments: " + ex.Message);
                         }
                     }
                 }
                 catch (Exception ex)
                 {
-                    // Handle any errors that occur during the database operation
-                    MessageBox.Show("An error occurred: " + ex.Message);
+                    MessageBox.Show("Error connecting to the database: " + ex.Message);
+                }
+            }
+        }
+        public void RejectAdmission()
+        {
+            string query3 = "UPDATE application SET admission_status = 'Rejected'  WHERE application_id=@Id";
+
+            using (SqlConnection conn = new SqlConnection(DBConnection.connectionString))
+            {
+                try
+                {
+                    conn.Open();
+
+                    using (SqlTransaction transaction = conn.BeginTransaction())
+                    {
+                        try
+                        {
+
+                            using (SqlCommand cmd3 = new SqlCommand(query3, conn, transaction))
+                            {
+                                cmd3.Parameters.AddWithValue("@Id", UserSession.ApplicationId);
+
+                                cmd3.ExecuteNonQuery();
+                            }
+
+                            transaction.Commit();
+
+
+                        }
+                        catch (Exception ex)
+                        {
+                            transaction.Rollback();
+                            MessageBox.Show("Error rejecting application automatically: " + ex.Message);
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error connecting to the database: " + ex.Message);
                 }
             }
         }
