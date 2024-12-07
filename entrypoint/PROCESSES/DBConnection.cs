@@ -11,7 +11,7 @@ namespace entrypoint.PROCESSES
     public static class DBConnection
     {
 
-      public static String connectionString = "Data Source=LAPTOP-O710BOPT\\SQLEXPRESS;Initial Catalog=admission_system;Integrated Security=True;Encrypt=True;TrustServerCertificate=True";
+      public static String connectionString = "Data Source=LAPTOP-MSQJ0130\\SQLEXPRESS;Initial Catalog=admission_system;Integrated Security=True;Encrypt=True;TrustServerCertificate=True";
        
     }
 }

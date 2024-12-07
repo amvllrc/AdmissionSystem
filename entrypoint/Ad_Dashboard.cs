@@ -28,34 +28,125 @@ namespace entrypoint
 
         private void Form1_Load(object sender, EventArgs e)
         {
-           
-            ShowPanel(new frmDashburd());
+            // ...
             btnDashboard.FlatStyle = FlatStyle.Flat;
             btnDashboard.FlatAppearance.BorderSize = 0;
-            btnCourseMan.FlatStyle = FlatStyle.Flat;
-            btnCourseMan.FlatAppearance.BorderSize = 0;
+            btnDashboard.FlatAppearance.MouseDownBackColor = Color.DarkGoldenrod;
+            btnDashboard.FlatAppearance.MouseOverBackColor = Color.Gold;
+
             btnAppList.FlatStyle = FlatStyle.Flat;
             btnAppList.FlatAppearance.BorderSize = 0;
+            btnAppList.FlatAppearance.MouseDownBackColor = Color.DarkGoldenrod;
+            btnAppList.FlatAppearance.MouseOverBackColor = Color.Gold;
+
             btnPaymentList.FlatStyle = FlatStyle.Flat;
             btnPaymentList.FlatAppearance.BorderSize = 0;
+            btnPaymentList.FlatAppearance.MouseDownBackColor = Color.DarkGoldenrod;
+            btnPaymentList.FlatAppearance.MouseOverBackColor = Color.Gold;
+
+            btnAdList.FlatStyle = FlatStyle.Flat;
+            btnAdList.FlatAppearance.BorderSize = 0;
+            btnAdList.FlatAppearance.MouseDownBackColor = Color.DarkGoldenrod;
+            btnAdList.FlatAppearance.MouseOverBackColor = Color.Gold;
+
+            // Set the default active color to darkgoldenrod for btnDashboard
+            btnDashboard.FlatAppearance.MouseDownBackColor = Color.DarkGoldenrod;
+            btnDashboard.FlatAppearance.MouseOverBackColor = Color.DarkGoldenrod;
+            btnDashboard.BackColor = Color.DarkGoldenrod;
+            pictureBox10.BackColor = Color.DarkGoldenrod;
+
+            ShowPanel(new frmDashburd());
         }
 
-        public void btnCourseMan_Click(object sender, EventArgs e)
+        public void btnDashboard_MouseLeave(object sender, EventArgs e)
         {
-            ShowPanel(new Ad_CourseManagement());
+            if (btnDashboard != activeButton)
+            {
+                btnDashboard.BackColor = Color.Transparent;
+            }
+        }
+
+        public void btnAppList_MouseLeave(object sender, EventArgs e)
+        {
+            if (btnAppList != activeButton)
+            {
+                btnAppList.BackColor = Color.Transparent;
+            }
+        }
+
+        public void btnPaymentList_MouseLeave(object sender, EventArgs e)
+        {
+            if (btnPaymentList != activeButton)
+            {
+                btnPaymentList.BackColor = Color.Transparent;
+            }
+        }
+
+        public void btnAdList_MouseLeave(object sender, EventArgs e)
+        {
+            if (btnAdList != activeButton)
+            {
+                btnAdList.BackColor = Color.Transparent;
+            }
+        }
+
+        public Button activeButton;
+
+        public void btnDashboard_Click(object sender, EventArgs e)
+        {
+            activeButton = btnDashboard;
+            ShowPanel(new frmDashburd());
+            ResetButtonColors();
+            btnDashboard.BackColor = Color.DarkGoldenrod;
+
+            pictureBox10.BackColor = Color.DarkGoldenrod;
         }
 
         public void btnAppList_Click(object sender, EventArgs e)
         {
+            activeButton = btnAppList;
             ShowPanel(new ApplicationList());
+            ResetButtonColors();
+            btnAppList.BackColor = Color.DarkGoldenrod;
+
+            pictureBox11.BackColor = Color.DarkGoldenrod;
         }
 
         public void btnPaymentList_Click(object sender, EventArgs e)
         {
+            activeButton = btnPaymentList;
             ShowPanel(new Ad_PaymentList());
+            ResetButtonColors();
+            btnPaymentList.BackColor = Color.DarkGoldenrod;
+
+            pictureBox12.BackColor = Color.DarkGoldenrod;
         }
 
-        private void btnLogout_Click(object sender, EventArgs e)
+        public void btnAdList_Click(object sender, EventArgs e)
+        {
+            activeButton = btnAdList;
+            ShowPanel(new Ad_FinalList());
+            ResetButtonColors();
+            btnAdList.BackColor = Color.DarkGoldenrod;
+
+            pictureBox13.BackColor = Color.DarkGoldenrod;
+        }
+
+        public void ResetButtonColors()
+        {
+            btnDashboard.BackColor = Color.Transparent;
+            btnAppList.BackColor = Color.Transparent;
+            btnPaymentList.BackColor = Color.Transparent;
+            btnAdList.BackColor = Color.Transparent;
+
+            pictureBox10.BackColor = Color.Transparent;
+            pictureBox11.BackColor = Color.Transparent;
+            pictureBox12.BackColor = Color.Transparent;
+            pictureBox13.BackColor = Color.Transparent;
+        }
+
+
+        public void btnLogout_Click(object sender, EventArgs e)
         {
             DialogResult result = MessageBox.Show("Are you sure you want to log out?",
                                           "Confirm Logout",
@@ -72,22 +163,13 @@ namespace entrypoint
                 UserSession.ID = 0;
             }
         }
-        private void ShowPanel(Form form)
+        public void ShowPanel(Form form)
         {
             panel9.Controls.Clear();
             form.TopLevel = false;
             form.Dock = DockStyle.Fill;
             panel9.Controls.Add(form);
             form.Show();
-        }
-        private void btnDashboard_Click(object sender, EventArgs e)
-        {
-            ShowPanel(new frmDashburd());
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            ShowPanel(new Ad_FinalList());
         }
     }
 }

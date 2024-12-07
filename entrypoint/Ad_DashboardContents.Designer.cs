@@ -30,6 +30,9 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDashburd));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label7 = new System.Windows.Forms.Label();
+            this.lblnotif = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
             this.panel10 = new System.Windows.Forms.Panel();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -47,10 +50,6 @@
             this.pictureBox11 = new System.Windows.Forms.PictureBox();
             this.lblPendingApplicants = new System.Windows.Forms.Label();
             this.valuePendingApplicants = new System.Windows.Forms.Label();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.lblNoCourses = new System.Windows.Forms.Label();
-            this.valueNumCourses = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.lblRejectedApplicants = new System.Windows.Forms.Label();
@@ -67,9 +66,6 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblTotalUsers = new System.Windows.Forms.Label();
             this.valueTotalUsers = new System.Windows.Forms.Label();
-            this.label21 = new System.Windows.Forms.Label();
-            this.lblnotif = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel10.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
@@ -79,8 +75,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
-            this.panel5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             this.panel8.SuspendLayout();
@@ -101,24 +95,54 @@
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.adminwelcome);
             this.panel1.Controls.Add(this.panel6);
-            this.panel1.Controls.Add(this.panel5);
             this.panel1.Controls.Add(this.panel7);
             this.panel1.Controls.Add(this.panel8);
             this.panel1.Controls.Add(this.panel4);
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(802, 454);
+            this.panel1.Size = new System.Drawing.Size(750, 500);
             this.panel1.TabIndex = 0;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.LightGreen;
+            this.label7.Location = new System.Drawing.Point(50, 80);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(63, 13);
+            this.label7.TabIndex = 23;
+            this.label7.Text = "Placeholder";
+            // 
+            // lblnotif
+            // 
+            this.lblnotif.AutoSize = true;
+            this.lblnotif.BackColor = System.Drawing.Color.LightGreen;
+            this.lblnotif.Location = new System.Drawing.Point(50, 64);
+            this.lblnotif.Name = "lblnotif";
+            this.lblnotif.Size = new System.Drawing.Size(63, 13);
+            this.lblnotif.TabIndex = 22;
+            this.lblnotif.Text = "Placeholder";
+            // 
+            // label21
+            // 
+            this.label21.BackColor = System.Drawing.Color.LightGreen;
+            this.label21.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label21.Location = new System.Drawing.Point(42, 48);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(647, 56);
+            this.label21.TabIndex = 21;
+            this.label21.Text = "REMINDER";
+            // 
             // panel10
             // 
-            this.panel10.BackColor = System.Drawing.Color.SteelBlue;
+            this.panel10.BackColor = System.Drawing.Color.Goldenrod;
             this.panel10.Controls.Add(this.pictureBox8);
             this.panel10.Controls.Add(this.label5);
             this.panel10.Controls.Add(this.label6);
-            this.panel10.Location = new System.Drawing.Point(476, 319);
+            this.panel10.Location = new System.Drawing.Point(269, 311);
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(196, 89);
             this.panel10.TabIndex = 15;
@@ -157,11 +181,11 @@
             // 
             // panel9
             // 
-            this.panel9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.panel9.BackColor = System.Drawing.Color.OrangeRed;
             this.panel9.Controls.Add(this.pictureBox5);
             this.panel9.Controls.Add(this.label3);
             this.panel9.Controls.Add(this.label4);
-            this.panel9.Location = new System.Drawing.Point(269, 319);
+            this.panel9.Location = new System.Drawing.Point(62, 311);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(196, 89);
             this.panel9.TabIndex = 16;
@@ -200,11 +224,11 @@
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.ForestGreen;
+            this.panel2.BackColor = System.Drawing.Color.MediumSeaGreen;
             this.panel2.Controls.Add(this.pictureBox2);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.label2);
-            this.panel2.Location = new System.Drawing.Point(62, 319);
+            this.panel2.Location = new System.Drawing.Point(476, 213);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(196, 89);
             this.panel2.TabIndex = 18;
@@ -254,15 +278,14 @@
             // 
             // panel6
             // 
-            this.panel6.BackColor = System.Drawing.Color.Goldenrod;
+            this.panel6.BackColor = System.Drawing.Color.DarkGoldenrod;
             this.panel6.Controls.Add(this.pictureBox11);
             this.panel6.Controls.Add(this.lblPendingApplicants);
             this.panel6.Controls.Add(this.valuePendingApplicants);
-            this.panel6.Location = new System.Drawing.Point(476, 215);
+            this.panel6.Location = new System.Drawing.Point(269, 213);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(196, 89);
             this.panel6.TabIndex = 19;
-            this.panel6.Paint += new System.Windows.Forms.PaintEventHandler(this.panel6_Paint);
             this.panel6.DoubleClick += new System.EventHandler(this.panel6_DoubleClick);
             // 
             // pictureBox11
@@ -297,56 +320,13 @@
             this.valuePendingApplicants.TabIndex = 0;
             this.valuePendingApplicants.Text = "0";
             // 
-            // panel5
-            // 
-            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.panel5.Controls.Add(this.pictureBox4);
-            this.panel5.Controls.Add(this.lblNoCourses);
-            this.panel5.Controls.Add(this.valueNumCourses);
-            this.panel5.Location = new System.Drawing.Point(476, 115);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(196, 89);
-            this.panel5.TabIndex = 16;
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(139, 13);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(38, 33);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox4.TabIndex = 2;
-            this.pictureBox4.TabStop = false;
-            // 
-            // lblNoCourses
-            // 
-            this.lblNoCourses.AutoSize = true;
-            this.lblNoCourses.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNoCourses.ForeColor = System.Drawing.Color.White;
-            this.lblNoCourses.Location = new System.Drawing.Point(11, 52);
-            this.lblNoCourses.Name = "lblNoCourses";
-            this.lblNoCourses.Size = new System.Drawing.Size(126, 17);
-            this.lblNoCourses.TabIndex = 1;
-            this.lblNoCourses.Text = "Number of Courses";
-            // 
-            // valueNumCourses
-            // 
-            this.valueNumCourses.AutoSize = true;
-            this.valueNumCourses.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.valueNumCourses.ForeColor = System.Drawing.Color.White;
-            this.valueNumCourses.Location = new System.Drawing.Point(11, 20);
-            this.valueNumCourses.Name = "valueNumCourses";
-            this.valueNumCourses.Size = new System.Drawing.Size(23, 25);
-            this.valueNumCourses.TabIndex = 0;
-            this.valueNumCourses.Text = "0";
-            // 
             // panel7
             // 
-            this.panel7.BackColor = System.Drawing.Color.Maroon;
+            this.panel7.BackColor = System.Drawing.Color.Firebrick;
             this.panel7.Controls.Add(this.pictureBox6);
             this.panel7.Controls.Add(this.lblRejectedApplicants);
             this.panel7.Controls.Add(this.valueRejectedApplicants);
-            this.panel7.Location = new System.Drawing.Point(269, 215);
+            this.panel7.Location = new System.Drawing.Point(62, 213);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(196, 89);
             this.panel7.TabIndex = 18;
@@ -389,7 +369,7 @@
             this.panel8.Controls.Add(this.pictureBox7);
             this.panel8.Controls.Add(this.lblApprovedApplicants);
             this.panel8.Controls.Add(this.valueApprovedApplicants);
-            this.panel8.Location = new System.Drawing.Point(62, 215);
+            this.panel8.Location = new System.Drawing.Point(476, 115);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(196, 89);
             this.panel8.TabIndex = 17;
@@ -428,7 +408,7 @@
             // 
             // panel4
             // 
-            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.panel4.BackColor = System.Drawing.Color.SteelBlue;
             this.panel4.Controls.Add(this.pictureBox3);
             this.panel4.Controls.Add(this.lblTotalApplicants);
             this.panel4.Controls.Add(this.valueTotalApplicants);
@@ -471,7 +451,7 @@
             // 
             // panel3
             // 
-            this.panel3.BackColor = System.Drawing.Color.SteelBlue;
+            this.panel3.BackColor = System.Drawing.Color.DodgerBlue;
             this.panel3.Controls.Add(this.pictureBox1);
             this.panel3.Controls.Add(this.lblTotalUsers);
             this.panel3.Controls.Add(this.valueTotalUsers);
@@ -512,42 +492,11 @@
             this.valueTotalUsers.TabIndex = 0;
             this.valueTotalUsers.Text = "0";
             // 
-            // label21
-            // 
-            this.label21.BackColor = System.Drawing.Color.LightGreen;
-            this.label21.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.Location = new System.Drawing.Point(39, 43);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(647, 56);
-            this.label21.TabIndex = 21;
-            this.label21.Text = "REMINDER";
-            // 
-            // lblnotif
-            // 
-            this.lblnotif.AutoSize = true;
-            this.lblnotif.BackColor = System.Drawing.Color.LightGreen;
-            this.lblnotif.Location = new System.Drawing.Point(50, 64);
-            this.lblnotif.Name = "lblnotif";
-            this.lblnotif.Size = new System.Drawing.Size(63, 13);
-            this.lblnotif.TabIndex = 22;
-            this.lblnotif.Text = "Placeholder";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.BackColor = System.Drawing.Color.LightGreen;
-            this.label7.Location = new System.Drawing.Point(50, 80);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(63, 13);
-            this.label7.TabIndex = 23;
-            this.label7.Text = "Placeholder";
-            // 
             // frmDashburd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(750, 500);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmDashburd";
@@ -568,9 +517,6 @@
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
-            this.panel5.ResumeLayout(false);
-            this.panel5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
@@ -595,10 +541,6 @@
         private System.Windows.Forms.PictureBox pictureBox11;
         private System.Windows.Forms.Label lblPendingApplicants;
         private System.Windows.Forms.Label valuePendingApplicants;
-        private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.PictureBox pictureBox4;
-        private System.Windows.Forms.Label lblNoCourses;
-        private System.Windows.Forms.Label valueNumCourses;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.PictureBox pictureBox6;
         private System.Windows.Forms.Label lblRejectedApplicants;

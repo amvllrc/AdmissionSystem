@@ -141,18 +141,6 @@
     <Compile Include="Ad_DashboardContents.Designer.cs">
       <DependentUpon>Ad_DashboardContents.cs</DependentUpon>
     </Compile>
-    <Compile Include="Ad_EditCourse.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Ad_EditCourse.Designer.cs">
-      <DependentUpon>Ad_EditCourse.cs</DependentUpon>
-    </Compile>
-    <Compile Include="AddCourse.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AddCourse.Designer.cs">
-      <DependentUpon>AddCourse.cs</DependentUpon>
-    </Compile>
     <Compile Include="Ad_FinalList.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -219,12 +207,6 @@
     </Compile>
     <Compile Include="Ad_Dashboard.Designer.cs">
       <DependentUpon>Ad_Dashboard.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Ad_CourseManagement.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Ad_CourseManagement.Designer.cs">
-      <DependentUpon>Ad_CourseManagement.cs</DependentUpon>
     </Compile>
     <Compile Include="Ad_ApplicationList.cs">
       <SubType>Form</SubType>
@@ -303,12 +285,6 @@
     <EmbeddedResource Include="Ad_DashboardContents.resx">
       <DependentUpon>Ad_DashboardContents.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Ad_EditCourse.resx">
-      <DependentUpon>Ad_EditCourse.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="AddCourse.resx">
-      <DependentUpon>AddCourse.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Ad_FinalList.resx">
       <DependentUpon>Ad_FinalList.cs</DependentUpon>
     </EmbeddedResource>
@@ -332,9 +308,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Ad_Dashboard.resx">
       <DependentUpon>Ad_Dashboard.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Ad_CourseManagement.resx">
-      <DependentUpon>Ad_CourseManagement.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Stu_Examination.resx">
       <DependentUpon>Stu_Examination.cs</DependentUpon>

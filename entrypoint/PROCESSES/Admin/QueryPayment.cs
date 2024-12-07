@@ -20,8 +20,8 @@ namespace entrypoint.PROCESSES.Admin
             string query = @"
     SELECT 
         p.paymentid AS PaymentID,
-p.application_id as ApplicationId,
-        CONCAT(a.last_name, ', ', a.first_name, ' ', a.middle_name) AS Name,
+        p.application_id as ApplicationId,
+        (COALESCE(a.last_name, '') + ', ' + COALESCE(a.first_name, '') + ' ' + COALESCE(a.middle_name, '')) AS Name,
         p.pay_at AS Payment_Date,
         p.reference_number AS 'Reference_Number',
         p.status AS Status
@@ -101,8 +101,8 @@ p.application_id as ApplicationId,
             string query = @"
     SELECT 
         p.paymentid AS PaymentID,
-p.application_id as ApplicationId,
-        CONCAT(a.last_name, ', ', a.first_name, ' ', a.middle_name) AS Name,
+        p.application_id as ApplicationId,
+        (COALESCE(a.last_name, '') + ', ' + COALESCE(a.first_name, '') + ' ' + COALESCE(a.middle_name, '')) AS Name,
         p.pay_at AS Payment_Date,
         p.reference_number AS 'Reference_Number',
         p.status AS Status

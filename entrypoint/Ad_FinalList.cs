@@ -41,6 +41,9 @@ namespace entrypoint
             Final.addRejectButton();
             button1.Visible = false;
 
+            appListDataGrid.EnableHeadersVisualStyles = false;
+            appListDataGrid.ColumnHeadersDefaultCellStyle.BackColor = Color.LightBlue;
+
         }
         
 
