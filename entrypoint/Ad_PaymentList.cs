@@ -40,9 +40,6 @@ namespace entrypoint
             payListDataGrid.EnableHeadersVisualStyles = false;
             payListDataGrid.ColumnHeadersDefaultCellStyle.BackColor = Color.LightBlue;
 
-
-
-
         }
         public void loadpay()
         {
