@@ -137,11 +137,10 @@
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.payListDataGrid.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.payListDataGrid.RowHeadersVisible = false;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.payListDataGrid.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.payListDataGrid.Size = new System.Drawing.Size(675, 425);
-            this.payListDataGrid.TabIndex = 33;
+            this.payListDataGrid.TabIndex = 26;
             this.payListDataGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.payListDataGrid_CellContentClick_1);
             this.payListDataGrid.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.payListDataGrid_CellFormatting);
             // 

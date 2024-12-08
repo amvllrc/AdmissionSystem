@@ -47,16 +47,16 @@
             this.picStep2 = new System.Windows.Forms.PictureBox();
             this.picStep1 = new System.Windows.Forms.PictureBox();
             this.lblStepsAdmission = new System.Windows.Forms.Label();
+            this.grpImportantDates = new System.Windows.Forms.GroupBox();
+            this.picStartOfClassPeriod = new System.Windows.Forms.PictureBox();
+            this.picExaminationPeriod = new System.Windows.Forms.PictureBox();
+            this.picApplicationPeriodIcon = new System.Windows.Forms.PictureBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.lblTitleImportantDates = new System.Windows.Forms.Label();
             this.picIconUniv = new System.Windows.Forms.PictureBox();
             this.lblwelcome = new System.Windows.Forms.Label();
-            this.lblTitleImportantDates = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.picApplicationPeriodIcon = new System.Windows.Forms.PictureBox();
-            this.picExaminationPeriod = new System.Windows.Forms.PictureBox();
-            this.picStartOfClassPeriod = new System.Windows.Forms.PictureBox();
-            this.grpImportantDates = new System.Windows.Forms.GroupBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.exitIcon)).BeginInit();
@@ -71,11 +71,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.picStep3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picStep2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picStep1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picIconUniv)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picApplicationPeriodIcon)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picExaminationPeriod)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picStartOfClassPeriod)).BeginInit();
             this.grpImportantDates.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picStartOfClassPeriod)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picExaminationPeriod)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picApplicationPeriodIcon)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picIconUniv)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -296,6 +296,102 @@
             this.lblStepsAdmission.Text = resources.GetString("lblStepsAdmission.Text");
             this.lblStepsAdmission.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // grpImportantDates
+            // 
+            this.grpImportantDates.Controls.Add(this.picStartOfClassPeriod);
+            this.grpImportantDates.Controls.Add(this.picExaminationPeriod);
+            this.grpImportantDates.Controls.Add(this.picApplicationPeriodIcon);
+            this.grpImportantDates.Controls.Add(this.label5);
+            this.grpImportantDates.Controls.Add(this.label4);
+            this.grpImportantDates.Controls.Add(this.label3);
+            this.grpImportantDates.Controls.Add(this.lblTitleImportantDates);
+            this.grpImportantDates.Location = new System.Drawing.Point(21, 64);
+            this.grpImportantDates.Name = "grpImportantDates";
+            this.grpImportantDates.Size = new System.Drawing.Size(672, 165);
+            this.grpImportantDates.TabIndex = 16;
+            this.grpImportantDates.TabStop = false;
+            // 
+            // picStartOfClassPeriod
+            // 
+            this.picStartOfClassPeriod.Image = ((System.Drawing.Image)(resources.GetObject("picStartOfClassPeriod.Image")));
+            this.picStartOfClassPeriod.Location = new System.Drawing.Point(527, 49);
+            this.picStartOfClassPeriod.Name = "picStartOfClassPeriod";
+            this.picStartOfClassPeriod.Size = new System.Drawing.Size(40, 40);
+            this.picStartOfClassPeriod.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picStartOfClassPeriod.TabIndex = 22;
+            this.picStartOfClassPeriod.TabStop = false;
+            // 
+            // picExaminationPeriod
+            // 
+            this.picExaminationPeriod.Image = ((System.Drawing.Image)(resources.GetObject("picExaminationPeriod.Image")));
+            this.picExaminationPeriod.Location = new System.Drawing.Point(311, 49);
+            this.picExaminationPeriod.Name = "picExaminationPeriod";
+            this.picExaminationPeriod.Size = new System.Drawing.Size(40, 40);
+            this.picExaminationPeriod.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picExaminationPeriod.TabIndex = 21;
+            this.picExaminationPeriod.TabStop = false;
+            // 
+            // picApplicationPeriodIcon
+            // 
+            this.picApplicationPeriodIcon.Image = ((System.Drawing.Image)(resources.GetObject("picApplicationPeriodIcon.Image")));
+            this.picApplicationPeriodIcon.Location = new System.Drawing.Point(100, 49);
+            this.picApplicationPeriodIcon.Name = "picApplicationPeriodIcon";
+            this.picApplicationPeriodIcon.Size = new System.Drawing.Size(40, 40);
+            this.picApplicationPeriodIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picApplicationPeriodIcon.TabIndex = 17;
+            this.picApplicationPeriodIcon.TabStop = false;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(465, 94);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(164, 20);
+            this.label5.TabIndex = 20;
+            this.label5.Text = "\"Start of Class Period\"\r\n";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(232, 94);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(159, 20);
+            this.label4.TabIndex = 19;
+            this.label4.Text = "\"Examination Period\"\r\n";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(11, 94);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(152, 20);
+            this.label3.TabIndex = 18;
+            this.label3.Text = "\"Application Period\"\r\n";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblTitleImportantDates
+            // 
+            this.lblTitleImportantDates.AutoSize = true;
+            this.lblTitleImportantDates.BackColor = System.Drawing.Color.Transparent;
+            this.lblTitleImportantDates.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitleImportantDates.Location = new System.Drawing.Point(11, 18);
+            this.lblTitleImportantDates.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblTitleImportantDates.Name = "lblTitleImportantDates";
+            this.lblTitleImportantDates.Size = new System.Drawing.Size(129, 20);
+            this.lblTitleImportantDates.TabIndex = 17;
+            this.lblTitleImportantDates.Text = "Important Dates:";
+            // 
             // picIconUniv
             // 
             this.picIconUniv.Image = ((System.Drawing.Image)(resources.GetObject("picIconUniv.Image")));
@@ -318,102 +414,6 @@
             this.lblwelcome.Size = new System.Drawing.Size(359, 25);
             this.lblwelcome.TabIndex = 14;
             this.lblwelcome.Text = "Your Path to Admission in the University";
-            // 
-            // lblTitleImportantDates
-            // 
-            this.lblTitleImportantDates.AutoSize = true;
-            this.lblTitleImportantDates.BackColor = System.Drawing.Color.Transparent;
-            this.lblTitleImportantDates.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitleImportantDates.Location = new System.Drawing.Point(11, 18);
-            this.lblTitleImportantDates.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblTitleImportantDates.Name = "lblTitleImportantDates";
-            this.lblTitleImportantDates.Size = new System.Drawing.Size(129, 20);
-            this.lblTitleImportantDates.TabIndex = 17;
-            this.lblTitleImportantDates.Text = "Important Dates:";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(11, 94);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(152, 20);
-            this.label3.TabIndex = 18;
-            this.label3.Text = "\"Application Period\"\r\n";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(232, 94);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(159, 20);
-            this.label4.TabIndex = 19;
-            this.label4.Text = "\"Examination Period\"\r\n";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(465, 94);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(164, 20);
-            this.label5.TabIndex = 20;
-            this.label5.Text = "\"Start of Class Period\"\r\n";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // picApplicationPeriodIcon
-            // 
-            this.picApplicationPeriodIcon.Image = ((System.Drawing.Image)(resources.GetObject("picApplicationPeriodIcon.Image")));
-            this.picApplicationPeriodIcon.Location = new System.Drawing.Point(100, 49);
-            this.picApplicationPeriodIcon.Name = "picApplicationPeriodIcon";
-            this.picApplicationPeriodIcon.Size = new System.Drawing.Size(40, 40);
-            this.picApplicationPeriodIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picApplicationPeriodIcon.TabIndex = 17;
-            this.picApplicationPeriodIcon.TabStop = false;
-            // 
-            // picExaminationPeriod
-            // 
-            this.picExaminationPeriod.Image = ((System.Drawing.Image)(resources.GetObject("picExaminationPeriod.Image")));
-            this.picExaminationPeriod.Location = new System.Drawing.Point(311, 49);
-            this.picExaminationPeriod.Name = "picExaminationPeriod";
-            this.picExaminationPeriod.Size = new System.Drawing.Size(40, 40);
-            this.picExaminationPeriod.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picExaminationPeriod.TabIndex = 21;
-            this.picExaminationPeriod.TabStop = false;
-            // 
-            // picStartOfClassPeriod
-            // 
-            this.picStartOfClassPeriod.Image = ((System.Drawing.Image)(resources.GetObject("picStartOfClassPeriod.Image")));
-            this.picStartOfClassPeriod.Location = new System.Drawing.Point(527, 49);
-            this.picStartOfClassPeriod.Name = "picStartOfClassPeriod";
-            this.picStartOfClassPeriod.Size = new System.Drawing.Size(40, 40);
-            this.picStartOfClassPeriod.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picStartOfClassPeriod.TabIndex = 22;
-            this.picStartOfClassPeriod.TabStop = false;
-            // 
-            // grpImportantDates
-            // 
-            this.grpImportantDates.Controls.Add(this.picStartOfClassPeriod);
-            this.grpImportantDates.Controls.Add(this.picExaminationPeriod);
-            this.grpImportantDates.Controls.Add(this.picApplicationPeriodIcon);
-            this.grpImportantDates.Controls.Add(this.label5);
-            this.grpImportantDates.Controls.Add(this.label4);
-            this.grpImportantDates.Controls.Add(this.label3);
-            this.grpImportantDates.Controls.Add(this.lblTitleImportantDates);
-            this.grpImportantDates.Location = new System.Drawing.Point(21, 64);
-            this.grpImportantDates.Name = "grpImportantDates";
-            this.grpImportantDates.Size = new System.Drawing.Size(672, 165);
-            this.grpImportantDates.TabIndex = 16;
-            this.grpImportantDates.TabStop = false;
             // 
             // Homepage
             // 
@@ -446,12 +446,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.picStep3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picStep2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picStep1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picIconUniv)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picApplicationPeriodIcon)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picExaminationPeriod)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picStartOfClassPeriod)).EndInit();
             this.grpImportantDates.ResumeLayout(false);
             this.grpImportantDates.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picStartOfClassPeriod)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picExaminationPeriod)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picApplicationPeriodIcon)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picIconUniv)).EndInit();
             this.ResumeLayout(false);
 
         }

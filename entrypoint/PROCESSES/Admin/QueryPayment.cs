@@ -22,8 +22,8 @@ namespace entrypoint.PROCESSES.Admin
         p.paymentid AS PaymentID,
         p.application_id as ApplicationId,
         (COALESCE(a.last_name, '') + ', ' + COALESCE(a.first_name, '') + ' ' + COALESCE(a.middle_name, '')) AS Name,
-        p.pay_at AS Payment_Date,
-        p.reference_number AS 'Reference_Number',
+        p.pay_at AS 'Payment Date',
+        p.reference_number AS 'Reference Number',
         p.status AS Status
     FROM 
         payment p
@@ -103,8 +103,8 @@ namespace entrypoint.PROCESSES.Admin
         p.paymentid AS PaymentID,
         p.application_id as ApplicationId,
         (COALESCE(a.last_name, '') + ', ' + COALESCE(a.first_name, '') + ' ' + COALESCE(a.middle_name, '')) AS Name,
-        p.pay_at AS Payment_Date,
-        p.reference_number AS 'Reference_Number',
+        p.pay_at AS 'Payment Date',
+        p.reference_number AS 'Reference Number',
         p.status AS Status
     FROM 
         payment p

@@ -21,11 +21,6 @@ namespace entrypoint
             dc=new DashboardContents();
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void frmDashburd_Load(object sender, EventArgs e)
         {
             valueApprovedApplicants.Text = dc.GetApprovedApp().ToString();
