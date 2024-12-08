@@ -32,6 +32,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
             this.btnAppListSearch = new System.Windows.Forms.Button();
@@ -53,7 +54,7 @@
             this.panel1.Controls.Add(this.btnPayListFilter);
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(759, 578);
+            this.panel1.Size = new System.Drawing.Size(750, 500);
             this.panel1.TabIndex = 0;
             // 
             // button1
@@ -64,9 +65,9 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.Transparent;
-            this.button1.Location = new System.Drawing.Point(210, 59);
+            this.button1.Location = new System.Drawing.Point(193, 30);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(26, 19);
+            this.button1.Size = new System.Drawing.Size(20, 20);
             this.button1.TabIndex = 36;
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -79,7 +80,7 @@
             this.btnAppListSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAppListSearch.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAppListSearch.ForeColor = System.Drawing.Color.Transparent;
-            this.btnAppListSearch.Location = new System.Drawing.Point(242, 59);
+            this.btnAppListSearch.Location = new System.Drawing.Point(225, 30);
             this.btnAppListSearch.Name = "btnAppListSearch";
             this.btnAppListSearch.Size = new System.Drawing.Size(24, 22);
             this.btnAppListSearch.TabIndex = 35;
@@ -89,7 +90,7 @@
             // textBox2
             // 
             this.textBox2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(41, 56);
+            this.textBox2.Location = new System.Drawing.Point(23, 27);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(195, 25);
             this.textBox2.TabIndex = 34;
@@ -125,7 +126,7 @@
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.payListDataGrid.DefaultCellStyle = dataGridViewCellStyle3;
-            this.payListDataGrid.Location = new System.Drawing.Point(41, 110);
+            this.payListDataGrid.Location = new System.Drawing.Point(24, 72);
             this.payListDataGrid.Name = "payListDataGrid";
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
@@ -136,7 +137,10 @@
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.payListDataGrid.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.payListDataGrid.RowHeadersVisible = false;
-            this.payListDataGrid.Size = new System.Drawing.Size(661, 404);
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.payListDataGrid.RowsDefaultCellStyle = dataGridViewCellStyle5;
+            this.payListDataGrid.Size = new System.Drawing.Size(675, 425);
             this.payListDataGrid.TabIndex = 33;
             this.payListDataGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.payListDataGrid_CellContentClick_1);
             this.payListDataGrid.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.payListDataGrid_CellFormatting);
@@ -150,10 +154,10 @@
             "Name (A-Z)",
             "Payment Date",
             "Chosen Exam Date"});
-            this.comboBox1.Location = new System.Drawing.Point(491, 57);
+            this.comboBox1.Location = new System.Drawing.Point(396, 28);
             this.comboBox1.Margin = new System.Windows.Forms.Padding(10, 3, 3, 3);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(86, 25);
+            this.comboBox1.Size = new System.Drawing.Size(204, 25);
             this.comboBox1.TabIndex = 32;
             this.comboBox1.Text = "Payment Date";
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged_1);
@@ -161,7 +165,7 @@
             // btnPayListFilter
             // 
             this.btnPayListFilter.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPayListFilter.Location = new System.Drawing.Point(583, 56);
+            this.btnPayListFilter.Location = new System.Drawing.Point(606, 28);
             this.btnPayListFilter.Name = "btnPayListFilter";
             this.btnPayListFilter.Size = new System.Drawing.Size(93, 27);
             this.btnPayListFilter.TabIndex = 31;
@@ -173,7 +177,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(756, 579);
+            this.ClientSize = new System.Drawing.Size(750, 500);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

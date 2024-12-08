@@ -35,27 +35,24 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btnDashboard = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.pictureBox13 = new System.Windows.Forms.PictureBox();
+            this.btnAdList = new System.Windows.Forms.Button();
             this.pictureBox12 = new System.Windows.Forms.PictureBox();
             this.btnLogout = new System.Windows.Forms.PictureBox();
             this.btnPaymentList = new System.Windows.Forms.Button();
-            this.pictureBox9 = new System.Windows.Forms.PictureBox();
-            this.pictureBox8 = new System.Windows.Forms.PictureBox();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.pictureBox11 = new System.Windows.Forms.PictureBox();
+            this.pictureBox10 = new System.Windows.Forms.PictureBox();
             this.btnAppList = new System.Windows.Forms.Button();
-            this.btnCourseMan = new System.Windows.Forms.Button();
             this.panel9 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.exitIcon)).BeginInit();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnLogout)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -107,12 +104,12 @@
             // btnDashboard
             // 
             this.btnDashboard.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.btnDashboard.BackColor = System.Drawing.Color.Gold;
+            this.btnDashboard.BackColor = System.Drawing.Color.Transparent;
             this.btnDashboard.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnDashboard.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDashboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDashboard.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDashboard.ForeColor = System.Drawing.Color.Black;
+            this.btnDashboard.ForeColor = System.Drawing.Color.Transparent;
             this.btnDashboard.Location = new System.Drawing.Point(-5, 27);
             this.btnDashboard.Margin = new System.Windows.Forms.Padding(0, 20, 0, 0);
             this.btnDashboard.Name = "btnDashboard";
@@ -127,16 +124,14 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.MidnightBlue;
-            this.panel2.Controls.Add(this.pictureBox1);
-            this.panel2.Controls.Add(this.button1);
+            this.panel2.Controls.Add(this.pictureBox13);
+            this.panel2.Controls.Add(this.btnAdList);
             this.panel2.Controls.Add(this.pictureBox12);
             this.panel2.Controls.Add(this.btnLogout);
             this.panel2.Controls.Add(this.btnPaymentList);
-            this.panel2.Controls.Add(this.pictureBox9);
-            this.panel2.Controls.Add(this.pictureBox8);
-            this.panel2.Controls.Add(this.pictureBox5);
+            this.panel2.Controls.Add(this.pictureBox11);
+            this.panel2.Controls.Add(this.pictureBox10);
             this.panel2.Controls.Add(this.btnAppList);
-            this.panel2.Controls.Add(this.btnCourseMan);
             this.panel2.Controls.Add(this.btnDashboard);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel2.Location = new System.Drawing.Point(0, 42);
@@ -144,42 +139,42 @@
             this.panel2.Size = new System.Drawing.Size(260, 569);
             this.panel2.TabIndex = 6;
             // 
-            // pictureBox1
+            // pictureBox13
             // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(14, 208);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(30, 30);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 17;
-            this.pictureBox1.TabStop = false;
+            this.pictureBox13.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox13.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox13.Image")));
+            this.pictureBox13.Location = new System.Drawing.Point(14, 168);
+            this.pictureBox13.Name = "pictureBox13";
+            this.pictureBox13.Size = new System.Drawing.Size(30, 30);
+            this.pictureBox13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox13.TabIndex = 17;
+            this.pictureBox13.TabStop = false;
             // 
-            // button1
+            // btnAdList
             // 
-            this.button1.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.button1.BackColor = System.Drawing.Color.Transparent;
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(-5, 205);
-            this.button1.Margin = new System.Windows.Forms.Padding(0, 20, 0, 0);
-            this.button1.Name = "button1";
-            this.button1.Padding = new System.Windows.Forms.Padding(50, 0, 0, 0);
-            this.button1.Size = new System.Drawing.Size(276, 46);
-            this.button1.TabIndex = 16;
-            this.button1.Text = "Admission List";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnAdList.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.btnAdList.BackColor = System.Drawing.Color.Transparent;
+            this.btnAdList.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnAdList.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAdList.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAdList.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdList.ForeColor = System.Drawing.Color.White;
+            this.btnAdList.Location = new System.Drawing.Point(-5, 161);
+            this.btnAdList.Margin = new System.Windows.Forms.Padding(0, 20, 0, 0);
+            this.btnAdList.Name = "btnAdList";
+            this.btnAdList.Padding = new System.Windows.Forms.Padding(50, 0, 0, 0);
+            this.btnAdList.Size = new System.Drawing.Size(276, 46);
+            this.btnAdList.TabIndex = 16;
+            this.btnAdList.Text = "Admission List";
+            this.btnAdList.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAdList.UseVisualStyleBackColor = false;
+            this.btnAdList.Click += new System.EventHandler(this.btnAdList_Click);
             // 
             // pictureBox12
             // 
             this.pictureBox12.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox12.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox12.Image")));
-            this.pictureBox12.Location = new System.Drawing.Point(14, 168);
+            this.pictureBox12.Location = new System.Drawing.Point(14, 125);
             this.pictureBox12.Name = "pictureBox12";
             this.pictureBox12.Size = new System.Drawing.Size(30, 30);
             this.pictureBox12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -207,7 +202,7 @@
             this.btnPaymentList.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPaymentList.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPaymentList.ForeColor = System.Drawing.Color.White;
-            this.btnPaymentList.Location = new System.Drawing.Point(-5, 159);
+            this.btnPaymentList.Location = new System.Drawing.Point(-5, 116);
             this.btnPaymentList.Margin = new System.Windows.Forms.Padding(0, 20, 0, 0);
             this.btnPaymentList.Name = "btnPaymentList";
             this.btnPaymentList.Padding = new System.Windows.Forms.Padding(50, 0, 0, 0);
@@ -218,38 +213,27 @@
             this.btnPaymentList.UseVisualStyleBackColor = false;
             this.btnPaymentList.Click += new System.EventHandler(this.btnPaymentList_Click);
             // 
-            // pictureBox9
+            // pictureBox11
             // 
-            this.pictureBox9.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox9.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox9.Image")));
-            this.pictureBox9.Location = new System.Drawing.Point(14, 124);
-            this.pictureBox9.Name = "pictureBox9";
-            this.pictureBox9.Size = new System.Drawing.Size(30, 30);
-            this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox9.TabIndex = 9;
-            this.pictureBox9.TabStop = false;
+            this.pictureBox11.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox11.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox11.Image")));
+            this.pictureBox11.Location = new System.Drawing.Point(14, 81);
+            this.pictureBox11.Name = "pictureBox11";
+            this.pictureBox11.Size = new System.Drawing.Size(30, 30);
+            this.pictureBox11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox11.TabIndex = 9;
+            this.pictureBox11.TabStop = false;
             // 
-            // pictureBox8
+            // pictureBox10
             // 
-            this.pictureBox8.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox8.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox8.Image")));
-            this.pictureBox8.Location = new System.Drawing.Point(14, 79);
-            this.pictureBox8.Name = "pictureBox8";
-            this.pictureBox8.Size = new System.Drawing.Size(30, 30);
-            this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox8.TabIndex = 8;
-            this.pictureBox8.TabStop = false;
-            // 
-            // pictureBox5
-            // 
-            this.pictureBox5.BackColor = System.Drawing.Color.Gold;
-            this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
-            this.pictureBox5.Location = new System.Drawing.Point(14, 36);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(30, 30);
-            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox5.TabIndex = 7;
-            this.pictureBox5.TabStop = false;
+            this.pictureBox10.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox10.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox10.Image")));
+            this.pictureBox10.Location = new System.Drawing.Point(14, 36);
+            this.pictureBox10.Name = "pictureBox10";
+            this.pictureBox10.Size = new System.Drawing.Size(30, 30);
+            this.pictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox10.TabIndex = 7;
+            this.pictureBox10.TabStop = false;
             // 
             // btnAppList
             // 
@@ -260,7 +244,7 @@
             this.btnAppList.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAppList.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAppList.ForeColor = System.Drawing.Color.White;
-            this.btnAppList.Location = new System.Drawing.Point(-5, 115);
+            this.btnAppList.Location = new System.Drawing.Point(-5, 72);
             this.btnAppList.Margin = new System.Windows.Forms.Padding(0, 20, 0, 0);
             this.btnAppList.Name = "btnAppList";
             this.btnAppList.Padding = new System.Windows.Forms.Padding(50, 0, 0, 0);
@@ -271,31 +255,11 @@
             this.btnAppList.UseVisualStyleBackColor = false;
             this.btnAppList.Click += new System.EventHandler(this.btnAppList_Click);
             // 
-            // btnCourseMan
-            // 
-            this.btnCourseMan.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.btnCourseMan.BackColor = System.Drawing.Color.Transparent;
-            this.btnCourseMan.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnCourseMan.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCourseMan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCourseMan.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCourseMan.ForeColor = System.Drawing.Color.White;
-            this.btnCourseMan.Location = new System.Drawing.Point(-5, 70);
-            this.btnCourseMan.Margin = new System.Windows.Forms.Padding(0, 20, 0, 0);
-            this.btnCourseMan.Name = "btnCourseMan";
-            this.btnCourseMan.Padding = new System.Windows.Forms.Padding(50, 0, 0, 0);
-            this.btnCourseMan.Size = new System.Drawing.Size(276, 46);
-            this.btnCourseMan.TabIndex = 5;
-            this.btnCourseMan.Text = "Course Management";
-            this.btnCourseMan.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCourseMan.UseVisualStyleBackColor = false;
-            this.btnCourseMan.Click += new System.EventHandler(this.btnCourseMan_Click);
-            // 
             // panel9
             // 
-            this.panel9.Location = new System.Drawing.Point(263, 42);
+            this.panel9.Location = new System.Drawing.Point(260, 42);
             this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(718, 570);
+            this.panel9.Size = new System.Drawing.Size(724, 570);
             this.panel9.TabIndex = 3;
             // 
             // Ad_Dashboard
@@ -317,12 +281,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.exitIcon)).EndInit();
             this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnLogout)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -334,18 +297,16 @@
         private System.Windows.Forms.Button btnDashboard;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Button btnCourseMan;
         private System.Windows.Forms.PictureBox exitIcon;
         private System.Windows.Forms.Button btnAppList;
-        private System.Windows.Forms.PictureBox pictureBox5;
-        private System.Windows.Forms.PictureBox pictureBox9;
-        private System.Windows.Forms.PictureBox pictureBox8;
+        private System.Windows.Forms.PictureBox pictureBox11;
         private System.Windows.Forms.PictureBox btnLogout;
         private System.Windows.Forms.PictureBox pictureBox12;
         private System.Windows.Forms.Button btnPaymentList;
         private System.Windows.Forms.Panel panel9;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.PictureBox pictureBox13;
+        private System.Windows.Forms.Button btnAdList;
+        private System.Windows.Forms.PictureBox pictureBox10;
     }
 }
 

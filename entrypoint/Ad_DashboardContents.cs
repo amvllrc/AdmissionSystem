@@ -29,7 +29,6 @@ namespace entrypoint
         private void frmDashburd_Load(object sender, EventArgs e)
         {
             valueApprovedApplicants.Text = dc.GetApprovedApp().ToString();
-            valueNumCourses.Text = dc.GetNumCourse().ToString();
             valuePendingApplicants.Text = dc.GetPendingApp().ToString(); 
             valueRejectedApplicants.Text = dc.GetRejectApp().ToString();
             valueTotalApplicants.Text = dc.GetTotalApp().ToString();
@@ -87,11 +86,6 @@ namespace entrypoint
             }
 
             
-        }
-
-        private void panel6_Paint(object sender, PaintEventArgs e)
-        {
-
         }
 
         private void panel6_DoubleClick(object sender, EventArgs e)
