@@ -45,10 +45,17 @@
             this.picQR = new System.Windows.Forms.PictureBox();
             this.lblScanToPay = new System.Windows.Forms.Label();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.picButtonDL = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel3.SuspendLayout();
             this.grpPaymentdetails.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picPreviewImg)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picQR)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picButtonDL)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // panel3
@@ -58,14 +65,16 @@
             this.panel3.Controls.Add(this.grpPaymentdetails);
             this.panel3.Controls.Add(this.picQR);
             this.panel3.Controls.Add(this.lblScanToPay);
+            this.panel3.Controls.Add(this.pictureBox2);
             this.panel3.Location = new System.Drawing.Point(2, 0);
             this.panel3.Margin = new System.Windows.Forms.Padding(2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(724, 569);
+            this.panel3.Size = new System.Drawing.Size(724, 566);
             this.panel3.TabIndex = 26;
             // 
             // grpPaymentdetails
             // 
+            this.grpPaymentdetails.Controls.Add(this.label1);
             this.grpPaymentdetails.Controls.Add(this.cbDateOfExam);
             this.grpPaymentdetails.Controls.Add(this.lblDateOfExam);
             this.grpPaymentdetails.Controls.Add(this.btnSubmit);
@@ -77,19 +86,21 @@
             this.grpPaymentdetails.Controls.Add(this.lblAccountHolderName);
             this.grpPaymentdetails.Controls.Add(this.txtCellphoneNum);
             this.grpPaymentdetails.Controls.Add(this.lblCellphoneNum);
+            this.grpPaymentdetails.Controls.Add(this.pictureBox1);
+            this.grpPaymentdetails.Controls.Add(this.picButtonDL);
             this.grpPaymentdetails.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grpPaymentdetails.Location = new System.Drawing.Point(34, 209);
+            this.grpPaymentdetails.Location = new System.Drawing.Point(19, 173);
             this.grpPaymentdetails.Name = "grpPaymentdetails";
-            this.grpPaymentdetails.Size = new System.Drawing.Size(659, 331);
+            this.grpPaymentdetails.Size = new System.Drawing.Size(664, 381);
             this.grpPaymentdetails.TabIndex = 30;
             this.grpPaymentdetails.TabStop = false;
-            this.grpPaymentdetails.Text = "Payment Details";
             // 
             // cbDateOfExam
             // 
+            this.cbDateOfExam.BackColor = System.Drawing.Color.Gold;
             this.cbDateOfExam.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbDateOfExam.FormattingEnabled = true;
-            this.cbDateOfExam.Location = new System.Drawing.Point(123, 192);
+            this.cbDateOfExam.Location = new System.Drawing.Point(141, 217);
             this.cbDateOfExam.Margin = new System.Windows.Forms.Padding(2);
             this.cbDateOfExam.Name = "cbDateOfExam";
             this.cbDateOfExam.Size = new System.Drawing.Size(237, 27);
@@ -98,8 +109,9 @@
             // lblDateOfExam
             // 
             this.lblDateOfExam.AutoSize = true;
+            this.lblDateOfExam.BackColor = System.Drawing.Color.Gold;
             this.lblDateOfExam.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDateOfExam.Location = new System.Drawing.Point(24, 195);
+            this.lblDateOfExam.Location = new System.Drawing.Point(42, 220);
             this.lblDateOfExam.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblDateOfExam.Name = "lblDateOfExam";
             this.lblDateOfExam.Size = new System.Drawing.Size(95, 19);
@@ -108,30 +120,35 @@
             // 
             // btnSubmit
             // 
+            this.btnSubmit.BackColor = System.Drawing.Color.Gold;
+            this.btnSubmit.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnSubmit.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSubmit.Location = new System.Drawing.Point(27, 241);
+            this.btnSubmit.Location = new System.Drawing.Point(62, 266);
             this.btnSubmit.Name = "btnSubmit";
-            this.btnSubmit.Size = new System.Drawing.Size(144, 56);
+            this.btnSubmit.Size = new System.Drawing.Size(130, 50);
             this.btnSubmit.TabIndex = 39;
             this.btnSubmit.Text = "SUBMIT";
-            this.btnSubmit.UseVisualStyleBackColor = true;
+            this.btnSubmit.UseVisualStyleBackColor = false;
             this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
             // 
             // btnProofOfPayment
             // 
+            this.btnProofOfPayment.BackColor = System.Drawing.Color.Gold;
+            this.btnProofOfPayment.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnProofOfPayment.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnProofOfPayment.Location = new System.Drawing.Point(216, 241);
+            this.btnProofOfPayment.Location = new System.Drawing.Point(230, 266);
             this.btnProofOfPayment.Name = "btnProofOfPayment";
-            this.btnProofOfPayment.Size = new System.Drawing.Size(144, 56);
+            this.btnProofOfPayment.Size = new System.Drawing.Size(130, 50);
             this.btnProofOfPayment.TabIndex = 38;
             this.btnProofOfPayment.Text = "PROOF OF PAYMENT";
-            this.btnProofOfPayment.UseVisualStyleBackColor = true;
+            this.btnProofOfPayment.UseVisualStyleBackColor = false;
             this.btnProofOfPayment.Click += new System.EventHandler(this.btnProofOfPayment_Click_1);
             // 
             // picPreviewImg
             // 
+            this.picPreviewImg.BackColor = System.Drawing.Color.WhiteSmoke;
             this.picPreviewImg.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.picPreviewImg.Location = new System.Drawing.Point(411, 26);
+            this.picPreviewImg.Location = new System.Drawing.Point(408, 55);
             this.picPreviewImg.Name = "picPreviewImg";
             this.picPreviewImg.Size = new System.Drawing.Size(220, 288);
             this.picPreviewImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -140,8 +157,9 @@
             // 
             // txtReferenceNum
             // 
+            this.txtReferenceNum.BackColor = System.Drawing.Color.Gold;
             this.txtReferenceNum.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtReferenceNum.Location = new System.Drawing.Point(186, 145);
+            this.txtReferenceNum.Location = new System.Drawing.Point(204, 170);
             this.txtReferenceNum.Margin = new System.Windows.Forms.Padding(2);
             this.txtReferenceNum.Name = "txtReferenceNum";
             this.txtReferenceNum.Size = new System.Drawing.Size(174, 26);
@@ -150,8 +168,9 @@
             // lblReferenceNum
             // 
             this.lblReferenceNum.AutoSize = true;
+            this.lblReferenceNum.BackColor = System.Drawing.Color.Gold;
             this.lblReferenceNum.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblReferenceNum.Location = new System.Drawing.Point(23, 148);
+            this.lblReferenceNum.Location = new System.Drawing.Point(41, 173);
             this.lblReferenceNum.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblReferenceNum.Name = "lblReferenceNum";
             this.lblReferenceNum.Size = new System.Drawing.Size(130, 19);
@@ -160,8 +179,9 @@
             // 
             // txtAccountHolderName
             // 
+            this.txtAccountHolderName.BackColor = System.Drawing.Color.Gold;
             this.txtAccountHolderName.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAccountHolderName.Location = new System.Drawing.Point(186, 101);
+            this.txtAccountHolderName.Location = new System.Drawing.Point(204, 126);
             this.txtAccountHolderName.Margin = new System.Windows.Forms.Padding(2);
             this.txtAccountHolderName.Name = "txtAccountHolderName";
             this.txtAccountHolderName.Size = new System.Drawing.Size(174, 26);
@@ -170,8 +190,9 @@
             // lblAccountHolderName
             // 
             this.lblAccountHolderName.AutoSize = true;
+            this.lblAccountHolderName.BackColor = System.Drawing.Color.Gold;
             this.lblAccountHolderName.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAccountHolderName.Location = new System.Drawing.Point(23, 104);
+            this.lblAccountHolderName.Location = new System.Drawing.Point(41, 129);
             this.lblAccountHolderName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblAccountHolderName.Name = "lblAccountHolderName";
             this.lblAccountHolderName.Size = new System.Drawing.Size(151, 19);
@@ -180,8 +201,9 @@
             // 
             // txtCellphoneNum
             // 
+            this.txtCellphoneNum.BackColor = System.Drawing.Color.Gold;
             this.txtCellphoneNum.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCellphoneNum.Location = new System.Drawing.Point(186, 58);
+            this.txtCellphoneNum.Location = new System.Drawing.Point(204, 83);
             this.txtCellphoneNum.Margin = new System.Windows.Forms.Padding(2);
             this.txtCellphoneNum.Name = "txtCellphoneNum";
             this.txtCellphoneNum.Size = new System.Drawing.Size(174, 26);
@@ -190,8 +212,9 @@
             // lblCellphoneNum
             // 
             this.lblCellphoneNum.AutoSize = true;
+            this.lblCellphoneNum.BackColor = System.Drawing.Color.Gold;
             this.lblCellphoneNum.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCellphoneNum.Location = new System.Drawing.Point(23, 61);
+            this.lblCellphoneNum.Location = new System.Drawing.Point(41, 86);
             this.lblCellphoneNum.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblCellphoneNum.Name = "lblCellphoneNum";
             this.lblCellphoneNum.Size = new System.Drawing.Size(131, 19);
@@ -202,23 +225,23 @@
             // 
             this.picQR.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.picQR.Image = ((System.Drawing.Image)(resources.GetObject("picQR.Image")));
-            this.picQR.Location = new System.Drawing.Point(306, 51);
+            this.picQR.Location = new System.Drawing.Point(291, 50);
             this.picQR.Margin = new System.Windows.Forms.Padding(2);
             this.picQR.Name = "picQR";
-            this.picQR.Size = new System.Drawing.Size(140, 140);
+            this.picQR.Size = new System.Drawing.Size(116, 106);
             this.picQR.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picQR.TabIndex = 0;
             this.picQR.TabStop = false;
             // 
             // lblScanToPay
             // 
-            this.lblScanToPay.AutoSize = true;
-            this.lblScanToPay.BackColor = System.Drawing.Color.Transparent;
-            this.lblScanToPay.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblScanToPay.Location = new System.Drawing.Point(313, 20);
+            this.lblScanToPay.BackColor = System.Drawing.Color.DarkBlue;
+            this.lblScanToPay.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblScanToPay.ForeColor = System.Drawing.Color.White;
+            this.lblScanToPay.Location = new System.Drawing.Point(298, 25);
             this.lblScanToPay.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblScanToPay.Name = "lblScanToPay";
-            this.lblScanToPay.Size = new System.Drawing.Size(132, 25);
+            this.lblScanToPay.Size = new System.Drawing.Size(105, 24);
             this.lblScanToPay.TabIndex = 29;
             this.lblScanToPay.Text = "SCAN TO PAY";
             // 
@@ -226,11 +249,54 @@
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
+            // picButtonDL
+            // 
+            this.picButtonDL.Image = ((System.Drawing.Image)(resources.GetObject("picButtonDL.Image")));
+            this.picButtonDL.Location = new System.Drawing.Point(4, 22);
+            this.picButtonDL.Name = "picButtonDL";
+            this.picButtonDL.Size = new System.Drawing.Size(658, 357);
+            this.picButtonDL.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picButtonDL.TabIndex = 31;
+            this.picButtonDL.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.DarkBlue;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(17, 52);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(385, 301);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 42;
+            this.pictureBox1.TabStop = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.DarkBlue;
+            this.label1.Font = new System.Drawing.Font("Segoe UI Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(31, 33);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(114, 17);
+            this.label1.TabIndex = 43;
+            this.label1.Text = "Payment Details:";
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(258, 13);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(183, 164);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 44;
+            this.pictureBox2.TabStop = false;
+            // 
             // Stu_PaymentForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(731, 611);
             this.Controls.Add(this.panel3);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -240,11 +306,13 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.Form1_Load);
             this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
             this.grpPaymentdetails.ResumeLayout(false);
             this.grpPaymentdetails.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picPreviewImg)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picQR)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picButtonDL)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -266,6 +334,10 @@
         private System.Windows.Forms.Button btnProofOfPayment;
         private System.Windows.Forms.Label lblDateOfExam;
         private System.Windows.Forms.ComboBox cbDateOfExam;
+        private System.Windows.Forms.PictureBox picButtonDL;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }
 

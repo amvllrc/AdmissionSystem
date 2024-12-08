@@ -156,7 +156,7 @@
             // btnSubmit
             // 
             this.btnSubmit.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSubmit.Location = new System.Drawing.Point(250, 1730);
+            this.btnSubmit.Location = new System.Drawing.Point(264, 1730);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(144, 40);
             this.btnSubmit.TabIndex = 41;
@@ -177,7 +177,7 @@
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Margin = new System.Windows.Forms.Padding(2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(724, 569);
+            this.panel3.Size = new System.Drawing.Size(707, 569);
             this.panel3.TabIndex = 26;
             // 
             // grpEnglish
@@ -188,7 +188,7 @@
             this.grpEnglish.Controls.Add(this.grpQuestionTwoEnglish);
             this.grpEnglish.Controls.Add(this.grpQuestionOneEnglish);
             this.grpEnglish.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grpEnglish.Location = new System.Drawing.Point(23, 1070);
+            this.grpEnglish.Location = new System.Drawing.Point(9, 1070);
             this.grpEnglish.Margin = new System.Windows.Forms.Padding(2);
             this.grpEnglish.Name = "grpEnglish";
             this.grpEnglish.Padding = new System.Windows.Forms.Padding(2);
@@ -588,7 +588,7 @@
             this.grpScience.Controls.Add(this.grpQuestionTwoScience);
             this.grpScience.Controls.Add(this.grpQuestionOneScience);
             this.grpScience.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grpScience.Location = new System.Drawing.Point(23, 603);
+            this.grpScience.Location = new System.Drawing.Point(9, 603);
             this.grpScience.Margin = new System.Windows.Forms.Padding(2);
             this.grpScience.Name = "grpScience";
             this.grpScience.Padding = new System.Windows.Forms.Padding(2);
@@ -985,7 +985,7 @@
             this.grpMathematics.Controls.Add(this.grpQuestionTwoMath);
             this.grpMathematics.Controls.Add(this.grpQuestionOneMath);
             this.grpMathematics.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grpMathematics.Location = new System.Drawing.Point(23, 136);
+            this.grpMathematics.Location = new System.Drawing.Point(9, 136);
             this.grpMathematics.Margin = new System.Windows.Forms.Padding(2);
             this.grpMathematics.Name = "grpMathematics";
             this.grpMathematics.Padding = new System.Windows.Forms.Padding(2);
@@ -1383,7 +1383,7 @@
             this.grpFullName.Controls.Add(this.txtFirstName);
             this.grpFullName.Controls.Add(this.lblFirstName);
             this.grpFullName.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grpFullName.Location = new System.Drawing.Point(23, 45);
+            this.grpFullName.Location = new System.Drawing.Point(9, 45);
             this.grpFullName.Margin = new System.Windows.Forms.Padding(2);
             this.grpFullName.Name = "grpFullName";
             this.grpFullName.Padding = new System.Windows.Forms.Padding(2);
@@ -1457,7 +1457,7 @@
             this.lblExaminationTitle.AutoSize = true;
             this.lblExaminationTitle.BackColor = System.Drawing.Color.Transparent;
             this.lblExaminationTitle.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblExaminationTitle.Location = new System.Drawing.Point(283, 15);
+            this.lblExaminationTitle.Location = new System.Drawing.Point(269, 15);
             this.lblExaminationTitle.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblExaminationTitle.Name = "lblExaminationTitle";
             this.lblExaminationTitle.Size = new System.Drawing.Size(144, 25);
@@ -1468,8 +1468,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(732, 611);
+            this.ClientSize = new System.Drawing.Size(718, 573);
             this.Controls.Add(this.panel3);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;

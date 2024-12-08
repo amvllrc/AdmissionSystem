@@ -32,11 +32,11 @@ namespace entrypoint
             btnApplication.BackColor = Color.Transparent;
             btnPaymentExam.BackColor = Color.Transparent;
             btnExamination.BackColor = Color.Transparent;
-            btnAdmissionStatus.ForeColor = Color.Black;
-            btnApplication.ForeColor = Color.Black;
-            btnPaymentExam.ForeColor = Color.Black;
-            btnExamination.ForeColor = Color.Black;
-            clickedButton.BackColor = Color.Gold;
+            btnAdmissionStatus.ForeColor = Color.White;
+            btnApplication.ForeColor = Color.White;
+            btnPaymentExam.ForeColor = Color.White;
+            btnExamination.ForeColor = Color.White;
+            clickedButton.BackColor = Color.DarkGoldenrod;
             clickedButton.ForeColor = Color.White;
 
         }
@@ -56,8 +56,8 @@ namespace entrypoint
         {
 
             tracker.validatethisbutton();
-           
-            btnAdmissionStatus.BackColor = Color.Gold;
+            picIconAdmission.BackColor = Color.DarkGoldenrod;
+            btnAdmissionStatus.BackColor = Color.DarkGoldenrod;
             ShowPanel(new Stu_Status());
 
 
@@ -111,8 +111,12 @@ namespace entrypoint
             StudentChangeIconColor imageUpdater = new StudentChangeIconColor();
             imageUpdater.UpdateButtonImages(
                 picIconApplication, picIconAdmission, picIconPay, picIconExamination,
-                "AppListWhite.png", "admission(Black).png", "iconpayment(White).png", "exams(White).png"
+                "AppListWhite.png", "admission(White).png", "iconpayment(White).png", "exams(White).png"
             );
+            picIconAdmission.BackColor = Color.DarkGoldenrod;
+            picIconApplication.BackColor = Color.Transparent;
+            picIconPay.BackColor = Color.Transparent;
+            picIconExamination.BackColor = Color.Transparent;
             ShowPanel(new Stu_Status());
             ChangeButtonColor(btnAdmissionStatus); 
         }
@@ -123,8 +127,12 @@ namespace entrypoint
 
             imageUpdater.UpdateButtonImages(
                 picIconApplication, picIconAdmission, picIconPay, picIconExamination,
-                "AppListBlack.png", "admission(White).png", "iconpayment(White).png", "exams(White).png"
+                "AppListWhite.png", "admission(White).png", "iconpayment(White).png", "exams(White).png"
             );
+            picIconAdmission.BackColor = Color.Transparent;
+            picIconApplication.BackColor = Color.DarkGoldenrod;
+            picIconPay.BackColor = Color.Transparent;
+            picIconExamination.BackColor = Color.Transparent;
             Stu_ApplicationForm appForm = new Stu_ApplicationForm(this); 
             ShowPanel(appForm);
             ChangeButtonColor(btnApplication);
@@ -141,9 +149,12 @@ namespace entrypoint
 
             imageUpdater.UpdateButtonImages(
                 picIconApplication, picIconAdmission, picIconPay, picIconExamination,
-                "AppListWhite.png", "application(White).png", "iconpayment(Black).png", "exams(White).png"
+                "AppListWhite.png", "application(White).png", "iconpayment(White).png", "exams(White).png"
             );
-
+            picIconAdmission.BackColor = Color.Transparent;
+            picIconApplication.BackColor = Color.Transparent;
+            picIconPay.BackColor = Color.DarkGoldenrod;
+            picIconExamination.BackColor = Color.Transparent;
             ShowPanel(new Stu_PaymentForm());
 
                 ChangeButtonColor(btnPaymentExam);
@@ -161,8 +172,12 @@ namespace entrypoint
             StudentChangeIconColor imageUpdater = new StudentChangeIconColor();
             imageUpdater.UpdateButtonImages(
        picIconApplication, picIconAdmission, picIconPay, picIconExamination,
-       "AppListWhite.png", "application(White).png", "iconpayment(White).png", "exams(Black).png"
-   );
+       "AppListWhite.png", "application(White).png", "iconpayment(White).png", "exams(White).png"
+        );
+            picIconAdmission.BackColor = Color.Transparent;
+            picIconApplication.BackColor = Color.Transparent;
+            picIconPay.BackColor = Color.Transparent;
+            picIconExamination.BackColor = Color.DarkGoldenrod;
             ShowPanel(new Stu_Examination());
             ChangeButtonColor(btnExamination); // Change to black icon for this button
         }

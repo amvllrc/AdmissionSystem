@@ -33,7 +33,7 @@ namespace entrypoint
             linkLabel1.Visible = false;
             lblwelcomestudent.Text = $"Welcome, {UserSession.NAME}";
             lblnotif.Text = "Admission";
-
+            picButtonDL.Visible = false;
 
         }
         public void loadStatus()
@@ -43,6 +43,7 @@ namespace entrypoint
             {
                 label13.Text = "Done";
                 label13.BackColor = Color.Green;
+                label13.ForeColor = Color.White;
             }
 
             else
@@ -65,8 +66,10 @@ namespace entrypoint
 
                     label13.Text = "On Going";
                     label13.BackColor = Color.Yellow;
+                    label13.ForeColor = Color.Black;
                     lblnotif.Text = "Please ensure you submit your application on or before "
-                   + TimePeriods.ApplicationPeriodEnd.ToString("MMMM dd, yyyy") + ". Applications not submitted by the deadline\n will not be accepted.";
+                   + TimePeriods.ApplicationPeriodEnd.ToString("MMMM dd, yyyy") + ". Applications not submitted \nby the deadline will not be accepted.";
+                    picButtonDL.Visible = false;
                 }
 
             }
@@ -77,18 +80,21 @@ namespace entrypoint
             {
                 label18.Text = "Approved";
                 label18.BackColor = Color.Green;
+                label18.ForeColor = Color.White;
             }
             else if (tracker.getStatus() == "rejected")
             {
                 label18.Text = "Rejected";
-                label18.BackColor = Color.Red;
+                label18.BackColor = Color.Crimson;
+                label18.ForeColor = Color.White;
             }
             else if (tracker.getStatus() == "pending") 
             {
                 label18.Text = "Pending";
                 label18.BackColor = Color.Gray;
+                label18.ForeColor = Color.White;
                 lblnotif.Text = "You have already submitted your application. Please wait for approval.";
-
+                picButtonDL.Visible = false;
             }
             else
             {
@@ -102,21 +108,25 @@ namespace entrypoint
             {
                 label14.Text = "Done";
                 label14.BackColor = Color.Green;
+                label14.ForeColor = Color.White;
             }
             else if (tracker.getStatus()== "approved" && !tracker.getStatus1()){ 
                 label14.Text = "On Going";
                 label14.BackColor = Color.Yellow;
+                label14.ForeColor = Color.Black;
                 if (!notification.isApprovedShown())
                 {
                     MessageBox.Show("Congatulations! You're application has been approved");
                     notification.updateBit("approvedapplication",1);
                 }
-                lblnotif.Text = $"Please ensure that you complete your payment by {TimePeriods.PaymentPeriodEnd.ToString("MMMM dd, yyyy")}. If payment is not received by this date\n your admission will be rejected.";
+                lblnotif.Text = $"Please ensure that you complete your payment by {TimePeriods.PaymentPeriodEnd.ToString("MMMM dd, yyyy")}. If payment is not received \nby this date your admission will be rejected.";
+                picButtonDL.Visible = false;
             }
             else if (tracker.getStatus() == "rejected" && !tracker.getStatus1())
             {
                 label18.Text = "Rejected";
-                label18.BackColor = Color.Red;
+                label18.BackColor = Color.Crimson;
+                label18.ForeColor = Color.White;
                 if (!notification.isRejectedShown())
                 {
                     MessageBox.Show("We're sorry, but your application has been rejected. We understand this is disappointing, but don't give up. We encourage you to try again next year. Best of luck with your future endeavors!");
@@ -132,6 +142,7 @@ namespace entrypoint
 
                 }
                 lblnotif.Text = $"Your application has been rejected.";
+                picButtonDL.Visible = false;
             }
         }
 
@@ -142,13 +153,16 @@ namespace entrypoint
             {
                 label15.Text = "Pending";
                 label15.BackColor = Color.Gray;
+                label15.ForeColor = Color.White;
                 lblnotif.Text = $"Your payment is being processed.";
+                picButtonDL.Visible = false;
 
             }
             else if (status == "rejected")
             {
                 label15.Text = "Rejected";
-                label15.BackColor = Color.Red;
+                label15.BackColor = Color.Crimson;
+                label15.ForeColor = Color.White;
                 if (!notification.isRejPaymentShown())
                 {
                     MessageBox.Show("We're sorry, but your payment has been rejected which results to rejection of admission");
@@ -162,12 +176,14 @@ namespace entrypoint
                 }
 
                 lblnotif.Text = $"Your payment has been rejected.";
+                picButtonDL.Visible = false;
             }
             else if (status == "paid")
             {
 
                 label15.Text = "Paid";
                 label15.BackColor = Color.Green;
+                label15.ForeColor = Color.White;
                 if (!notification.isApPaymentShown())
                 {
                     MessageBox.Show("Congatulations! You're payment has been approved");
@@ -176,7 +192,8 @@ namespace entrypoint
                 string examDate = tracker.getExamDate().ToString();
                 if (!string.IsNullOrEmpty(examDate) && DateTime.TryParse(examDate, out DateTime parsedDate))
                 {
-                    lblnotif.Text = $"Please ensure that you take your exam by {parsedDate.ToString("MMMM dd, yyyy")}. If the exam is not taken by this date,\nyour admission will be rejected.";
+                    lblnotif.Text = $"Please ensure that you take your exam by {parsedDate.ToString("MMMM dd, yyyy")}. If the exam is not taken \nby this date, your admission will be rejected.";
+                    picButtonDL.Visible = false;
                 }
                 if(TimePeriods.CurrentDate >= TimePeriods.PaymentPeriodStart)
                 {
@@ -213,8 +230,10 @@ namespace entrypoint
                     notification.updateBit("examdate", 1);
                 }
                 lblnotif.Text = "Please take your examination until 11:59pm only this day!";
+                picButtonDL.Visible = false;
                 label16.Text = "Ongoing";
                 label16.BackColor = Color.Yellow;
+                label16.ForeColor = Color.Black;
             }
 
             else
@@ -243,28 +262,35 @@ namespace entrypoint
             if (tracker.isDoneExam())
             {
                 lblnotif.Text = "Please wait for your Notice on Admission!";
+                picButtonDL.Visible = false;
                 label16.Text = "Done";
                 label16.BackColor = Color.Green;
+                label16.ForeColor = Color.White;
                 label17.Text = "Waiting";
                 label17.BackColor = Color.Yellow;
+                label17.ForeColor = Color.Black;
 
             }
           if (tracker.displayNOA() == "Admitted")
             {
-                lblnotif.Text = "You have been admitted, Please wait for announcement regarding enrollment and other steps.!";
+                lblnotif.Text = "You have been admitted, Please wait for announcement regarding \nenrollment and other steps.!";
+                picButtonDL.Visible = false;
                 label17.Text = "Approved";
                 label17.BackColor = Color.Green;
-               
+                label17.ForeColor = Color.White;
+
 
 
             }
           else if (tracker.displayNOA() == "Rejected")
             {
                 label17.Text = "Rejected";
-                label17.BackColor = Color.Red;
+                label17.BackColor = Color.Crimson;
+                label17.ForeColor = Color.White;
             }
             if (notification.isadmitShown())
             {
+                picButtonDL.Visible = true;
                 linkLabel1.Visible=true;
             }
          

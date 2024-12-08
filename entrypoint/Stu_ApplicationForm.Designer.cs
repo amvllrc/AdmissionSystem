@@ -129,7 +129,7 @@
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Margin = new System.Windows.Forms.Padding(2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(717, 600);
+            this.panel3.Size = new System.Drawing.Size(717, 591);
             this.panel3.TabIndex = 26;
             // 
             // grpDocuments
@@ -147,7 +147,7 @@
             this.grpDocuments.Controls.Add(this.lblForm137);
             this.grpDocuments.Controls.Add(this.lblBirthCert);
             this.grpDocuments.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grpDocuments.Location = new System.Drawing.Point(16, 645);
+            this.grpDocuments.Location = new System.Drawing.Point(8, 645);
             this.grpDocuments.Margin = new System.Windows.Forms.Padding(2);
             this.grpDocuments.Name = "grpDocuments";
             this.grpDocuments.Padding = new System.Windows.Forms.Padding(2);
@@ -293,7 +293,7 @@
             this.grpStudentDeclaration.Controls.Add(this.btnSubmit);
             this.grpStudentDeclaration.Controls.Add(this.lblConfirmation);
             this.grpStudentDeclaration.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grpStudentDeclaration.Location = new System.Drawing.Point(16, 848);
+            this.grpStudentDeclaration.Location = new System.Drawing.Point(8, 828);
             this.grpStudentDeclaration.Margin = new System.Windows.Forms.Padding(2);
             this.grpStudentDeclaration.Name = "grpStudentDeclaration";
             this.grpStudentDeclaration.Padding = new System.Windows.Forms.Padding(2);
@@ -346,7 +346,7 @@
             this.grpFamilyInformation.Controls.Add(this.txtMother);
             this.grpFamilyInformation.Controls.Add(this.lblMother);
             this.grpFamilyInformation.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grpFamilyInformation.Location = new System.Drawing.Point(16, 492);
+            this.grpFamilyInformation.Location = new System.Drawing.Point(8, 492);
             this.grpFamilyInformation.Margin = new System.Windows.Forms.Padding(2);
             this.grpFamilyInformation.Name = "grpFamilyInformation";
             this.grpFamilyInformation.Padding = new System.Windows.Forms.Padding(2);
@@ -542,7 +542,7 @@
             this.grpProgramPreferances.Controls.Add(this.lblSecondChoice);
             this.grpProgramPreferances.Controls.Add(this.lblFirstChoice);
             this.grpProgramPreferances.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grpProgramPreferances.Location = new System.Drawing.Point(16, 375);
+            this.grpProgramPreferances.Location = new System.Drawing.Point(8, 375);
             this.grpProgramPreferances.Margin = new System.Windows.Forms.Padding(2);
             this.grpProgramPreferances.Name = "grpProgramPreferances";
             this.grpProgramPreferances.Padding = new System.Windows.Forms.Padding(2);
@@ -608,7 +608,7 @@
             this.grpEducationalBackground.Controls.Add(this.txtElem);
             this.grpEducationalBackground.Controls.Add(this.lblElem);
             this.grpEducationalBackground.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grpEducationalBackground.Location = new System.Drawing.Point(16, 225);
+            this.grpEducationalBackground.Location = new System.Drawing.Point(8, 225);
             this.grpEducationalBackground.Margin = new System.Windows.Forms.Padding(2);
             this.grpEducationalBackground.Name = "grpEducationalBackground";
             this.grpEducationalBackground.Padding = new System.Windows.Forms.Padding(2);
@@ -741,7 +741,7 @@
             // 
             this.lblTitleForm.AutoSize = true;
             this.lblTitleForm.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitleForm.Location = new System.Drawing.Point(283, 15);
+            this.lblTitleForm.Location = new System.Drawing.Point(255, 15);
             this.lblTitleForm.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTitleForm.Name = "lblTitleForm";
             this.lblTitleForm.Size = new System.Drawing.Size(194, 25);
@@ -772,7 +772,7 @@
             this.grpPersonalInformation.Controls.Add(this.lblBirthdate);
             this.grpPersonalInformation.Controls.Add(this.lblFirstName);
             this.grpPersonalInformation.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grpPersonalInformation.Location = new System.Drawing.Point(16, 46);
+            this.grpPersonalInformation.Location = new System.Drawing.Point(8, 46);
             this.grpPersonalInformation.Margin = new System.Windows.Forms.Padding(2);
             this.grpPersonalInformation.Name = "grpPersonalInformation";
             this.grpPersonalInformation.Padding = new System.Windows.Forms.Padding(2);
@@ -1012,7 +1012,6 @@
             this.Name = "Stu_ApplicationForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.Form1_Load);
-          
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.grpDocuments.ResumeLayout(false);
