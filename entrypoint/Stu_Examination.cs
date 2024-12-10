@@ -71,7 +71,7 @@ namespace entrypoint
                     "Please make sure to check all your answers before clicking OK to submit your scores.",
                     "Confirmation",
                     MessageBoxButtons.OKCancel,
-                    MessageBoxIcon.Warning);
+                    MessageBoxIcon.Information);
 
                 if (result == DialogResult.OK)
                 {

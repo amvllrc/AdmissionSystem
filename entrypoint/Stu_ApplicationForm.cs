@@ -127,7 +127,7 @@ namespace entrypoint
                                 "Please make sure to check all your details before clicking OK to submit.",
                                 "Confirmation",
                                 MessageBoxButtons.OKCancel,
-                                MessageBoxIcon.Warning);
+                                MessageBoxIcon.Information);
                             if (result == DialogResult.OK)
                             {
                                 insertToDatabase();
