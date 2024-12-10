@@ -91,13 +91,14 @@ namespace entrypoint
                         scienceScore = subjectScores["SCIENCE:"];
                     }
 
-                    MessageBox.Show(mathScore+" "+englishScore+" "+scienceScore);
-
                     bool isInsertSuccessful = r.insertExaminfo(mathScore, scienceScore, englishScore);
                     if (isInsertSuccessful)
                     {
                         Stu_AdmissionStatus status = new Stu_AdmissionStatus();
+                        Stu_Examination form=new Stu_Examination();
+                        form.Hide();
                         status.Show();
+
                     }
                     else
                     {

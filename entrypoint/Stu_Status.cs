@@ -116,7 +116,7 @@ namespace entrypoint
                 label14.ForeColor = Color.Black;
                 if (!notification.isApprovedShown())
                 {
-                    MessageBox.Show("Congatulations! You're application has been approved");
+                    MessageBox.Show("Congatulations! Your application has been approved");
                     notification.updateBit("approvedapplication",1);
                 }
                 lblnotif.Text = $"Please ensure that you complete your payment by {TimePeriods.PaymentPeriodEnd.ToString("MMMM dd, yyyy")}. If payment is not received \nby this date your admission will be rejected.";
@@ -130,15 +130,15 @@ namespace entrypoint
                 if (!notification.isRejectedShown())
                 {
                     MessageBox.Show("We're sorry, but your application has been rejected. We understand this is disappointing, but don't give up. We encourage you to try again next year. Best of luck with your future endeavors!");
+                    notification.updateBit("rejectedapplication", 1);
+                    notification.updateBit("rejected", 1);
                     homepage.Show();
                     this.Hide();
                     UserSession.ApplicationId = 0;
                     UserSession.NAME = "";
                     UserSession.ROLE = "";
                     UserSession.ID = 0;
-                    notification.updateBit("rejectedapplication", 1);
-                    notification.updateBit("rejected", 1);
-
+                   
 
                 }
                 lblnotif.Text = $"Your application has been rejected.";
@@ -166,13 +166,16 @@ namespace entrypoint
                 if (!notification.isRejPaymentShown())
                 {
                     MessageBox.Show("We're sorry, but your payment has been rejected which results to rejection of admission");
+                    autom.RejectAll();
+                    notification.updateBit("rejectedpayment", 1);
+                    notification.updateBit("rejected", 1);
                     homepage.Show();
                     UserSession.ApplicationId = 0;
                     UserSession.NAME = "";
                     UserSession.ROLE = "";
                     UserSession.ID = 0;
                     this.Hide();
-                    notification.updateBit("rejectedpayment", 1);
+                   
                 }
 
                 lblnotif.Text = $"Your payment has been rejected.";
@@ -186,7 +189,7 @@ namespace entrypoint
                 label15.ForeColor = Color.White;
                 if (!notification.isApPaymentShown())
                 {
-                    MessageBox.Show("Congatulations! You're payment has been approved");
+                    MessageBox.Show("Congatulations! Your payment has been approved");
                     notification.updateBit("approvedpayment", 1);
                 }
                 string examDate = tracker.getExamDate().ToString();
@@ -207,6 +210,10 @@ namespace entrypoint
             {
                 if (TimePeriods.CurrentDate > TimePeriods.PaymentPeriodEnd&&tracker.getStatus() == "approved")
                 {
+
+                    label14.Text = "Rejected";
+                    label14.BackColor = Color.Crimson;
+                    label14.ForeColor = Color.White;
                     label15.Text = "Rejected";
                     label15.BackColor = Color.Crimson;
                     label15.ForeColor = Color.White;
@@ -230,7 +237,7 @@ namespace entrypoint
             {
                 if (!notification.isexamShown())
                 {
-                    MessageBox.Show("Best of luck! Today is you're examination day, don't forget to take it as it will be the final basis for this admission");
+                    MessageBox.Show("Best of luck! Today is your examination day, don't forget to take it as it will be the final basis for this admission");
                     notification.updateBit("examdate", 1);
                 }
                 lblnotif.Text = "Please take your examination until 11:59pm only this day!";
@@ -291,6 +298,7 @@ namespace entrypoint
             }
           else if (tracker.displayNOA() == "Rejected")
             {
+                lblnotif.Text = "Your admission has been rejected!";
                 label17.Text = "Rejected";
                 label17.BackColor = Color.Crimson;
                 label17.ForeColor = Color.White;

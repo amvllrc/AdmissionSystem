@@ -97,9 +97,10 @@ namespace entrypoint
                     MessageBoxIcon.Warning);
                 if (result == DialogResult.OK)
                 {
-                   
+
 
                     p.insertPayment(txtAccountHolderName.Text, txtCellphoneNum.Text, txtReferenceNum.Text, selectedDate, Filepath, FileName);
+                    
                     foreach (Control control in panel3.Controls)
                     {
                         control.Enabled = false;
@@ -113,6 +114,7 @@ namespace entrypoint
             }
 
         }
+      
 
     }
 }

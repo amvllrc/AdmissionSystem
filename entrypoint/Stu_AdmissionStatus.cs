@@ -220,24 +220,24 @@ namespace entrypoint
             {
                 MessageBox.Show("Your application has not been processed. Please proceed to our admission department");
             }
-            if (tracker.getStatus2()== "pending" && TimePeriods.CurrentDate > TimePeriods.PaymentApprovalEnd)
+            else if (tracker.getStatus2()== "pending" && TimePeriods.CurrentDate > TimePeriods.PaymentApprovalEnd)
             {
                 MessageBox.Show("Your payment has not been processed. Please proceed to our admission department");
             }
-            if (tracker.isDoneExam() && TimePeriods.CurrentDate > TimePeriods.AdmissionApprovalEnd)
+            else if (tracker.isDoneExam() && TimePeriods.CurrentDate > TimePeriods.AdmissionApprovalEnd)
             {
                 MessageBox.Show("Your admission has not been processed. Please proceed to our admission department");
             }
 
-            if (tracker.getStatus() == "" && TimePeriods.CurrentDate == TimePeriods.ApplicationPeriodEnd.AddDays(-1))
+            else if (tracker.getStatus() == "" && TimePeriods.CurrentDate == TimePeriods.ApplicationPeriodEnd.AddDays(-1))
             {
                 MessageBox.Show("Don't forget to apply until tomorrow");
             }
-            if (tracker.getStatus() == "approved" && TimePeriods.CurrentDate == TimePeriods.PaymentPeriodEnd.AddDays(-1))
+            else if (tracker.getStatus() == "approved" && TimePeriods.CurrentDate == TimePeriods.PaymentPeriodEnd.AddDays(-1))
             {
                 MessageBox.Show("Don't forget to pay until tomorrow");
             }
-            if (tracker.getStatus2() == "paid")
+            else if (tracker.getStatus2() == "paid")
             {
                 DateTime dateexam = (DateTime)tracker.getExamDate();
 
@@ -259,7 +259,7 @@ namespace entrypoint
                 noa.ShowDialog();
                 notification.updateBit("admitted", 1);
             }
-            else if (tracker.displayNOA() == "Rejected"&&!notification.isrejectedShown())
+            else if (tracker.displayNOA() == "Rejected"&&!notification.isrejectedShown()&&tracker.getStatus1())
             {
                 MessageBox.Show(
                     "We understand that this news may be disappointing, but remember, this is not the end of your journey. " +
@@ -270,8 +270,21 @@ namespace entrypoint
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Information
                 );
+                notification.updateBit("rejectedapplication", 1);
                 notification.updateBit("rejected", 1);
             }
+           else if (notification.isrejectedShown())
+            {
+                MessageBox.Show("You are already rejected. Redirecting to homepage");
+                this.Close();
+                UserSession.ApplicationId = 0;
+                UserSession.NAME = "";
+                UserSession.ROLE = "";
+                UserSession.ID = 0;
+                Homepage homepage = new Homepage();
+                homepage.Show();
+            }
+
             else if (notification.isRejectedShown())
             {
                 MessageBox.Show("You are already rejected. Redirecting to homepage");
@@ -284,7 +297,7 @@ namespace entrypoint
                 homepage.Show();
             }
 
-            if (notification.isRejPaymentShown()&&tracker.getStatus()=="approved")
+            else if (notification.isRejPaymentShown()&&tracker.getStatus()=="approved")
             {
                 MessageBox.Show("You are already rejected due to rejection of payment. Redirecting to homepage");
                 this.Close();
@@ -295,18 +308,7 @@ namespace entrypoint
                 Homepage homepage = new Homepage();
                 homepage.Show();
             }
-            if(notification.isrejectedShown())
-            {
-                MessageBox.Show("You are already rejected. Redirecting to homepage");
-                this.Close();
-                UserSession.ApplicationId = 0;
-                UserSession.NAME = "";
-                UserSession.ROLE = "";
-                UserSession.ID = 0;
-                Homepage homepage = new Homepage();
-                homepage.Show();
-            }
-
+       
        
 
 

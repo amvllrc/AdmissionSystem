@@ -126,9 +126,8 @@ namespace entrypoint.PROCESSES.Student_application
                         if (rowsAffected > 0)
                         {
                             MessageBox.Show("Success, Wait for the evaluation of your payment");
-                            Stu_AdmissionStatus status = new Stu_AdmissionStatus();
-                            status.Show();
-                           
+                            Stu_AdmissionStatus status1 = new Stu_AdmissionStatus();
+                            status1.Show();
                         }
                     }
                     catch (SqlException ex)

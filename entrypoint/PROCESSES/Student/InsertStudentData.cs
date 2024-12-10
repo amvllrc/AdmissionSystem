@@ -129,10 +129,11 @@ namespace entrypoint.PROCESSES.Student_application
                         {
 
                             MessageBox.Show("Your application has been submitted successfully.");
-                            Stu_ApplicationForm form = new Stu_ApplicationForm(adstat);
+                            
+                        
+                            
                             adstat.Show();
-                            form.Close();
-                            form.Hide();
+                            
                             tracker.validatethisbutton();
                             insertnotif();
 
