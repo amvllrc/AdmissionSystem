@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Stu_PaymentForm));
             this.panel3 = new System.Windows.Forms.Panel();
             this.grpPaymentdetails = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.cbDateOfExam = new System.Windows.Forms.ComboBox();
             this.lblDateOfExam = new System.Windows.Forms.Label();
             this.btnSubmit = new System.Windows.Forms.Button();
@@ -42,19 +43,18 @@
             this.lblAccountHolderName = new System.Windows.Forms.Label();
             this.txtCellphoneNum = new System.Windows.Forms.TextBox();
             this.lblCellphoneNum = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.picButtonDL = new System.Windows.Forms.PictureBox();
             this.picQR = new System.Windows.Forms.PictureBox();
             this.lblScanToPay = new System.Windows.Forms.Label();
-            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.picButtonDL = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.panel3.SuspendLayout();
             this.grpPaymentdetails.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picPreviewImg)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picQR)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picButtonDL)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picButtonDL)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picQR)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
@@ -95,6 +95,19 @@
             this.grpPaymentdetails.TabIndex = 30;
             this.grpPaymentdetails.TabStop = false;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.DarkBlue;
+            this.label1.Font = new System.Drawing.Font("Segoe UI Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(31, 33);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(114, 17);
+            this.label1.TabIndex = 43;
+            this.label1.Text = "Payment Details:";
+            // 
             // cbDateOfExam
             // 
             this.cbDateOfExam.BackColor = System.Drawing.Color.Gold;
@@ -120,7 +133,7 @@
             // 
             // btnSubmit
             // 
-            this.btnSubmit.BackColor = System.Drawing.Color.Gold;
+            this.btnSubmit.BackColor = System.Drawing.Color.SpringGreen;
             this.btnSubmit.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnSubmit.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSubmit.Location = new System.Drawing.Point(62, 266);
@@ -133,7 +146,7 @@
             // 
             // btnProofOfPayment
             // 
-            this.btnProofOfPayment.BackColor = System.Drawing.Color.Gold;
+            this.btnProofOfPayment.BackColor = System.Drawing.Color.Khaki;
             this.btnProofOfPayment.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnProofOfPayment.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnProofOfPayment.Location = new System.Drawing.Point(230, 266);
@@ -221,6 +234,27 @@
             this.lblCellphoneNum.TabIndex = 31;
             this.lblCellphoneNum.Text = "Cellphone Number:";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.DarkBlue;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(17, 52);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(385, 301);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 42;
+            this.pictureBox1.TabStop = false;
+            // 
+            // picButtonDL
+            // 
+            this.picButtonDL.Image = ((System.Drawing.Image)(resources.GetObject("picButtonDL.Image")));
+            this.picButtonDL.Location = new System.Drawing.Point(4, 22);
+            this.picButtonDL.Name = "picButtonDL";
+            this.picButtonDL.Size = new System.Drawing.Size(658, 357);
+            this.picButtonDL.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picButtonDL.TabIndex = 31;
+            this.picButtonDL.TabStop = false;
+            // 
             // picQR
             // 
             this.picQR.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
@@ -245,44 +279,6 @@
             this.lblScanToPay.TabIndex = 29;
             this.lblScanToPay.Text = "SCAN TO PAY";
             // 
-            // openFileDialog1
-            // 
-            this.openFileDialog1.FileName = "openFileDialog1";
-            // 
-            // picButtonDL
-            // 
-            this.picButtonDL.Image = ((System.Drawing.Image)(resources.GetObject("picButtonDL.Image")));
-            this.picButtonDL.Location = new System.Drawing.Point(4, 22);
-            this.picButtonDL.Name = "picButtonDL";
-            this.picButtonDL.Size = new System.Drawing.Size(658, 357);
-            this.picButtonDL.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picButtonDL.TabIndex = 31;
-            this.picButtonDL.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.DarkBlue;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(17, 52);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(385, 301);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 42;
-            this.pictureBox1.TabStop = false;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.DarkBlue;
-            this.label1.Font = new System.Drawing.Font("Segoe UI Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(31, 33);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(114, 17);
-            this.label1.TabIndex = 43;
-            this.label1.Text = "Payment Details:";
-            // 
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
@@ -292,6 +288,10 @@
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 44;
             this.pictureBox2.TabStop = false;
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
             // 
             // Stu_PaymentForm
             // 
@@ -309,9 +309,9 @@
             this.grpPaymentdetails.ResumeLayout(false);
             this.grpPaymentdetails.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picPreviewImg)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picQR)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picButtonDL)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picButtonDL)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picQR)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
@@ -321,23 +321,23 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label lblScanToPay;
         private System.Windows.Forms.PictureBox picQR;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.GroupBox grpPaymentdetails;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox cbDateOfExam;
+        private System.Windows.Forms.Label lblDateOfExam;
+        private System.Windows.Forms.Button btnSubmit;
+        private System.Windows.Forms.Button btnProofOfPayment;
+        private System.Windows.Forms.PictureBox picPreviewImg;
         private System.Windows.Forms.TextBox txtReferenceNum;
         private System.Windows.Forms.Label lblReferenceNum;
         private System.Windows.Forms.TextBox txtAccountHolderName;
         private System.Windows.Forms.Label lblAccountHolderName;
         private System.Windows.Forms.TextBox txtCellphoneNum;
         private System.Windows.Forms.Label lblCellphoneNum;
-        private System.Windows.Forms.PictureBox picPreviewImg;
-        private System.Windows.Forms.OpenFileDialog openFileDialog1;
-        private System.Windows.Forms.Button btnSubmit;
-        private System.Windows.Forms.Button btnProofOfPayment;
-        private System.Windows.Forms.Label lblDateOfExam;
-        private System.Windows.Forms.ComboBox cbDateOfExam;
-        private System.Windows.Forms.PictureBox picButtonDL;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox picButtonDL;
     }
 }
 

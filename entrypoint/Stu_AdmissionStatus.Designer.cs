@@ -101,9 +101,9 @@
             this.label1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(55, 11);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(344, 20);
+            this.label1.Size = new System.Drawing.Size(369, 40);
             this.label1.TabIndex = 2;
-            this.label1.Text = "STUDENT ADMISSION | SYSTEM NAME | STUDENT";
+            this.label1.Text = "STUDENT ADMISSION | SWIFT UNIVERSITY | STUDENT\r\n\r\n";
             // 
             // btnAdmissionStatus
             // 

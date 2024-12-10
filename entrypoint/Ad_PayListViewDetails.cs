@@ -41,7 +41,8 @@ namespace entrypoint
             label6.Text = detailsView.gcashnum;
             label7.Text = detailsView.status;
             label8.Text = detailsView.refnum;
-            label9.Text = detailsView.paydate; 
+            label9.Text = detailsView.paydate;
+
             label10.Text = detailsView.examdate;
             DisplayImage(detailsView.proof);
 

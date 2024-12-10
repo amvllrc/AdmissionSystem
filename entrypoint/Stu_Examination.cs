@@ -53,10 +53,10 @@ namespace entrypoint
         {
             r.validatethis(panel3);
             r.retrieveNameandOthers();
-            txtFirstName.Text=r.firstName;
-            txtLastName.Text=r.lastName;
-            txtMiddleName.Text=r.middleName;
-           
+            txtFirstName.Text = r.firstName;
+            txtLastName.Text = r.lastName;
+            txtMiddleName.Text = r.middleName;
+
         }
 
         private void btnSubmit_Click(object sender, EventArgs e)
@@ -78,9 +78,9 @@ namespace entrypoint
                     var subjectScores = quizHelper.CalculateScoresBySubject();
                     int totalScore = subjectScores.Values.Sum();
 
-                    if (subjectScores.ContainsKey("MATH:"))
+                    if (subjectScores.ContainsKey("MATHEMATICS:"))
                     {
-                        mathScore = subjectScores["MATH:"];
+                        mathScore = subjectScores["MATHEMATICS:"];
                     }
                     if (subjectScores.ContainsKey("ENGLISH:"))
                     {
@@ -90,6 +90,8 @@ namespace entrypoint
                     {
                         scienceScore = subjectScores["SCIENCE:"];
                     }
+
+                    MessageBox.Show(mathScore+" "+englishScore+" "+scienceScore);
 
                     bool isInsertSuccessful = r.insertExaminfo(mathScore, scienceScore, englishScore);
                     if (isInsertSuccessful)

@@ -107,6 +107,10 @@ namespace entrypoint.PROCESSES.Student_application
                     {
                         status = reader.GetString(reader.GetOrdinal("application_status"));
                     }
+                    else
+                    {
+                        status = "";
+                    }
 
 
 

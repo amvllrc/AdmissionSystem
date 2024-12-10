@@ -204,7 +204,7 @@ namespace entrypoint
                     sortby = "last_name";
                     break;
                 case 2:
-                    sortby = "AverageScore";
+                    sortby = "AverageScore DESC";
                     break;
                 default:
                     sortby = "taken_at";

@@ -52,7 +52,7 @@ namespace entrypoint.PROCESSES
                                 }
                                 if (string.IsNullOrWhiteSpace(textbox.Text))
                                 {
-                                    textbox.BackColor = Color.LightPink;
+                                    textbox.Focus();
                                     isValid = false; 
                                 }
                                 else
@@ -95,7 +95,7 @@ namespace entrypoint.PROCESSES
                             {
                                 if (cbo.SelectedItem == null || string.IsNullOrWhiteSpace(cbo.SelectedItem.ToString()))
                                 {
-                                    cbo.BackColor = Color.LightPink;
+                                cbo.Focus();
                                     isValid = false; 
                                 }
                                 else

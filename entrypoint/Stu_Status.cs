@@ -51,8 +51,8 @@ namespace entrypoint
                 if (TimePeriods.CurrentDate > TimePeriods.ApplicationPeriodEnd)
                 {
                     MessageBox.Show("You failed to submit your application on time, which results in not qualifying for this admission.");
-                   
-                    
+
+                    MessageBox.Show(TimePeriods.CurrentDate.ToString());
                     homepage.Show();
                     UserSession.ApplicationId = 0;
                     UserSession.NAME = "";
@@ -207,7 +207,11 @@ namespace entrypoint
             {
                 if (TimePeriods.CurrentDate > TimePeriods.PaymentPeriodEnd&&tracker.getStatus() == "approved")
                 {
+                    label15.Text = "Rejected";
+                    label15.BackColor = Color.Crimson;
+                    label15.ForeColor = Color.White;
                     MessageBox.Show("You failed to settle your payment on time, which results in not qualifying for this admission.");
+                    
                     autom.RejectAll();
                     notification.updateBit("rejected", 1);
                     notification.updateBit("rejectedapplication", 1);
@@ -240,12 +244,15 @@ namespace entrypoint
             {
                 if (tracker.getExamDate() < TimePeriods.CurrentDate&&tracker.getStatus2()=="paid")
                 {
+                    label16.Text = "Rejected";
+                    label16.BackColor = Color.Crimson;
+                    label16.ForeColor = Color.White;
                     MessageBox.Show("You forgot to take your examination. I'm sorry to tell you that this results to rejection of your admission");
                     autom.RejectAdmission();
                     notification.updateBit("rejected", 1);
                     notification.updateBit("rejectedapplication", 1);
                     notification.updateBit("exammissed", 1);
-                    
+                   
                     UserSession.ApplicationId = 0;
                     UserSession.NAME = "";
                     UserSession.ROLE = "";

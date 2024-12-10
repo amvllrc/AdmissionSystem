@@ -73,7 +73,7 @@ namespace entrypoint.PROCESSES.Student
                         Font fontUnderline = FontFactory.GetFont(FontFactory.HELVETICA_BOLD, 12, Font.UNDERLINE);
                         string fullName = $"{firstName.ToUpper()} {middleName.ToUpper()} {lastName.ToUpper()}";
 
-                        Paragraph title = new Paragraph("LAND OF DAWN UNIVERSITY", fontBold)
+                        Paragraph title = new Paragraph("SWIFT UNIVERSITY", fontBold)
                         {
                             Alignment = Element.ALIGN_CENTER
                         };

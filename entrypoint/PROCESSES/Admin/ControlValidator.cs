@@ -186,7 +186,7 @@ namespace entrypoint.PROCESSES.Admin
                         int rowsAffected = cmd.ExecuteNonQuery();
                         if (rowsAffected > 0)
                         {
-                            MessageBox.Show("This admission has been rejected automatically.");
+                            MessageBox.Show("This admission has been rejected");
                         }
                         else
                         {

@@ -20,17 +20,17 @@ namespace entrypoint.PROCESSES.Admin
         public string examdate = null;
         public byte[] proof = null;
 
-        public void PloadDetails() {
-
+        public void PloadDetails()
+        {
             string queryPayment = "SELECT * FROM payment WHERE application_id = @appl_id";
-            string queryName = "SELECT last_name,first_name,middle_name FROM application WHERE application_id = @appl_id";
+            string queryName = "SELECT last_name, first_name, middle_name FROM application WHERE application_id = @appl_id";
 
             using (SqlConnection conn = new SqlConnection(DBConnection.connectionString))
             {
                 conn.Open();
-                using(SqlCommand cmd = new SqlCommand(queryPayment, conn))
+                using (SqlCommand cmd = new SqlCommand(queryPayment, conn))
                 {
-                    cmd.Parameters.AddWithValue("@appl_id",ap_id);
+                    cmd.Parameters.AddWithValue("@appl_id", ap_id);
                     using (SqlDataReader reader = cmd.ExecuteReader())
                     {
                         if (reader.Read())
@@ -39,24 +39,23 @@ namespace entrypoint.PROCESSES.Admin
                             gcashnum = reader["cellphone_number"].ToString();
                             status = reader["status"].ToString();
                             refnum = reader["reference_number"].ToString();
-                            paydate = reader["pay_at"].ToString();
+                            DateTime paymentDate = Convert.ToDateTime(reader["pay_at"]);
+                            paydate = paymentDate.ToString("MMMM d, yyyy");
                             DateTime formattedDate = Convert.ToDateTime(reader["date_of_exam"]);
-                           examdate= formattedDate.ToString("MMMM d, yyyy");
+                            examdate = formattedDate.ToString("MMMM d, yyyy");
                             proof = reader["filepath"] as byte[];
                         }
-    
                     }
                 }
 
-                using (SqlCommand cmd1 = new SqlCommand(queryName,conn))
+                using (SqlCommand cmd1 = new SqlCommand(queryName, conn))
                 {
                     cmd1.Parameters.AddWithValue("@appl_id", ap_id);
                     using (SqlDataReader reader = cmd1.ExecuteReader())
                     {
                         if (reader.Read())
                         {
-                            name = reader["last_name"].ToString() + ", " + reader["first_name"].ToString() + ", " + reader["last_name"].ToString();
-
+                            name = reader["last_name"].ToString() + ", " + reader["first_name"].ToString() + ", " + reader["middle_name"].ToString();
                         }
                         else
                         {
@@ -65,8 +64,8 @@ namespace entrypoint.PROCESSES.Admin
                     }
                 }
             }
-
         }
+
 
 
     }

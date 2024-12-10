@@ -40,6 +40,7 @@ namespace entrypoint
                 TimePeriods.ExamPeriodStart.ToString("MMMM dd") + // Full month name
                 " - " +
                 TimePeriods.ExamPeriodEnd.ToString("MMMM dd");  // Full month name
+            label5.Text += "\nJune 21, 2025";
         }
 
         private void btnHomepage_Click(object sender, EventArgs e)

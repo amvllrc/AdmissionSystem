@@ -184,23 +184,28 @@ namespace entrypoint
 
         private void picLogout_Click(object sender, EventArgs e)
         {
-           
-            Homepage Homepage = new Homepage();
-            Homepage.Show();
-            Stu_ApplicationForm form = new Stu_ApplicationForm(this);
-            Stu_PaymentForm form2 = new Stu_PaymentForm();
-            Stu_Examination form3= new Stu_Examination();
-            form.Close();
-            form2.Close();
-            form3.Close();
-            this.Close();
-            
+            DialogResult result = MessageBox.Show("Are you sure you want to log out?",
+                                          "Confirm Logout",
+                                          MessageBoxButtons.YesNo,
+                                          MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
+            {
+                Homepage Homepage = new Homepage();
+                Homepage.Show();
+                Stu_ApplicationForm form = new Stu_ApplicationForm(this);
+                Stu_PaymentForm form2 = new Stu_PaymentForm();
+                Stu_Examination form3 = new Stu_Examination();
+                form.Close();
+                form2.Close();
+                form3.Close();
+                this.Close();
 
-       
-            UserSession.ROLE = "";
-            UserSession.NAME = "";
-            UserSession.ID = 0;
-            UserSession.ApplicationId = 0;
+                UserSession.ApplicationId = 0;
+                UserSession.NAME = "";
+                UserSession.ROLE = "";
+                UserSession.ID = 0;
+            }
+
             
         }
 
@@ -209,8 +214,45 @@ namespace entrypoint
             // Handle DataGridView cell content click here (if needed)
         }
 
-        private void Stu_AdmissionStatus_Shown(object sender, EventArgs e)
+        private void Notif()
         {
+            if (tracker.getStatus() == "pending" && TimePeriods.CurrentDate > TimePeriods.ApplicationApprovalEnd)
+            {
+                MessageBox.Show("Your application has not been processed. Please proceed to our admission department");
+            }
+            if (tracker.getStatus2()== "pending" && TimePeriods.CurrentDate > TimePeriods.PaymentApprovalEnd)
+            {
+                MessageBox.Show("Your payment has not been processed. Please proceed to our admission department");
+            }
+            if (tracker.isDoneExam() && TimePeriods.CurrentDate > TimePeriods.AdmissionApprovalEnd)
+            {
+                MessageBox.Show("Your admission has not been processed. Please proceed to our admission department");
+            }
+
+            if (tracker.getStatus() == "" && TimePeriods.CurrentDate == TimePeriods.ApplicationPeriodEnd.AddDays(-1))
+            {
+                MessageBox.Show("Don't forget to apply until tomorrow");
+            }
+            if (tracker.getStatus() == "approved" && TimePeriods.CurrentDate == TimePeriods.PaymentPeriodEnd.AddDays(-1))
+            {
+                MessageBox.Show("Don't forget to pay until tomorrow");
+            }
+            if (tracker.getStatus2() == "paid")
+            {
+                DateTime dateexam = (DateTime)tracker.getExamDate();
+
+                if (TimePeriods.CurrentDate == dateexam.AddDays(-1))
+                {
+                    MessageBox.Show("Don't forget to take your exam tomorrow");
+                }
+            }
+
+        }
+        private void Stu_AdmissionStatus_Shown(object sender, EventArgs e)
+            
+        {
+            Notif();
+
             if (tracker.displayNOA()=="Admitted"&&!notification.isadmitShown())
             {
                 Stu_NOA noa = new Stu_NOA();
@@ -265,18 +307,7 @@ namespace entrypoint
                 homepage.Show();
             }
 
-            //if (notification.isexammShown())
-            //{
-            //    MessageBox.Show("You are already rejected due to missed exam. Redirecting to homepage");
-            //    this.Close();
-            //    UserSession.ApplicationId = 0;
-            //    UserSession.NAME = "";
-            //    UserSession.ROLE = "";
-            //    UserSession.ID = 0;
-            //    Homepage homepage = new Homepage();
-            //    homepage.Show();
-            //}
-
+       
 
 
         }

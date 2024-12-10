@@ -17,7 +17,7 @@ namespace entrypoint.PROCESSES.Student
 
 
         //Student time frames
-        public static DateTime CurrentDate { get; } = new DateTime(2024, 12, 19);
+        public static DateTime CurrentDate { get; } = new DateTime(2024, 12, 06);
         public static DateTime ApplicationPeriodStart { get; } = new DateTime(2024, 12, 06);
         public static DateTime ApplicationPeriodEnd { get; } = new DateTime(2024, 12, 11);
         public static DateTime PaymentPeriodStart { get; } = new DateTime(2024, 12, 06);

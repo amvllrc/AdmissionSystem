@@ -122,7 +122,7 @@ namespace entrypoint.PROCESSES.Admin
             {
                 query += " WHERE " + string.Join(" AND ", conditions);
             }
-            List<string> validSortColumns = new List<string> { "taken_at", "last_name", "AverageScore" };
+            List<string> validSortColumns = new List<string> { "taken_at", "last_name", "AverageScore DESC" };
             if (!string.IsNullOrEmpty(sort) && validSortColumns.Contains(sort))
             {
                 query += $" ORDER BY {sort}";
